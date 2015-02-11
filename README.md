@@ -9,3 +9,11 @@ My custom iTerm2 build.
 * Added native OS X shadow
 * Modified menu bar to resemble Terminal.app shipped with OS X
 * Changed the app icon to resemble the window's appearance
+
+===
+
+You may need to import the preferences from the config directory:
+
+`
+	cp config/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+`
