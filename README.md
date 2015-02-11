@@ -14,6 +14,4 @@ My custom iTerm2 build.
 
 You may need to import the preferences from the config directory:
 
-`
-	cp config/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
-`
+`cp config/prefs ~/Library/Preferences/com.googlecode.iterm2.plist`
