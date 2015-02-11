@@ -1,5 +1,7 @@
 # iTerm2-borderless
 
+![iTerm2-borderless](https://github.com/jasonwoodland/iTerm2-borderless/blob/master/sample.png?raw=true)
+
 My custom iTerm2 build.
 
 * Removed titlebar
