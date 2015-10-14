@@ -1,0 +1,124 @@
+diff -bur iTerm2-borderless/Interfaces/MainMenu.xib iTerm2-orig/Interfaces/MainMenu.xib
+--- iTerm2-borderless/Interfaces/MainMenu.xib	2015-10-14 10:58:58.000000000 +1100
++++ iTerm2-orig/Interfaces/MainMenu.xib	2015-10-09 11:46:16.000000000 +1100
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
++<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+     <dependencies>
+-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
++        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+     </dependencies>
+     <objects>
+         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+@@ -13,10 +13,10 @@
+         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+         <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
+             <items>
+-                <menuItem title="Terminal" id="56">
+-                    <menu key="submenu" title="Terminal" systemMenu="apple" id="57">
++                <menuItem title="iTerm2" id="56">
++                    <menu key="submenu" title="iTerm2" systemMenu="apple" id="57">
+                         <items>
+-                            <menuItem title="About Terminal" id="233">
++                            <menuItem title="About iTerm2" id="233">
+                                 <connections>
+                                     <action selector="showAbout:" target="201" id="509"/>
+                                 </connections>
+@@ -49,7 +49,7 @@
+                             <menuItem isSeparatorItem="YES" id="144">
+                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                             </menuItem>
+-                            <menuItem title="Hide Terminal" keyEquivalent="h" id="134">
++                            <menuItem title="Hide iTerm2" keyEquivalent="h" id="134">
+                                 <connections>
+                                     <action selector="hide:" target="-2" id="152"/>
+                                 </connections>
+@@ -75,13 +75,13 @@
+                                 </connections>
+                             </menuItem>
+                             <menuItem isSeparatorItem="YES" id="1176"/>
+-                            <menuItem title="Make This Default" keyEquivalent="\" id="1470">
++                            <menuItem title="Make iTerm2 Default Term" keyEquivalent="\" id="1470">
+                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" control="YES" command="YES"/>
+                                 <connections>
+                                     <action selector="makeDefaultTerminal:" target="201" id="1472"/>
+                                 </connections>
+                             </menuItem>
+-                            <menuItem title="Make OS X Terminal Default" alternate="YES" keyEquivalent="\" id="1473">
++                            <menuItem title="Make Terminal Default Term" alternate="YES" keyEquivalent="\" id="1473">
+                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" control="YES" option="YES" command="YES"/>
+                                 <connections>
+                                     <action selector="unmakeDefaultTerminal:" target="201" id="1475"/>
+@@ -784,6 +784,19 @@
+                         </items>
+                     </menu>
+                 </menuItem>
++                <menuItem title="Toolbelt" id="1295">
++                    <modifierMask key="keyEquivalentModifierMask"/>
++                    <menu key="submenu" title="Toolbelt" id="1296">
++                        <items>
++                            <menuItem title="Show Toolbelt" keyEquivalent="B" id="1297">
++                                <connections>
++                                    <action selector="toggleToolbeltVisibility:" target="-1" id="v3c-uP-c8Q"/>
++                                </connections>
++                            </menuItem>
++                            <menuItem isSeparatorItem="YES" id="1298"/>
++                        </items>
++                    </menu>
++                </menuItem>
+                 <menuItem title="Window" id="19">
+                     <menu key="submenu" title="Window" systemMenu="window" id="24">
+                         <items>
+@@ -964,7 +977,7 @@
+                 <menuItem title="Help" id="103">
+                     <menu key="submenu" title="Help" id="106">
+                         <items>
+-                            <menuItem title="Terminal Help" keyEquivalent="?" id="111">
++                            <menuItem title="iTerm2 Help" keyEquivalent="?" id="111">
+                                 <connections>
+                                     <action selector="showHelp:" target="-1" id="122"/>
+                                 </connections>
+@@ -989,6 +1002,7 @@
+                 <outlet property="sendInputToAllPanes" destination="1266" id="1279"/>
+                 <outlet property="sendInputToAllSessions" destination="1264" id="1278"/>
+                 <outlet property="showFullScreenTabs" destination="1257" id="1260"/>
++                <outlet property="toolbeltMenu" destination="1296" id="1299"/>
+                 <outlet property="useTransparency" destination="1228" id="1230"/>
+                 <outlet property="windowArrangements_" destination="1280" id="1285"/>
+             </connections>
+Only in iTerm2-borderless/ThirdParty/RegexKitLite: ._License.html
+Only in iTerm2-borderless/ThirdParty/RegexKitLite: ._License.rtf
+Only in iTerm2-borderless/ThirdParty/RegexKitLite: ._RegexKitLite.html
+Only in iTerm2-borderless/ThirdParty/RegexKitLite: ._RegexKitLite.m
+Only in iTerm2-borderless/ThirdParty/RegexKitLite: ._examples
+Only in iTerm2-borderless/ThirdParty/RegexKitLite/examples: ._NSString-HexConversion.h
+Only in iTerm2-borderless/ThirdParty/RegexKitLite/examples: ._compiledRegexCache.d
+Only in iTerm2-borderless/ThirdParty/RegexKitLite/examples: ._link_example.m
+Only in iTerm2-borderless/ThirdParty/RegexKitLite/examples: ._utf16ConversionCache.d
+Only in iTerm2-borderless: master.zip
+diff -bur iTerm2-borderless/sources/PseudoTerminal.m iTerm2-orig/sources/PseudoTerminal.m
+--- iTerm2-borderless/sources/PseudoTerminal.m	2015-10-14 10:54:56.000000000 +1100
++++ iTerm2-orig/sources/PseudoTerminal.m	2015-10-09 11:46:16.000000000 +1100
+@@ -336,7 +336,8 @@
+             return NSBorderlessWindowMask;
+ 
+         default:
+-            return (NSClosableWindowMask |
++            return (NSTitledWindowMask |
++                    NSClosableWindowMask |
+                     NSMiniaturizableWindowMask |
+                     NSResizableWindowMask |
+                     NSTexturedBackgroundWindowMask);
+diff -bur iTerm2-borderless/sources/iTermRootTerminalView.m iTerm2-orig/sources/iTermRootTerminalView.m
+--- iTerm2-borderless/sources/iTermRootTerminalView.m	2015-10-14 10:54:56.000000000 +1100
++++ iTerm2-orig/sources/iTermRootTerminalView.m	2015-10-09 11:46:16.000000000 +1100
+@@ -15,7 +15,7 @@
+ #import "iTermToolbeltView.h"
+ #import "PTYTabView.h"
+ 
+-const CGFloat kHorizontalTabBarHeight = 0;
++const CGFloat kHorizontalTabBarHeight = 22;
+ const CGFloat kLeftTabsWidth = 150;
+ const CGFloat kDivisionViewHeight = 1;
+ 
