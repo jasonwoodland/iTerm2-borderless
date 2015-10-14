@@ -18,7 +18,7 @@ Open your terminal and download the patch:
 wget https://github.com/jasonwoodland/iTerm2-borderless/archive/master.zip
 unzip master.zip
 rm master.zip
-cd iTerm2-borderless
+cd iTerm2-borderless-master
 ```
 
 ### Download iTerm2
@@ -41,7 +41,7 @@ patch -p1 < ../iTerm2-borderless.patch
 The build is in build/Development by default.
 
 ```
-xcodebuild
+make Development
 open build/Development
 ```
 

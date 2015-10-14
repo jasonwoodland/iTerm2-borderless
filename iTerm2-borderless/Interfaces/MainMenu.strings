@@ -167,7 +167,7 @@
 "Window" = "Window";
 
 /* NSTextField (iTerm) : <title:iTerm> (oid:510) */
-"iTerm" = "iTerm";
+"iTerm" = "Terminal";
 
 /* NSMenuItem : <title:iTerm Help> (oid:111) */
 "iTerm Help" = "iTerm Help";
