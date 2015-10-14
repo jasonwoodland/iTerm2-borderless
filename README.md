@@ -52,8 +52,8 @@ cp config/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm
 ## Colors
 
 Get them by doing the following:  
-   Terminal > Preferences > Profiles > Colors > Color Presets > Import...  
-   Choose Jason's.itermcolors in config
+Terminal > Preferences > Profiles > Colors > Color Presets > Import...  
+Choose Jason's.itermcolors in config
 
 ## Fonts
 
