@@ -1,5 +1,0 @@
-Always double width:
-汉字
-
-Ambiguous width:
-αα

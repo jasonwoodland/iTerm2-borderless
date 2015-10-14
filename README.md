@@ -8,7 +8,7 @@ My custom iTerm2 build.
 * Modified menu bar to resemble Terminal.app shipped with OS X
 * Changed the app icon to resemble the window's appearance
 
-Use the pre-built app or apply the patch youself by following the steps below.
+Use the pre-built Terminal.app supplied or apply the patch youself by following the steps below.
 
 ## Do it youself
 
@@ -41,7 +41,7 @@ patch -p1 < ../iTerm2-borderless.patch
 The build is in build/Development by default.
 
 ```
-make Development
+xcodebuild -parallelizeTargets -target iTerm2 -configuration Development
 open build/Development
 ```
 
