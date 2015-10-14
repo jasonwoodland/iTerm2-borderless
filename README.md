@@ -12,8 +12,6 @@ My custom iTerm2 build.
 
 Use the pre-built app or apply the patch youself by following the steps below.
 
-===
-
 # Do it youself
 
 Open your terminal and download the patch:
@@ -60,3 +58,10 @@ Choose Jason's.itermcolors in config
 
 Font: [MonteCarlo](http://www.bok.net/MonteCarlo/)
 Non-ASCII Font: [Adobe Souce Code Pro](https://github.com/adobe-fonts/source-code-pro)
+
+## App icon
+
+1. Open assets/icon.png with Preview.
+2. Press ⌘ A, followed by ⌘ C.
+1. Right click the app icon and click Get Info.
+2. Click the small icon in the top left corner, then press ⌘ V.
