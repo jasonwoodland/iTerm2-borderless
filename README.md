@@ -10,7 +10,7 @@ My custom iTerm2 build.
 
 Use the pre-built app or apply the patch youself by following the steps below.
 
-# Do it youself
+## Do it youself
 
 Open your terminal and download the patch:
 
@@ -18,20 +18,20 @@ Open your terminal and download the patch:
 wget https://github.com/jasonwoodland/iTerm2-borderless/archive/master.zip && cd iTerm2-borderless
 ```
 
-## Download iTerm2
+### Download iTerm2
 
 ```
 wget https://github.com/gnachman/iTerm2/archive/master.zip && unzip master.zip
 ```
 
-## Patch
+### Patch
 
 ```
 cd iTerm2-master
 patch -p1 < ../iTerm2-borderless.patch
 ```
 
-## Build
+### Build
 
 The build is in build/Development by default.
 
@@ -42,25 +42,25 @@ open build/Development
 
 Drag the app to your Applications directory.
 
-## Import preferences
+### Import preferences
 
 ```
 cd ../config
 cp config/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 ```
 
-## Colors
+### Colors
 
 Get them by doing the following:  
 Terminal > Preferences > Profiles > Colors > Color Presets > Import...  
 Choose Jason's.itermcolors in config
 
-## Fonts
+### Fonts
 
 * Font: [MonteCarlo](http://www.bok.net/MonteCarlo/)
 * Non-ASCII Font: [Adobe Souce Code Pro](https://github.com/adobe-fonts/source-code-pro)
 
-## App icon
+### App icon
 
 1. Open assets/icon.png with Preview.
 2. Press ⌘A, followed by ⌘C.
