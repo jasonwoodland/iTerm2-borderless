@@ -16,19 +16,19 @@ Use the pre-built app or apply the patch youself by following the steps below.
 
 Open your terminal and download the patch:
 
-```bash
+```
 wget https://github.com/jasonwoodland/iTerm2-borderless/archive/master.zip && cd iTerm2-borderless
 ```
 
 ## Download iTerm2
 
-```bash
+```
 wget https://github.com/gnachman/iTerm2/archive/master.zip && unzip master.zip
 ```
 
 ## Patch
 
-```bash
+```
 cd iTerm2-master
 patch -p1 < ../iTerm2-borderless.patch
 ```
@@ -37,7 +37,7 @@ patch -p1 < ../iTerm2-borderless.patch
 
 The build is in build/Development by default.
 
-```bash
+```
 xcodebuild
 open build/Development
 ```
@@ -46,7 +46,7 @@ Drag the app to your Applications directory.
 
 ## Import preferences
 
-```bash
+```
 cd ../config
 cp config/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 ```
