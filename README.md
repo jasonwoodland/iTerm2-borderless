@@ -1,7 +1,5 @@
 # iTerm2-borderless
 
-![iTerm2-borderless](https://github.com/jasonwoodland/iTerm2-borderless/blob/master/preview.png?raw=true)
-
 My custom iTerm2 build.
 
 * Removed titlebar
@@ -51,7 +49,7 @@ cd ../config
 cp config/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 ```
 
-You can get my colors by going to Terminal > Preferences > Profiles > Colors > Color Presets > Import...
+You can get my colors by going to `Terminal > Preferences > Profiles > Colors > Color Presets > Import...`
 Choose Jason's.itermcolors in config
 
 ## Fonts
