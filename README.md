@@ -52,13 +52,15 @@ cp config/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm
 ## Colors
 
 Get them by doing the following:
+
 Terminal > Preferences > Profiles > Colors > Color Presets > Import...
+
 Choose Jason's.itermcolors in config
 
 ## Fonts
 
-Font: [MonteCarlo](http://www.bok.net/MonteCarlo/)
-Non-ASCII Font: [Adobe Souce Code Pro](https://github.com/adobe-fonts/source-code-pro)
+* Font: [MonteCarlo](http://www.bok.net/MonteCarlo/)
+* Non-ASCII Font: [Adobe Souce Code Pro](https://github.com/adobe-fonts/source-code-pro)
 
 ## App icon
 
