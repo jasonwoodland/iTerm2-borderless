@@ -15,13 +15,18 @@ Use the pre-built app or apply the patch youself by following the steps below.
 Open your terminal and download the patch:
 
 ```
-wget https://github.com/jasonwoodland/iTerm2-borderless/archive/master.zip && unzip master.zip && cd iTerm2-borderless
+wget https://github.com/jasonwoodland/iTerm2-borderless/archive/master.zip
+unzip master.zip
+rm master.zip
+cd iTerm2-borderless
 ```
 
 ### Download iTerm2
 
 ```
-wget https://github.com/gnachman/iTerm2/archive/master.zip && unzip master.zip
+wget https://github.com/gnachman/iTerm2/archive/master.zip
+unzip master.zip
+rm master.zip
 ```
 
 ### Patch
