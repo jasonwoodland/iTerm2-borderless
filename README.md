@@ -64,4 +64,4 @@ Non-ASCII Font: [Adobe Souce Code Pro](https://github.com/adobe-fonts/source-cod
 1. Open assets/icon.png with Preview.
 2. Press ⌘A, followed by ⌘C.
 1. Right click the app icon and click Get Info.
-2. Click the small icon in the top left corner, then press ⌘ V.
+2. Click the small icon in the top left corner, then press ⌘V.
