@@ -8,7 +8,8 @@ My custom iTerm2 build.
 * Removed tab bar line
 * Keep native OS X shadow
 * Modified menu bar to resemble Terminal.app shipped with OS X
-* Changed the app icon to resemble the window's appearance
+* New app icon to resemble the window's appearance
+* Added extra window padding
 
 Use the pre-built Terminal.app supplied or apply the patch youself by following the steps below.
 
@@ -64,12 +65,12 @@ Choose Jason's.itermcolors in config
 
 ### Fonts
 
-* Font: [MonteCarlo](http://www.bok.net/MonteCarlo/)
-* Non-ASCII Font: [Adobe Souce Code Pro](https://github.com/adobe-fonts/source-code-pro)
+* Font: [11pt Adobe Source Code Pro Medium](https://github.com/adobe-fonts/source-code-pro)
+* Non-ASCII Font: [17pt Adobe Souce Code Pro](https://github.com/adobe-fonts/source-code-pro)
 
 ### App icon
 
-1. Open assets/icon.png with Preview.
+1. Open config/icon.png with Preview.
 2. Press ⌘A, followed by ⌘C.
-1. Right click the app icon and click Get Info.
-2. Click the small icon in the top left corner, then press ⌘V.
+3. Right click the app icon and click Get Info.
+4. Click the small icon in the top left corner, then press ⌘V.
