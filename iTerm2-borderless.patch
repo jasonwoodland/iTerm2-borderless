@@ -554,10 +554,10 @@ diff -rc iTerm2-master 3/sources/iTermTextDrawingHelper.h iTerm2-master 2/source
   #import "VT100GridTypes.h"
   
   // Number of pixels margin on left and right edge.
-! #define MARGIN 7
+! #define MARGIN 9
   
   // Number of pixels margin on the top.
-! #define VMARGIN 7
+! #define VMARGIN 8
   
   @class iTermColorMap;
   @class iTermFindOnPageHelper;

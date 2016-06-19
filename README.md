@@ -6,37 +6,27 @@ My custom iTerm2 build.
 
 * Removed titlebar
 * Removed tab bar line
-* Keep native OS X shadow
-* Modified menu bar to resemble Terminal.app shipped with OS X
+* Keep native macOS shadow
+* Modified menu bar to resemble Terminal.app shipped with macOS
 * New app icon to resemble the window's appearance
 * Added extra window padding
 
 Use the pre-built Terminal.app supplied or apply the patch youself by following the steps below.
 
-## Do it youself
+## Patch it youself
 
-Open your terminal and download the patch:
-
-```
-wget https://github.com/jasonwoodland/iTerm2-borderless/archive/master.zip
-unzip master.zip
-rm master.zip
-cd iTerm2-borderless-master
-```
-
-### Download iTerm2
+### Get iTerm2 and iTerm2-borderless
 
 ```
-wget https://github.com/gnachman/iTerm2/archive/master.zip
-unzip master.zip
-rm master.zip
+git clone https://github.com/gnachman/iTerm2.git
+git clone https://github.com/jasonwoodland/iTerm2-borderless.git
 ```
 
 ### Patch
 
 ```
-cd iTerm2-master
-patch -p1 < ../iTerm2-borderless.patch
+cd iTerm2
+patch -p1 < ../iTerm2-borderless/iTerm2-borderless.patch
 ```
 
 ### Build
@@ -44,29 +34,24 @@ patch -p1 < ../iTerm2-borderless.patch
 The build is in build/Development by default.
 
 ```
-xcodebuild -parallelizeTargets -target iTerm2 -configuration Development
-open build/Development
+xcodebuild -parallelizeTargets -target iTerm2
+open build/Default
 ```
 
 Drag the app to your Applications directory.
 
 ### Import preferences
 
-```
-cd ../config
-cp config/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
-```
+Optional, only if you like the look of the Preview at the top of this readme.
 
-### Colors
-
-Get them by doing the following:  
-iTerm2 > Preferences... > Profiles > Colors > Color Presets > Import...  
-Choose Jason's.itermcolors in config
+```
+cp ../iTerm2-borderless/config/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+```
 
 ### Fonts
 
-* Font: [11pt Adobe Source Code Pro Medium](https://github.com/adobe-fonts/source-code-pro)
-* Non-ASCII Font: [17pt Adobe Souce Code Pro](https://github.com/adobe-fonts/source-code-pro)
+* Font: [11pt Source Code Pro Medium](https://github.com/adobe-fonts/source-code-pro)
+* Non-ASCII Font: [17pt Souce Code Pro](https://github.com/adobe-fonts/source-code-pro)
 
 ### App icon
 
