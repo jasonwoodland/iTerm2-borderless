@@ -6,12 +6,13 @@ My custom iTerm2 build.
 
 * Removed titlebar
 * Removed tab bar line
-* Keep native macOS shadow
+* Native macOS shadow
 * Modified menu bar to resemble Terminal.app shipped with macOS
 * New app icon to resemble the window's appearance
-* Added extra window padding
+* Extra window padding
+* Block cursor doesn't change character foreground color
 
-Use the pre-built Terminal.app supplied or apply the patch youself by following the steps below.
+Copy the Terminal.app to your Applications directory or apply the patch youself by following the steps below.
 
 ## Patch it youself
 
@@ -31,7 +32,7 @@ patch -p1 < ../iTerm2-borderless/iTerm2-borderless.patch
 
 ### Build
 
-The build is in build/Development by default.
+The build is in build/Default by default.
 
 ```
 xcodebuild -parallelizeTargets -target iTerm2
@@ -42,7 +43,7 @@ Drag the app to your Applications directory.
 
 ### Import preferences
 
-Optional, only if you like the look of the Preview at the top of this readme.
+If you like the look of my terminal, you can import my settings with the following command:
 
 ```
 cp ../iTerm2-borderless/config/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
@@ -55,7 +56,7 @@ cp ../iTerm2-borderless/config/com.googlecode.iterm2.plist ~/Library/Preferences
 
 ### App icon
 
-1. Open config/icon.png with Preview.
-2. Press ⌘A, followed by ⌘C.
-3. Right click the app icon and click Get Info.
-4. Click the small icon in the top left corner, then press ⌘V.
+1. Open either of the icon PNGs in the config directory with Preview.app
+2. Press ⌘A, followed by ⌘C to copy the image data to the clipboard.
+3. Right click Terminal.app and click Get Info.
+4. Click the small icon in the top left corner of the inspector and press ⌘V.
