@@ -465,26 +465,6 @@ diff -Prc -x '*.orig' -x '*.rej' iTerm2/sources/iTermTextDrawingHelper.h iTerm2-
   
   @class iTermColorMap;
   @class iTermFindOnPageHelper;
-diff -Prc -x '*.orig' -x '*.rej' iTerm2/sources/iTermTextDrawingHelper.m iTerm2-borderless/sources/iTermTextDrawingHelper.m
-*** iTerm2/sources/iTermTextDrawingHelper.m	2016-07-18 19:24:57.000000000 +1000
---- iTerm2-borderless/sources/iTermTextDrawingHelper.m	2016-07-18 22:25:20.000000000 +1000
-***************
-*** 1660,1666 ****
-  - (NSRect)cursorFrame {
-      const int rowNumber = _cursorCoord.y + _numberOfLines - _gridSize.height;
-      return NSMakeRect(floor(_cursorCoord.x * _cellSize.width + MARGIN),
-!                       rowNumber * _cellSize.height + round((_cellSize.height - _cellSizeWithoutSpacing.height) / 2.0),
-                        MIN(_cellSize.width, _cellSizeWithoutSpacing.width),
-                        _cellSizeWithoutSpacing.height);
-  }
---- 1660,1666 ----
-  - (NSRect)cursorFrame {
-      const int rowNumber = _cursorCoord.y + _numberOfLines - _gridSize.height;
-      return NSMakeRect(floor(_cursorCoord.x * _cellSize.width + MARGIN),
-!                       rowNumber * _cellSize.height - round((_cellSize.height - _cellSizeWithoutSpacing.height) / 2.0),
-                        MIN(_cellSize.width, _cellSizeWithoutSpacing.width),
-                        _cellSizeWithoutSpacing.height);
-  }
 diff -Prc -x '*.orig' -x '*.rej' iTerm2/sources/iTermTipWindowController.xib iTerm2-borderless/sources/iTermTipWindowController.xib
 *** iTerm2/sources/iTermTipWindowController.xib	2016-07-18 19:24:57.000000000 +1000
 --- iTerm2-borderless/sources/iTermTipWindowController.xib	2016-07-18 19:13:00.000000000 +1000
