@@ -2,15 +2,17 @@
 
 ![iTerm2-borderless](https://github.com/jasonwoodland/iTerm2-borderless/blob/master/Preview.png?raw=true)
 
-My custom iTerm2 build.
+My custom iTerm2 patch and build. Consistently updated.
 
 * Removed titlebar
 * Removed tab bar line
-* Native macOS shadow
+* Native macOS shadow on windows
 * Modified menu bar to resemble Terminal.app shipped with macOS
 * New app icon to resemble the window's appearance
 * Extra window padding
 * Block cursor doesn't change character foreground color
+* More noticeable 2px-wide vertical bar cursor
+* Reverted to slightly bolder font smoothing
 
 Copy the Terminal.app to your Applications directory or apply the patch youself by following the steps below.
 
@@ -60,3 +62,9 @@ cp ../iTerm2-borderless/config/com.googlecode.iterm2.plist ~/Library/Preferences
 2. Press ⌘A, followed by ⌘C to copy the image data to the clipboard.
 3. Right click Terminal.app and click Get Info.
 4. Click the small icon in the top left corner of the inspector and press ⌘V.
+
+### Moving the window
+
+You can drag the window by dragging along any edge of the window, eg. click and drag horizontally along the top edge of the window.
+
+Alternatively, you can also ⌥⇧⌘-drag anywhere on the window.
