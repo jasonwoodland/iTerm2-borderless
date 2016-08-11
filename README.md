@@ -11,7 +11,7 @@ My custom iTerm2 patch and build. Consistently updated.
 * New app icon to resemble the window's appearance
 * Extra window padding
 * Block cursor doesn't change character foreground color
-* More noticeable 2px-wide vertical bar cursor
+* 2px-wide vertical bar cursor
 * Reverted to slightly bolder font smoothing
 
 Copy the Terminal.app to your Applications directory or apply the patch youself by following the steps below.
@@ -51,6 +51,8 @@ If you like the look of my terminal, you can import my settings with the followi
 cp ../iTerm2-borderless/config/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 ```
 
+Alternatively, go to Terminal > Preferences > Profiles > Window, and select "No Title Bar" for Style.
+
 ### Fonts
 
 * Font: [11pt Source Code Pro Medium](https://github.com/adobe-fonts/source-code-pro)
@@ -65,6 +67,4 @@ cp ../iTerm2-borderless/config/com.googlecode.iterm2.plist ~/Library/Preferences
 
 ### Moving the window
 
-You can drag the window by dragging along any edge of the window, eg. click and drag horizontally along the top edge of the window.
-
-Alternatively, you can also ⌥⇧⌘-drag anywhere on the window.
+You can move the window by dragging along any edge of the window, eg. click and drag horizontally along the top edge of the window.

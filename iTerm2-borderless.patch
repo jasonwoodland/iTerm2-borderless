@@ -1,4 +1,385 @@
-diff -Prc iTerm2/sources/PseudoTerminal.m iTerm2-patched/sources/PseudoTerminal.m
+Binary files iTerm2/.DS_Store and iTerm2-patched/.DS_Store differ
+diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/AdvancedWorkingDirectoryWindow.xib iTerm2-borderless/Interfaces/AdvancedWorkingDirectoryWindow.xib
+*** iTerm2/Interfaces/AdvancedWorkingDirectoryWindow.xib	2016-07-18 19:24:56.000000000 +1000
+--- iTerm2-borderless/Interfaces/AdvancedWorkingDirectoryWindow.xib	2016-07-18 19:13:00.000000000 +1000
+***************
+*** 1,7 ****
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+! <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+      <dependencies>
+!         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+      </dependencies>
+      <objects>
+          <customObject id="-2" userLabel="File's Owner" customClass="AdvancedWorkingDirectoryWindowController">
+--- 1,8 ----
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+! <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G12a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+      <dependencies>
+!         <deployment identifier="macosx"/>
+!         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+      </dependencies>
+      <objects>
+          <customObject id="-2" userLabel="File's Owner" customClass="AdvancedWorkingDirectoryWindowController">
+***************
+*** 21,27 ****
+              <windowStyleMask key="styleMask" titled="YES" utility="YES" documentModal="YES"/>
+              <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+              <rect key="contentRect" x="230" y="120" width="485" height="421"/>
+!             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+              <view key="contentView" id="532-ja-tzA">
+                  <rect key="frame" x="0.0" y="0.0" width="485" height="421"/>
+                  <autoresizingMask key="autoresizingMask"/>
+--- 22,28 ----
+              <windowStyleMask key="styleMask" titled="YES" utility="YES" documentModal="YES"/>
+              <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+              <rect key="contentRect" x="230" y="120" width="485" height="421"/>
+!             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+              <view key="contentView" id="532-ja-tzA">
+                  <rect key="frame" x="0.0" y="0.0" width="485" height="421"/>
+                  <autoresizingMask key="autoresizingMask"/>
+***************
+*** 162,168 ****
+                          </textFieldCell>
+                      </textField>
+                      <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="c7j-EE-75L">
+!                         <rect key="frame" x="12" y="296" width="461" height="5"/>
+                          <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                          <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                          <font key="titleFont" metaFont="system"/>
+--- 163,169 ----
+                          </textFieldCell>
+                      </textField>
+                      <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="c7j-EE-75L">
+!                         <rect key="frame" x="12" y="296" width="461" height="4"/>
+                          <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                          <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                          <font key="titleFont" metaFont="system"/>
+diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/MainMenu.strings iTerm2-borderless/Interfaces/MainMenu.strings
+*** iTerm2/Interfaces/MainMenu.strings	2016-07-18 19:24:56.000000000 +1000
+--- iTerm2-borderless/Interfaces/MainMenu.strings	2016-07-18 19:13:00.000000000 +1000
+***************
+*** 1,8 ****
+  ﻿/* NSMenuItem : <title: > (oid:349) */
+  " " = " ";
+  
+! /* NSPanel (About iTerm) : <title:About iTerm> (oid:498) */
+! "About iTerm" = "About iTerm";
+  
+  /* NSMenuItem : <title:Bigger Font> (oid:804) */
+  "Bigger Font" = "Bigger Font";
+--- 1,8 ----
+  ﻿/* NSMenuItem : <title: > (oid:349) */
+  " " = " ";
+  
+! /* NSPanel (About Terminal) : <title:About Terminal> (oid:498) */
+! "About Terminal" = "About Terminal";
+  
+  /* NSMenuItem : <title:Bigger Font> (oid:804) */
+  "Bigger Font" = "Bigger Font";
+***************
+*** 52,59 ****
+  /* NSMenuItem : <title:Hide Others> (oid:145) */
+  "Hide Others" = "Hide Others";
+  
+! /* NSMenuItem : <title:Hide iTerm> (oid:134) */
+! "Hide iTerm" = "Hide iTerm";
+  
+  /* NSTextField (JTerminal Parts Copyright by Kiichi Kusama, kuma@icon.rim.or.jp) : <title:JTerminal Parts Copyright by Kiichi Kusama, kuma@icon.rim.or.jp> (oid:634) */
+  "JTerminal Parts Copyright by Kiichi Kusama, kuma@icon.rim.or.jp" = "JTerminal Parts Copyright by Kiichi Kusama, kuma@icon.rim.or.jp";
+--- 52,59 ----
+  /* NSMenuItem : <title:Hide Others> (oid:145) */
+  "Hide Others" = "Hide Others";
+  
+! /* NSMenuItem : <title:Hide Terminal> (oid:134) */
+! "Hide Terminal" = "Hide Terminal";
+  
+  /* NSTextField (JTerminal Parts Copyright by Kiichi Kusama, kuma@icon.rim.or.jp) : <title:JTerminal Parts Copyright by Kiichi Kusama, kuma@icon.rim.or.jp> (oid:634) */
+  "JTerminal Parts Copyright by Kiichi Kusama, kuma@icon.rim.or.jp" = "JTerminal Parts Copyright by Kiichi Kusama, kuma@icon.rim.or.jp";
+***************
+*** 106,113 ****
+  /* NSMenuItem : <title:Print...> (oid:687) */
+  "Print..." = "Print...";
+  
+! /* NSMenuItem : <title:Quit iTerm> (oid:136) */
+! "Quit iTerm" = "Quit iTerm";
+  
+  /* NSMenuItem : <title:Save Display Profile> (oid:818) */
+  "Save Display Profile" = "Save Display Profile";
+--- 106,113 ----
+  /* NSMenuItem : <title:Print...> (oid:687) */
+  "Print..." = "Print...";
+  
+! /* NSMenuItem : <title:Quit Terminal> (oid:136) */
+! "Quit Terminal" = "Quit Terminal";
+  
+  /* NSMenuItem : <title:Save Display Profile> (oid:818) */
+  "Save Display Profile" = "Save Display Profile";
+***************
+*** 166,174 ****
+  /* NSMenu : <title:Window> (oid:24) */
+  "Window" = "Window";
+  
+! /* NSTextField (iTerm) : <title:iTerm> (oid:510) */
+! "iTerm" = "iTerm";
+  
+! /* NSMenuItem : <title:iTerm Help> (oid:111) */
+! "iTerm Help" = "iTerm Help";
+  
+--- 166,174 ----
+  /* NSMenu : <title:Window> (oid:24) */
+  "Window" = "Window";
+  
+! /* NSTextField (Terminal) : <title:Terminal> (oid:510) */
+! "Terminal" = "Terminal";
+  
+! /* NSMenuItem : <title:Terminal Help> (oid:111) */
+! "Terminal Help" = "Terminal Help";
+  
+diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/MainMenu.xib iTerm2-borderless/Interfaces/MainMenu.xib
+*** iTerm2/Interfaces/MainMenu.xib	2016-07-18 19:24:56.000000000 +1000
+--- iTerm2-borderless/Interfaces/MainMenu.xib	2016-07-18 19:13:00.000000000 +1000
+***************
+*** 1,8 ****
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+! <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+      <dependencies>
+!         <deployment identifier="macosx"/>
+!         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+      </dependencies>
+      <objects>
+          <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+--- 1,7 ----
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+! <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G12a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+      <dependencies>
+!         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+      </dependencies>
+      <objects>
+          <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+***************
+*** 14,23 ****
+          <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+          <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
+              <items>
+!                 <menuItem title="iTerm2" id="56">
+!                     <menu key="submenu" title="iTerm2" systemMenu="apple" id="57">
+                          <items>
+!                             <menuItem title="About iTerm2" id="233">
+                                  <connections>
+                                      <action selector="showAbout:" target="201" id="509"/>
+                                  </connections>
+--- 13,22 ----
+          <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+          <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
+              <items>
+!                 <menuItem title="Terminal" id="56">
+!                     <menu key="submenu" title="Terminal" systemMenu="apple" id="57">
+                          <items>
+!                             <menuItem title="About Terminal" id="233">
+                                  <connections>
+                                      <action selector="showAbout:" target="201" id="509"/>
+                                  </connections>
+***************
+*** 63,69 ****
+                              <menuItem isSeparatorItem="YES" id="144">
+                                  <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                              </menuItem>
+!                             <menuItem title="Hide iTerm2" keyEquivalent="h" id="134">
+                                  <connections>
+                                      <action selector="hide:" target="-2" id="152"/>
+                                  </connections>
+--- 62,68 ----
+                              <menuItem isSeparatorItem="YES" id="144">
+                                  <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                              </menuItem>
+!                             <menuItem title="Hide Terminal" keyEquivalent="h" id="134">
+                                  <connections>
+                                      <action selector="hide:" target="-2" id="152"/>
+                                  </connections>
+***************
+*** 89,101 ****
+                                  </connections>
+                              </menuItem>
+                              <menuItem isSeparatorItem="YES" id="1176"/>
+!                             <menuItem title="Make iTerm2 Default Term" keyEquivalent="\" id="1470">
+                                  <modifierMask key="keyEquivalentModifierMask" shift="YES" control="YES" command="YES"/>
+                                  <connections>
+                                      <action selector="makeDefaultTerminal:" target="201" id="1472"/>
+                                  </connections>
+                              </menuItem>
+!                             <menuItem title="Make Terminal Default Term" alternate="YES" keyEquivalent="\" id="1473">
+                                  <modifierMask key="keyEquivalentModifierMask" shift="YES" control="YES" option="YES" command="YES"/>
+                                  <connections>
+                                      <action selector="unmakeDefaultTerminal:" target="201" id="1475"/>
+--- 88,100 ----
+                                  </connections>
+                              </menuItem>
+                              <menuItem isSeparatorItem="YES" id="1176"/>
+!                             <menuItem title="Make Default" keyEquivalent="\" id="1470">
+                                  <modifierMask key="keyEquivalentModifierMask" shift="YES" control="YES" command="YES"/>
+                                  <connections>
+                                      <action selector="makeDefaultTerminal:" target="201" id="1472"/>
+                                  </connections>
+                              </menuItem>
+!                             <menuItem title="Make OS X Terminal Default " alternate="YES" keyEquivalent="\" id="1473">
+                                  <modifierMask key="keyEquivalentModifierMask" shift="YES" control="YES" option="YES" command="YES"/>
+                                  <connections>
+                                      <action selector="unmakeDefaultTerminal:" target="201" id="1475"/>
+***************
+*** 108,114 ****
+                                  </connections>
+                              </menuItem>
+                              <menuItem isSeparatorItem="YES" id="1469"/>
+!                             <menuItem title="Quit iTerm2" keyEquivalent="q" id="136">
+                                  <connections>
+                                      <action selector="terminate:" target="-1" id="532"/>
+                                  </connections>
+--- 107,113 ----
+                                  </connections>
+                              </menuItem>
+                              <menuItem isSeparatorItem="YES" id="1469"/>
+!                             <menuItem title="Quit Terminal" keyEquivalent="q" id="136">
+                                  <connections>
+                                      <action selector="terminate:" target="-1" id="532"/>
+                                  </connections>
+***************
+*** 1050,1056 ****
+                  <menuItem title="Help" id="103">
+                      <menu key="submenu" title="Help" id="106">
+                          <items>
+!                             <menuItem title="iTerm2 Help" keyEquivalent="?" id="111">
+                                  <connections>
+                                      <action selector="showHelp:" target="201" id="hFO-6H-VeJ"/>
+                                  </connections>
+--- 1049,1055 ----
+                  <menuItem title="Help" id="103">
+                      <menu key="submenu" title="Help" id="106">
+                          <items>
+!                             <menuItem title="Terminal Help" keyEquivalent="?" id="111">
+                                  <connections>
+                                      <action selector="showHelp:" target="201" id="hFO-6H-VeJ"/>
+                                  </connections>
+***************
+*** 1075,1081 ****
+                  <outlet property="sendInputToAllPanes" destination="1266" id="1279"/>
+                  <outlet property="sendInputToAllSessions" destination="1264" id="1278"/>
+                  <outlet property="showFullScreenTabs" destination="1257" id="1260"/>
+-                 <outlet property="toolbeltMenu" destination="1296" id="1299"/>
+                  <outlet property="useTransparency" destination="1228" id="1230"/>
+                  <outlet property="windowArrangements_" destination="1280" id="1285"/>
+              </connections>
+--- 1074,1079 ----
+diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/iTerm.strings iTerm2-borderless/Interfaces/iTerm.strings
+*** iTerm2/Interfaces/iTerm.strings	2016-07-18 19:24:56.000000000 +1000
+--- iTerm2-borderless/Interfaces/iTerm.strings	2016-07-18 19:13:00.000000000 +1000
+***************
+*** 23,29 ****
+  
+  /* Close window */
+  "Close Window?" = "Close Window?";
+! "Quit iTerm?" = "Quit iTerm?";
+  
+  /* Close Session */
+  "This session will be closed."="This session will be closed.";
+--- 23,29 ----
+  
+  /* Close window */
+  "Close Window?" = "Close Window?";
+! "Quit Terminal?" = "Quit Terminal?";
+  
+  /* Close Session */
+  "This session will be closed."="This session will be closed.";
+***************
+*** 115,121 ****
+  "Configuration saved"="Configuration saved";
+  
+  /* OS Version */
+! "Minimum_OS"="iTerm requires OS X version 10.2 or higher to run. This application will now terminate.";
+  
+  /* Sorry */
+  "Sorry"="Sorry";
+--- 115,121 ----
+  "Configuration saved"="Configuration saved";
+  
+  /* OS Version */
+! "Minimum_OS"="Terminal requires OS X version 10.2 or higher to run. This application will now terminate.";
+  
+  /* Sorry */
+  "Sorry"="Sorry";
+***************
+*** 228,232 ****
+  
+  /* Fork Error*/
+  "Unable to Fork!"="Unable to Fork!";
+! "iTerm cannot launch the program for this session."="iTerm cannot launch the program for this session.";
+  "Close Session"="Close Session";
+\ No newline at end of file
+--- 228,232 ----
+  
+  /* Fork Error*/
+  "Unable to Fork!"="Unable to Fork!";
+! "Terminal cannot launch the program for this session."="Terminal cannot launch the program for this session.";
+  "Close Session"="Close Session";
+\ No newline at end of file
+diff -Prc -x '*.orig' -x '*.rej' iTerm2/plists/iTerm2.plist iTerm2-borderless/plists/iTerm2.plist
+*** iTerm2/plists/iTerm2.plist	2016-07-18 19:24:56.000000000 +1000
+--- iTerm2-borderless/plists/iTerm2.plist	2016-07-18 19:13:00.000000000 +1000
+***************
+*** 2,9 ****
+  <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+  <plist version="1.0">
+  <dict>
+- 	<key>NSHumanReadableCopyright</key>
+- 	<string>GPL v2</string>
+  	<key>CFBundleDevelopmentRegion</key>
+  	<string>English</string>
+  	<key>CFBundleDocumentTypes</key>
+--- 2,7 ----
+***************
+*** 26,37 ****
+  			<string>Editor</string>
+  		</dict>
+  		<dict>
+  			<key>CFBundleTypeOSTypes</key>
+  			<array>
+  				<string>fold</string>
+  			</array>
+- 			<key>CFBundleTypeName</key>
+- 			<string>Folders</string>
+  			<key>CFBundleTypeRole</key>
+  			<string>Editor</string>
+  		</dict>
+--- 24,35 ----
+  			<string>Editor</string>
+  		</dict>
+  		<dict>
++ 			<key>CFBundleTypeName</key>
++ 			<string>Folders</string>
+  			<key>CFBundleTypeOSTypes</key>
+  			<array>
+  				<string>fold</string>
+  			</array>
+  			<key>CFBundleTypeRole</key>
+  			<string>Editor</string>
+  		</dict>
+***************
+*** 71,77 ****
+  	<key>CFBundleInfoDictionaryVersion</key>
+  	<string>6.0</string>
+  	<key>CFBundleName</key>
+! 	<string>iTerm2</string>
+  	<key>CFBundlePackageType</key>
+  	<string>APPL</string>
+  	<key>CFBundleShortVersionString</key>
+--- 69,75 ----
+  	<key>CFBundleInfoDictionaryVersion</key>
+  	<string>6.0</string>
+  	<key>CFBundleName</key>
+! 	<string>Terminal</string>
+  	<key>CFBundlePackageType</key>
+  	<string>APPL</string>
+  	<key>CFBundleShortVersionString</key>
+diff --exclude=.git -Prc iTerm2/sources/PseudoTerminal.m iTerm2-patched/sources/PseudoTerminal.m
 *** iTerm2/sources/PseudoTerminal.m	2016-08-11 13:47:02.000000000 +1000
 --- iTerm2-patched/sources/PseudoTerminal.m	2016-08-10 18:18:47.000000000 +1000
 ***************
@@ -18,7 +399,7 @@ diff -Prc iTerm2/sources/PseudoTerminal.m iTerm2-patched/sources/PseudoTerminal.
   
       DLog(@"Create window %@", myWindow);
   
-diff -Prc iTerm2/sources/iTermCursor.m iTerm2-patched/sources/iTermCursor.m
+diff --exclude=.git -Prc iTerm2/sources/iTermCursor.m iTerm2-patched/sources/iTermCursor.m
 *** iTerm2/sources/iTermCursor.m	2016-08-11 13:47:02.000000000 +1000
 --- iTerm2-patched/sources/iTermCursor.m	2016-08-10 18:20:53.000000000 +1000
 ***************
@@ -55,7 +436,7 @@ diff -Prc iTerm2/sources/iTermCursor.m iTerm2-patched/sources/iTermCursor.m
                                            context:ctx
                                    backgroundColor:backgroundColor];
           }
-diff -Prc iTerm2/sources/iTermRootTerminalView.m iTerm2-patched/sources/iTermRootTerminalView.m
+diff --exclude=.git -Prc iTerm2/sources/iTermRootTerminalView.m iTerm2-patched/sources/iTermRootTerminalView.m
 *** iTerm2/sources/iTermRootTerminalView.m	2016-08-11 13:47:02.000000000 +1000
 --- iTerm2-patched/sources/iTermRootTerminalView.m	2016-08-10 18:19:57.000000000 +1000
 ***************
@@ -75,7 +456,7 @@ diff -Prc iTerm2/sources/iTermRootTerminalView.m iTerm2-patched/sources/iTermRoo
   const CGFloat kDivisionViewHeight = 1;
   
   static const CGFloat kMinimumToolbeltSizeInPoints = 100;
-diff -Prc iTerm2/sources/iTermTextDrawingHelper.h iTerm2-patched/sources/iTermTextDrawingHelper.h
+diff --exclude=.git -Prc iTerm2/sources/iTermTextDrawingHelper.h iTerm2-patched/sources/iTermTextDrawingHelper.h
 *** iTerm2/sources/iTermTextDrawingHelper.h	2016-08-11 13:47:02.000000000 +1000
 --- iTerm2-patched/sources/iTermTextDrawingHelper.h	2016-08-10 18:20:38.000000000 +1000
 ***************
@@ -101,7 +482,7 @@ diff -Prc iTerm2/sources/iTermTextDrawingHelper.h iTerm2-patched/sources/iTermTe
   
   @class iTermColorMap;
   @class iTermFindOnPageHelper;
-diff -Prc iTerm2/sources/iTermTextDrawingHelper.m iTerm2-patched/sources/iTermTextDrawingHelper.m
+diff --exclude=.git -Prc iTerm2/sources/iTermTextDrawingHelper.m iTerm2-patched/sources/iTermTextDrawingHelper.m
 *** iTerm2/sources/iTermTextDrawingHelper.m	2016-08-11 13:47:02.000000000 +1000
 --- iTerm2-patched/sources/iTermTextDrawingHelper.m	2016-08-10 18:33:12.000000000 +1000
 ***************
@@ -124,3 +505,40 @@ diff -Prc iTerm2/sources/iTermTextDrawingHelper.m iTerm2-patched/sources/iTermTe
       if (useThinStrokes) {
           CGContextSetShouldSmoothFonts(cgContext, YES);
           // This seems to be available at least on 10.8 and later. The only reference to it is in
+diff -Prc -x '*.orig' -x '*.rej' iTerm2/sources/iTermTipWindowController.xib iTerm2-borderless/sources/iTermTipWindowController.xib
+*** iTerm2/sources/iTermTipWindowController.xib	2016-07-18 19:24:57.000000000 +1000
+--- iTerm2-borderless/sources/iTermTipWindowController.xib	2016-07-18 19:13:00.000000000 +1000
+***************
+*** 1,7 ****
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+! <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+      <dependencies>
+!         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7531"/>
+      </dependencies>
+      <objects>
+          <customObject id="-2" userLabel="File's Owner" customClass="iTermTipWindowController">
+--- 1,7 ----
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+! <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G12a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+      <dependencies>
+!         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+      </dependencies>
+      <objects>
+          <customObject id="-2" userLabel="File's Owner" customClass="iTermTipWindowController">
+***************
+*** 14,20 ****
+          <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hasShadow="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
+              <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+              <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+!             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+              <view key="contentView" id="se5-gp-TjO" customClass="iTermTipRootView">
+                  <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                  <autoresizingMask key="autoresizingMask"/>
+--- 14,20 ----
+          <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hasShadow="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
+              <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+              <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+!             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+              <view key="contentView" id="se5-gp-TjO" customClass="iTermTipRootView">
+                  <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                  <autoresizingMask key="autoresizingMask"/>
