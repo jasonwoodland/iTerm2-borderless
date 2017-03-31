@@ -4,17 +4,17 @@
 
 My custom iTerm2 patch and build. Consistently updated.
 
-* Removed titlebar
-* Removed tab bar line
+* Removed titlebar (They added an option for this but this maintains the native macOS window shadow)
+* Removed tab bar line visible on other borderless patches
 * Native macOS shadow on windows
 * Modified menu bar to resemble Terminal.app shipped with macOS
 * New app icon to resemble the window's appearance
 * Extra window padding
 * Block cursor doesn't change character foreground color
 * 2px-wide vertical bar cursor
-* Reverted to slightly bolder font smoothing
+* ~~Reverted to slightly bolder font smoothing~~ They added an option in preferences for this
 
-Copy the Terminal.app to your Applications directory or apply the patch youself by following the steps below.
+Copy Terminal.app to /Applications or apply the patch youself. Open an issue if it fails patching.
 
 ## Patch it youself
 
@@ -34,29 +34,30 @@ patch -p1 < ../iTerm2-borderless/iTerm2-borderless.patch
 
 ### Build
 
-The build is in build/Default by default.
+The build is in build/Default
 
 ```
 xcodebuild -parallelizeTargets -target iTerm2
 open build/Default
 ```
 
-Drag the app to your Applications directory.
+Drag the app to /Applications.
 
 ### Import preferences
 
-If you like the look of my terminal, you can import my settings with the following command:
+If you dig the look of my terminal, you can import my preferences.
 
 ```
 cp ../iTerm2-borderless/config/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 ```
 
-Alternatively, go to Terminal > Preferences > Profiles > Window, and select "No Title Bar" for Style.
+### Issues
 
-### Fonts
+If the terminal looks wrong, go to Terminal > Preferences > Profiles > Window, and set the Style to "No Title Bar". Otherwise, open an issue.
 
-* Font: [11pt Source Code Pro Medium](https://github.com/adobe-fonts/source-code-pro)
-* Non-ASCII Font: [17pt Souce Code Pro](https://github.com/adobe-fonts/source-code-pro)
+### Font
+
+[12pt Source Code Pro Medium](https://github.com/adobe-fonts/source-code-pro)
 
 ### App icon
 

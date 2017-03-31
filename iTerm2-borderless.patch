@@ -1,7 +1,7 @@
 Binary files iTerm2/.DS_Store and iTerm2-patched/.DS_Store differ
-diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/AdvancedWorkingDirectoryWindow.xib iTerm2-borderless/Interfaces/AdvancedWorkingDirectoryWindow.xib
-*** iTerm2/Interfaces/AdvancedWorkingDirectoryWindow.xib	2016-07-18 19:24:56.000000000 +1000
---- iTerm2-borderless/Interfaces/AdvancedWorkingDirectoryWindow.xib	2016-07-18 19:13:00.000000000 +1000
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/Interfaces/AdvancedWorkingDirectoryWindow.xib iTerm2-patched/Interfaces/AdvancedWorkingDirectoryWindow.xib
+*** iTerm2/Interfaces/AdvancedWorkingDirectoryWindow.xib	2017-03-31 13:18:46.000000000 +1100
+--- iTerm2-patched/Interfaces/AdvancedWorkingDirectoryWindow.xib	2017-03-31 13:46:42.000000000 +1100
 ***************
 *** 1,7 ****
   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -54,9 +54,9 @@ diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/AdvancedWorkingDirectoryWindo
                           <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                           <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                           <font key="titleFont" metaFont="system"/>
-diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/MainMenu.strings iTerm2-borderless/Interfaces/MainMenu.strings
-*** iTerm2/Interfaces/MainMenu.strings	2016-07-18 19:24:56.000000000 +1000
---- iTerm2-borderless/Interfaces/MainMenu.strings	2016-07-18 19:13:00.000000000 +1000
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/Interfaces/MainMenu.strings iTerm2-patched/Interfaces/MainMenu.strings
+*** iTerm2/Interfaces/MainMenu.strings	2017-03-31 13:18:46.000000000 +1100
+--- iTerm2-patched/Interfaces/MainMenu.strings	2017-03-31 13:46:42.000000000 +1100
 ***************
 *** 1,8 ****
   ﻿/* NSMenuItem : <title: > (oid:349) */
@@ -135,27 +135,9 @@ diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/MainMenu.strings iTerm2-borde
 ! /* NSMenuItem : <title:Terminal Help> (oid:111) */
 ! "Terminal Help" = "Terminal Help";
   
-diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/MainMenu.xib iTerm2-borderless/Interfaces/MainMenu.xib
-*** iTerm2/Interfaces/MainMenu.xib	2016-07-18 19:24:56.000000000 +1000
---- iTerm2-borderless/Interfaces/MainMenu.xib	2016-07-18 19:13:00.000000000 +1000
-***************
-*** 1,8 ****
-  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-! <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
-      <dependencies>
-!         <deployment identifier="macosx"/>
-!         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
-      </dependencies>
-      <objects>
-          <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
---- 1,7 ----
-  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-! <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G12a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
-      <dependencies>
-!         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
-      </dependencies>
-      <objects>
-          <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/Interfaces/MainMenu.xib iTerm2-patched/Interfaces/MainMenu.xib
+*** iTerm2/Interfaces/MainMenu.xib	2017-03-31 13:18:46.000000000 +1100
+--- iTerm2-patched/Interfaces/MainMenu.xib	2017-03-31 13:46:42.000000000 +1100
 ***************
 *** 14,23 ****
           <customObject id="-3" userLabel="Application" customClass="NSObject"/>
@@ -168,7 +150,7 @@ diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/MainMenu.xib iTerm2-borderles
                                   <connections>
                                       <action selector="showAbout:" target="201" id="509"/>
                                   </connections>
---- 13,22 ----
+--- 14,23 ----
           <customObject id="-3" userLabel="Application" customClass="NSObject"/>
           <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
               <items>
@@ -188,7 +170,7 @@ diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/MainMenu.xib iTerm2-borderles
                                   <connections>
                                       <action selector="hide:" target="-2" id="152"/>
                                   </connections>
---- 62,68 ----
+--- 63,69 ----
                               <menuItem isSeparatorItem="YES" id="144">
                                   <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                               </menuItem>
@@ -211,7 +193,7 @@ diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/MainMenu.xib iTerm2-borderles
                                   <modifierMask key="keyEquivalentModifierMask" shift="YES" control="YES" option="YES" command="YES"/>
                                   <connections>
                                       <action selector="unmakeDefaultTerminal:" target="201" id="1475"/>
---- 88,100 ----
+--- 89,101 ----
                                   </connections>
                               </menuItem>
                               <menuItem isSeparatorItem="YES" id="1176"/>
@@ -234,7 +216,7 @@ diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/MainMenu.xib iTerm2-borderles
                                   <connections>
                                       <action selector="terminate:" target="-1" id="532"/>
                                   </connections>
---- 107,113 ----
+--- 108,114 ----
                                   </connections>
                               </menuItem>
                               <menuItem isSeparatorItem="YES" id="1469"/>
@@ -243,7 +225,7 @@ diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/MainMenu.xib iTerm2-borderles
                                       <action selector="terminate:" target="-1" id="532"/>
                                   </connections>
 ***************
-*** 1050,1056 ****
+*** 1083,1089 ****
                   <menuItem title="Help" id="103">
                       <menu key="submenu" title="Help" id="106">
                           <items>
@@ -251,7 +233,7 @@ diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/MainMenu.xib iTerm2-borderles
                                   <connections>
                                       <action selector="showHelp:" target="201" id="hFO-6H-VeJ"/>
                                   </connections>
---- 1049,1055 ----
+--- 1083,1089 ----
                   <menuItem title="Help" id="103">
                       <menu key="submenu" title="Help" id="106">
                           <items>
@@ -260,18 +242,18 @@ diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/MainMenu.xib iTerm2-borderles
                                       <action selector="showHelp:" target="201" id="hFO-6H-VeJ"/>
                                   </connections>
 ***************
-*** 1075,1081 ****
+*** 1109,1115 ****
                   <outlet property="sendInputToAllPanes" destination="1266" id="1279"/>
                   <outlet property="sendInputToAllSessions" destination="1264" id="1278"/>
                   <outlet property="showFullScreenTabs" destination="1257" id="1260"/>
 -                 <outlet property="toolbeltMenu" destination="1296" id="1299"/>
                   <outlet property="useTransparency" destination="1228" id="1230"/>
+                  <outlet property="windowArrangementsAsTabs_" destination="z6V-EJ-Ntf" id="wse-Wc-WVw"/>
                   <outlet property="windowArrangements_" destination="1280" id="1285"/>
-              </connections>
---- 1074,1079 ----
-diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/iTerm.strings iTerm2-borderless/Interfaces/iTerm.strings
-*** iTerm2/Interfaces/iTerm.strings	2016-07-18 19:24:56.000000000 +1000
---- iTerm2-borderless/Interfaces/iTerm.strings	2016-07-18 19:13:00.000000000 +1000
+--- 1109,1114 ----
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/Interfaces/iTerm.strings iTerm2-patched/Interfaces/iTerm.strings
+*** iTerm2/Interfaces/iTerm.strings	2017-03-31 13:18:46.000000000 +1100
+--- iTerm2-patched/Interfaces/iTerm.strings	2017-03-31 13:46:42.000000000 +1100
 ***************
 *** 23,29 ****
   
@@ -321,9 +303,855 @@ diff -Prc -x '*.orig' -x '*.rej' iTerm2/Interfaces/iTerm.strings iTerm2-borderle
 ! "Terminal cannot launch the program for this session."="Terminal cannot launch the program for this session.";
   "Close Session"="Close Session";
 \ No newline at end of file
-diff -Prc -x '*.orig' -x '*.rej' iTerm2/plists/iTerm2.plist iTerm2-borderless/plists/iTerm2.plist
-*** iTerm2/plists/iTerm2.plist	2016-07-18 19:24:56.000000000 +1000
---- iTerm2-borderless/plists/iTerm2.plist	2016-07-18 19:13:00.000000000 +1000
+Binary files iTerm2/ThirdParty/RegexKitLite/._License.html and iTerm2-patched/ThirdParty/RegexKitLite/._License.html differ
+Binary files iTerm2/ThirdParty/RegexKitLite/._License.rtf and iTerm2-patched/ThirdParty/RegexKitLite/._License.rtf differ
+Binary files iTerm2/ThirdParty/RegexKitLite/._RegexKitLite.html and iTerm2-patched/ThirdParty/RegexKitLite/._RegexKitLite.html differ
+Binary files iTerm2/ThirdParty/RegexKitLite/._RegexKitLite.m and iTerm2-patched/ThirdParty/RegexKitLite/._RegexKitLite.m differ
+Binary files iTerm2/ThirdParty/RegexKitLite/._examples and iTerm2-patched/ThirdParty/RegexKitLite/._examples differ
+Binary files iTerm2/ThirdParty/RegexKitLite/examples/._NSString-HexConversion.h and iTerm2-patched/ThirdParty/RegexKitLite/examples/._NSString-HexConversion.h differ
+Binary files iTerm2/ThirdParty/RegexKitLite/examples/._compiledRegexCache.d and iTerm2-patched/ThirdParty/RegexKitLite/examples/._compiledRegexCache.d differ
+Binary files iTerm2/ThirdParty/RegexKitLite/examples/._link_example.m and iTerm2-patched/ThirdParty/RegexKitLite/examples/._link_example.m differ
+Binary files iTerm2/ThirdParty/RegexKitLite/examples/._utf16ConversionCache.d and iTerm2-patched/ThirdParty/RegexKitLite/examples/._utf16ConversionCache.d differ
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.d iTerm2-patched/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.d
+*** iTerm2/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.d	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.d	2017-03-31 14:24:29.000000000 +1100
+***************
+*** 0 ****
+--- 1,3 ----
++ dependencies: \
++   /Users/jason/iTerm2/ThirdParty/SSKeychain/SSKeychain-Prefix.pch \
++   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework/Modules/module.modulemap
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.data iTerm2-patched/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.data
+*** iTerm2/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.data	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.data	2017-03-31 14:24:29.000000000 +1100
+***************
+*** 0 ****
+--- 1,11 ----
++ Identifier   ProcessPCH\ /Users/jason/iTerm2/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.pch\ ThirdParty/SSKeychain/SSKeychain-Prefix.pch\ normal\ x86_64\ objective-c\ com.apple.compilers.llvm.clang.1_0.compiler
++ CmdSignature bc4073c1fb70e4b855041bd7ed5bb8d1
++ Description  ProcessPCH\ /Users/jason/iTerm2/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.pch\ ThirdParty/SSKeychain/SSKeychain-Prefix.pch\ normal\ x86_64\ objective-c\ com.apple.compilers.llvm.clang.1_0.compiler
++ CommandLine  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch x86_64 -fmessage-length=159 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -fmodules-prune-interval=86400 -fmodules-prune-after=345600 -fbuild-session-file=/var/folders/vg/_tvx9ssj6g5g2xlpmx_g2kbh0000gn/C/org.llvm.clang/ModuleCache/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror=non-modular-include-in-framework-module -Wno-trigraphs -fpascal-strings -O0 -fno-common -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wunreachable-code -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -DOBJC_OLD_DISPATCH_PROTOTYPES=0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.10 -g -Wno-sign-conversion -Winfinite-recursion -iquote /Users/jason/iTerm2/build/iTerm2.build/Development/SSKeychain.build/SSKeychain-generated-files.hmap -I/Users/jason/iTerm2/build/iTerm2.build/Development/SSKeychain.build/SSKeychain-own-target-headers.hmap -I/Users/jason/iTerm2/build/iTerm2.build/Development/SSKeychain.build/SSKeychain-all-target-headers.hmap -iquote /Users/jason/iTerm2/build/iTerm2.build/Development/SSKeychain.build/SSKeychain-project-headers.hmap -I/Users/jason/iTerm2/build/Development/include -I/Users/jason/iTerm2/build/iTerm2.build/Development/SSKeychain.build/DerivedSources/x86_64 -I/Users/jason/iTerm2/build/iTerm2.build/Development/SSKeychain.build/DerivedSources -Wall -F/Users/jason/iTerm2/build/Development -F/Users/jason/iTerm2 -MD -MT dependencies -MF /Users/jason/iTerm2/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.d -c /Users/jason/iTerm2/ThirdParty/SSKeychain/SSKeychain-Prefix.pch -o /Users/jason/iTerm2/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.pch --serialize-diagnostics /Users/jason/iTerm2/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.dia
++ Environment  LANG=en_US.US-ASCII
++ BuilderIdent ProcessPCH\ /Users/jason/iTerm2/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.pch\ ThirdParty/SSKeychain/SSKeychain-Prefix.pch\ normal\ x86_64\ objective-c\ com.apple.compilers.llvm.clang.1_0.compiler
++ InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/SDKSettings.plist 0 1480478439 1107 33188
++ InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/CoreServices/SystemVersion.plist 0 1488869285 481 33188
++ InputFile    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include/module.modulemap 0 1488396191 3838 33188
++ InputFile    /Users/jason/iTerm2/ThirdParty/SSKeychain/SSKeychain-Prefix.pch 0 1490926484 170 33188
++ InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/SDKSettings.plist 0 1480478439 1107 33188
+Binary files iTerm2/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.dia and iTerm2-patched/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.dia differ
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.pch.hash-criteria iTerm2-patched/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.pch.hash-criteria
+*** iTerm2/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.pch.hash-criteria	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/SharedPrecompiledHeaders/SSKeychain-Prefix-adnziwxwjzchdhdfpdtbhramymur/SSKeychain-Prefix.pch.pch.hash-criteria	2017-03-31 13:58:09.000000000 +1100
+***************
+*** 0 ****
+--- 1,27 ----
++ -x
++ objective-c
++ -arch
++ x86_64
++ -std=gnu99
++ -fobjc-arc
++ -fmodules
++ -fbuild-session-file=/var/folders/vg/_tvx9ssj6g5g2xlpmx_g2kbh0000gn/C/org.llvm.clang/ModuleCache/Session.modulevalidation
++ -fpascal-strings
++ -O0
++ -fno-common
++ -DDEBUG=1
++ -DOBJC_OLD_DISPATCH_PROTOTYPES=0
++ -isysroot
++ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk
++ -fasm-blocks
++ -mmacosx-version-min=10.10
++ -g
++ -iquote
++ -iquote
++ -I/Users/jason/iTerm2/build/Development/include
++ -F/Users/jason/iTerm2/build/Development
++ -F/Users/jason/iTerm2
++ x86_64-apple-darwin16.6.0
++ "4.2.1 Compatible Apple LLVM 8.1.0 (clang-802.0.38)"
++ SDK_PRODUCT_BUILD_VERSION=16E185
++ 16E185
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.d iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.d
+*** iTerm2/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.d	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.d	2017-03-31 13:58:10.000000000 +1100
+***************
+*** 0 ****
+--- 1 ----
++ dependencies: /Users/jason/iTerm2/sources/iTerm2.pch
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.data iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.data
+*** iTerm2/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.data	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.data	2017-03-31 13:58:11.000000000 +1100
+***************
+*** 0 ****
+--- 1,12 ----
++ Identifier   ProcessPCH\ /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.pch\ sources/iTerm2.pch\ normal\ x86_64\ objective-c\ com.apple.compilers.llvm.clang.1_0.compiler
++ CmdSignature f09b5ff3ce3615ef5de74fe4ea686052
++ Description  ProcessPCH\ /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.pch\ sources/iTerm2.pch\ normal\ x86_64\ objective-c\ com.apple.compilers.llvm.clang.1_0.compiler
++ CommandLine  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch x86_64 -fmessage-length=181 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -fmodules-prune-interval=86400 -fmodules-prune-after=345600 -fbuild-session-file=/var/folders/vg/_tvx9ssj6g5g2xlpmx_g2kbh0000gn/C/org.llvm.clang/ModuleCache/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror=non-modular-include-in-framework-module -Wno-trigraphs -fpascal-strings -O0 -fno-common -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wunreachable-code -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -DOBJC_OLD_DISPATCH_PROTOTYPES=0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.10 -g -Wno-sign-conversion -Winfinite-recursion -iquote /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC-generated-files.hmap -I/Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC-own-target-headers.hmap -I/Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC-all-target-headers.hmap -iquote /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC-project-headers.hmap -I/Users/jason/iTerm2/build/Development/include -IThirdParty -I/Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/DerivedSources/x86_64 -I/Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/DerivedSources -Wall -F/Users/jason/iTerm2/build/Development -F/Users/jason/iTerm2 -F/Users/jason/iTerm2/ColorPicker -F/Users/jason/iTerm2/ThirdParty -MD -MT dependencies -MF /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.d -c /Users/jason/iTerm2/sources/iTerm2.pch -o /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.pch --serialize-diagnostics /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.dia
++ Environment  LANG=en_US.US-ASCII
++ BuilderIdent ProcessPCH\ /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.pch\ sources/iTerm2.pch\ normal\ x86_64\ objective-c\ com.apple.compilers.llvm.clang.1_0.compiler
++ InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/SDKSettings.plist 0 1480478439 1107 33188
++ InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/CoreServices/SystemVersion.plist 0 1488869285 481 33188
++ InputFile    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include/module.modulemap 0 1488396191 3838 33188
++ InputFile    /Users/jason/iTerm2/sources/iTerm2.pch 0 1490926487 205 33188
++ InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/SDKSettings.plist 0 1480478439 1107 33188
++ InputFile    /Users/jason/iTerm2/sources/iTerm2.pch 0 1490926487 205 33188
+Binary files iTerm2/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.dia and iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.dia differ
+Binary files iTerm2/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.pch and iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.pch differ
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.pch.hash-criteria iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.pch.hash-criteria
+*** iTerm2/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.pch.hash-criteria	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-axmifkomquapoqdqpvvaztuofmrr/iTerm2.pch.pch.hash-criteria	2017-03-31 13:58:09.000000000 +1100
+***************
+*** 0 ****
+--- 1,30 ----
++ -x
++ objective-c
++ -arch
++ x86_64
++ -std=gnu99
++ -fobjc-arc
++ -fmodules
++ -fbuild-session-file=/var/folders/vg/_tvx9ssj6g5g2xlpmx_g2kbh0000gn/C/org.llvm.clang/ModuleCache/Session.modulevalidation
++ -fpascal-strings
++ -O0
++ -fno-common
++ -DDEBUG=1
++ -DOBJC_OLD_DISPATCH_PROTOTYPES=0
++ -isysroot
++ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk
++ -fasm-blocks
++ -mmacosx-version-min=10.10
++ -g
++ -iquote
++ -iquote
++ -I/Users/jason/iTerm2/build/Development/include
++ -IThirdParty
++ -F/Users/jason/iTerm2/build/Development
++ -F/Users/jason/iTerm2
++ -F/Users/jason/iTerm2/ColorPicker
++ -F/Users/jason/iTerm2/ThirdParty
++ x86_64-apple-darwin16.6.0
++ "4.2.1 Compatible Apple LLVM 8.1.0 (clang-802.0.38)"
++ SDK_PRODUCT_BUILD_VERSION=16E185
++ 16E185
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.d iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.d
+*** iTerm2/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.d	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.d	2017-03-31 13:58:11.000000000 +1100
+***************
+*** 0 ****
+--- 1 ----
++ dependencies: /Users/jason/iTerm2/sources/iTerm2.pch
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.data iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.data
+*** iTerm2/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.data	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.data	2017-03-31 13:58:11.000000000 +1100
+***************
+*** 0 ****
+--- 1,12 ----
++ Identifier   ProcessPCH\ /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.pch\ sources/iTerm2.pch\ normal\ x86_64\ c\ com.apple.compilers.llvm.clang.1_0.compiler
++ CmdSignature b7e9be2df2e48e3e027ac12b9d12a28b
++ Description  ProcessPCH\ /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.pch\ sources/iTerm2.pch\ normal\ x86_64\ c\ com.apple.compilers.llvm.clang.1_0.compiler
++ CommandLine  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c-header -arch x86_64 -fmessage-length=181 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fmodules -fmodules-prune-interval=86400 -fmodules-prune-after=345600 -fbuild-session-file=/var/folders/vg/_tvx9ssj6g5g2xlpmx_g2kbh0000gn/C/org.llvm.clang/ModuleCache/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror=non-modular-include-in-framework-module -Wno-trigraphs -fpascal-strings -O0 -fno-common -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wunreachable-code -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.10 -g -Wno-sign-conversion -Winfinite-recursion -iquote /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-generated-files.hmap -I/Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-own-target-headers.hmap -I/Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-all-target-headers.hmap -iquote /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-project-headers.hmap -I/Users/jason/iTerm2/build/Development/include -IThirdParty -I/Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/DerivedSources/x86_64 -I/Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/DerivedSources -Wall -Wpartial-availability -F/Users/jason/iTerm2/build/Development -F/Users/jason/iTerm2 -F/Users/jason/iTerm2/ColorPicker -F/Users/jason/iTerm2/ThirdParty -MD -MT dependencies -MF /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.d -c /Users/jason/iTerm2/sources/iTerm2.pch -o /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.pch --serialize-diagnostics /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.dia
++ Environment  LANG=en_US.US-ASCII
++ BuilderIdent ProcessPCH\ /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.pch\ sources/iTerm2.pch\ normal\ x86_64\ c\ com.apple.compilers.llvm.clang.1_0.compiler
++ InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/SDKSettings.plist 0 1480478439 1107 33188
++ InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/CoreServices/SystemVersion.plist 0 1488869285 481 33188
++ InputFile    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include/module.modulemap 0 1488396191 3838 33188
++ InputFile    /Users/jason/iTerm2/sources/iTerm2.pch 0 1490926487 205 33188
++ InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/SDKSettings.plist 0 1480478439 1107 33188
++ InputFile    /Users/jason/iTerm2/sources/iTerm2.pch 0 1490926487 205 33188
+Binary files iTerm2/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.dia and iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.dia differ
+Binary files iTerm2/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.pch and iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.pch differ
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.pch.hash-criteria iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.pch.hash-criteria
+*** iTerm2/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.pch.hash-criteria	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-degxlvctoltdvjeebuqepqcccbue/iTerm2.pch.pch.hash-criteria	2017-03-31 13:58:10.000000000 +1100
+***************
+*** 0 ****
+--- 1,28 ----
++ -x
++ c
++ -arch
++ x86_64
++ -std=gnu99
++ -fmodules
++ -fbuild-session-file=/var/folders/vg/_tvx9ssj6g5g2xlpmx_g2kbh0000gn/C/org.llvm.clang/ModuleCache/Session.modulevalidation
++ -fpascal-strings
++ -O0
++ -fno-common
++ -DDEBUG=1
++ -isysroot
++ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk
++ -fasm-blocks
++ -mmacosx-version-min=10.10
++ -g
++ -iquote
++ -iquote
++ -I/Users/jason/iTerm2/build/Development/include
++ -IThirdParty
++ -F/Users/jason/iTerm2/build/Development
++ -F/Users/jason/iTerm2
++ -F/Users/jason/iTerm2/ColorPicker
++ -F/Users/jason/iTerm2/ThirdParty
++ x86_64-apple-darwin16.6.0
++ "4.2.1 Compatible Apple LLVM 8.1.0 (clang-802.0.38)"
++ SDK_PRODUCT_BUILD_VERSION=16E185
++ 16E185
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.d iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.d
+*** iTerm2/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.d	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.d	2017-03-31 13:58:11.000000000 +1100
+***************
+*** 0 ****
+--- 1 ----
++ dependencies: /Users/jason/iTerm2/sources/iTerm2.pch
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.data iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.data
+*** iTerm2/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.data	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.data	2017-03-31 13:58:11.000000000 +1100
+***************
+*** 0 ****
+--- 1,12 ----
++ Identifier   ProcessPCH\ /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.pch\ sources/iTerm2.pch\ normal\ x86_64\ objective-c\ com.apple.compilers.llvm.clang.1_0.compiler
++ CmdSignature 81054549ca21d5b8dd1bbcecfec16fa2
++ Description  ProcessPCH\ /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.pch\ sources/iTerm2.pch\ normal\ x86_64\ objective-c\ com.apple.compilers.llvm.clang.1_0.compiler
++ CommandLine  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch x86_64 -fmessage-length=181 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fmodules -fmodules-prune-interval=86400 -fmodules-prune-after=345600 -fbuild-session-file=/var/folders/vg/_tvx9ssj6g5g2xlpmx_g2kbh0000gn/C/org.llvm.clang/ModuleCache/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror=non-modular-include-in-framework-module -Wno-trigraphs -fpascal-strings -O0 -fno-common -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wunreachable-code -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -DOBJC_OLD_DISPATCH_PROTOTYPES=0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.10 -g -Wno-sign-conversion -Winfinite-recursion -iquote /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-generated-files.hmap -I/Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-own-target-headers.hmap -I/Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-all-target-headers.hmap -iquote /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-project-headers.hmap -I/Users/jason/iTerm2/build/Development/include -IThirdParty -I/Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/DerivedSources/x86_64 -I/Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/DerivedSources -Wall -Wpartial-availability -F/Users/jason/iTerm2/build/Development -F/Users/jason/iTerm2 -F/Users/jason/iTerm2/ColorPicker -F/Users/jason/iTerm2/ThirdParty -MD -MT dependencies -MF /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.d -c /Users/jason/iTerm2/sources/iTerm2.pch -o /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.pch --serialize-diagnostics /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.dia
++ Environment  LANG=en_US.US-ASCII
++ BuilderIdent ProcessPCH\ /Users/jason/iTerm2/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.pch\ sources/iTerm2.pch\ normal\ x86_64\ objective-c\ com.apple.compilers.llvm.clang.1_0.compiler
++ InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/SDKSettings.plist 0 1480478439 1107 33188
++ InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/CoreServices/SystemVersion.plist 0 1488869285 481 33188
++ InputFile    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include/module.modulemap 0 1488396191 3838 33188
++ InputFile    /Users/jason/iTerm2/sources/iTerm2.pch 0 1490926487 205 33188
++ InputFile    /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/SDKSettings.plist 0 1480478439 1107 33188
++ InputFile    /Users/jason/iTerm2/sources/iTerm2.pch 0 1490926487 205 33188
+Binary files iTerm2/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.dia and iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.dia differ
+Binary files iTerm2/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.pch and iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.pch differ
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.pch.hash-criteria iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.pch.hash-criteria
+*** iTerm2/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.pch.hash-criteria	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/SharedPrecompiledHeaders/iTerm2-fudvnmvtadwyiqecdavzcoxeahaz/iTerm2.pch.pch.hash-criteria	2017-03-31 13:58:09.000000000 +1100
+***************
+*** 0 ****
+--- 1,29 ----
++ -x
++ objective-c
++ -arch
++ x86_64
++ -std=gnu99
++ -fmodules
++ -fbuild-session-file=/var/folders/vg/_tvx9ssj6g5g2xlpmx_g2kbh0000gn/C/org.llvm.clang/ModuleCache/Session.modulevalidation
++ -fpascal-strings
++ -O0
++ -fno-common
++ -DDEBUG=1
++ -DOBJC_OLD_DISPATCH_PROTOTYPES=0
++ -isysroot
++ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk
++ -fasm-blocks
++ -mmacosx-version-min=10.10
++ -g
++ -iquote
++ -iquote
++ -I/Users/jason/iTerm2/build/Development/include
++ -IThirdParty
++ -F/Users/jason/iTerm2/build/Development
++ -F/Users/jason/iTerm2
++ -F/Users/jason/iTerm2/ColorPicker
++ -F/Users/jason/iTerm2/ThirdParty
++ x86_64-apple-darwin16.6.0
++ "4.2.1 Compatible Apple LLVM 8.1.0 (clang-802.0.38)"
++ SDK_PRODUCT_BUILD_VERSION=16E185
++ 16E185
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/iTerm2.build/Development/SSKeychain.build/Objects-normal/x86_64/SSKeychain.LinkFileList iTerm2-patched/build/iTerm2.build/Development/SSKeychain.build/Objects-normal/x86_64/SSKeychain.LinkFileList
+*** iTerm2/build/iTerm2.build/Development/SSKeychain.build/Objects-normal/x86_64/SSKeychain.LinkFileList	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/iTerm2.build/Development/SSKeychain.build/Objects-normal/x86_64/SSKeychain.LinkFileList	2017-03-31 13:58:08.000000000 +1100
+***************
+*** 0 ****
+--- 1,2 ----
++ /Users/jason/iTerm2/build/iTerm2.build/Development/SSKeychain.build/Objects-normal/x86_64/SSKeychainQuery.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/SSKeychain.build/Objects-normal/x86_64/SSKeychain.o
+Binary files iTerm2/build/iTerm2.build/Development/SSKeychain.build/SSKeychain-all-non-framework-target-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/SSKeychain.build/SSKeychain-all-non-framework-target-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/SSKeychain.build/SSKeychain-all-target-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/SSKeychain.build/SSKeychain-all-target-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/SSKeychain.build/SSKeychain-generated-files.hmap and iTerm2-patched/build/iTerm2.build/Development/SSKeychain.build/SSKeychain-generated-files.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/SSKeychain.build/SSKeychain-own-target-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/SSKeychain.build/SSKeychain-own-target-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/SSKeychain.build/SSKeychain-project-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/SSKeychain.build/SSKeychain-project-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/SSKeychain.build/SSKeychain.hmap and iTerm2-patched/build/iTerm2.build/Development/SSKeychain.build/SSKeychain.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/SSKeychain.build/dgph and iTerm2-patched/build/iTerm2.build/Development/SSKeychain.build/dgph differ
+Binary files iTerm2/build/iTerm2.build/Development/SSKeychain.build/dgph~ and iTerm2-patched/build/iTerm2.build/Development/SSKeychain.build/dgph~ differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2.build/dgph and iTerm2-patched/build/iTerm2.build/Development/iTerm2.build/dgph differ
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTerm2Shared.LinkFileList iTerm2-patched/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTerm2Shared.LinkFileList
+*** iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTerm2Shared.LinkFileList	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTerm2Shared.LinkFileList	2017-03-31 13:58:09.000000000 +1100
+***************
+*** 0 ****
+--- 1,412 ----
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermWarning.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PTYSession+Scripting.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermSemanticHistoryPrefsController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSView+RecursiveDescription.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TriggerController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/KeysPreferencesViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermWebViewWrapperViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PopupModel.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GlobalSearch.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermScriptingWindow.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100StringParser.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSURL+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermHotKeyController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100GridTypes.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PasteView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SendTextTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSWorkspace+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermAppHotKeyProvider.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PSMLightHighContrastTabStyle.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermPromptOnCloseReason.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TmuxStateParser.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PointerPrefsController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermShortcutInputView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermPasteHelper.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProcessCache.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GPBExtensionInternals.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/BellTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PSMTabBarControl.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfileTableRow.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermTipCardActionButton.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PSMTabBarCell.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermMouseCursor.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TmuxHistoryParser.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PointerPreferencesViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSPasteboard+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermPreciseTimer.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/EquivalenceClassSet.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ScreenChar.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/UKNibOwner.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/Duration.pbobjc.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GPBDescriptor.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/Empty.pbobjc.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermTouchBarButton.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermSizeRememberingView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfileListView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GPBMessage.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PointerController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfilesColorsPreferencesViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PSMTabDragWindow.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermHotkeyPreferencesModel.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/AsyncHostLookupController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSWindow+PSM.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermImageInfo.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermPreferences.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PSMDarkTabStyle.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GrowlTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermSemanticHistoryController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/QLPreviewPanel+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GPBRootObject.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/LineBufferPosition.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSMutableData+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermFileDescriptorSocketPath.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TmuxController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermAnnouncementView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PreferencePanel.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermKeyLabels.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100WorkingDirectory.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermHostRecordMO+CoreDataProperties.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermProgressIndicator.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermSetTitleTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermSearchField.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/BulkCopyProfilePreferencesWindowController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/MovingAverage.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PopupEntry.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermSavePanel.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SearchResult.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/FutureMethods.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermObjectPool.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/IntervalMap.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/BounceTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermInstantReplayWindowController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermBoxDrawingBezierCurveFactory.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSArray+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GPBCodedOutputStream.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/FieldMask.pbobjc.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermRoundedCornerScrollView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSCharacterSet+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GPBWellKnownTypes.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PSMTabDragAssistant.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/CaptureTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermFindCursorView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/Trigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PTYWindow.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermExposeGridView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSData+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/CommandHistoryPopup.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/Type.pbobjc.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ToolProfiles.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100OtherParser.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PTYTab+Scripting.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermRecentDirectoryMO+Additions.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GPBUtilities.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermBadgeLabel.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSPopUpButton+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PTYWindow+Scripting.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermPasswordManagerWindowController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermCarbonHotKeyController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermOpenQuicklyTextField.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermTip.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermSelectionScrollHelper.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermAdvancedSettingsViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSFileManager+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermPrintAccessoryViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermCommandHistoryEntryMO.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/CoprocessTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100DCSParser.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PTYTab.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermInitialDirectory.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100Terminal.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermOpenQuicklyTableCellView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermCommandHistoryCommandUseMO.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TSVParser.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PasteboardHistory.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermBackgroundColorRun.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermProfilePreferences.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermTextExtractor.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSDictionary+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/WindowArrangements.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSStringITerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TaskNotifier.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSMutableAttributedString+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermTemporaryDoubleBufferedGridController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfilesAdvancedPreferencesViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermImageDecoderDriver.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermOpenQuicklyView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100StateMachine.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/MovePaneController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSApplication+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100StateTransition.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermSystemVersion.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/Api.pbobjc-FCC23F5BF30362EE.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfileTagsView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PreferenceInfo.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PasteViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermFileDescriptorServer.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermCommandHistoryEntryMO+Additions.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermMutableAttributedStringBuilder.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/Coprocess.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ArrangementPreviewView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PTYNoteViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermImage.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermFlippedView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermAltScreenMouseScrollInferer.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/AATree.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/StopTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100ScreenMark.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermNoColorAccessoryButton.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/URLAction.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermAppHotKey.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermMark.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermAnimatedImageInfo.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermProfilesWindowController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermWeakReference.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/Struct.pbobjc.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermLogoGenerator.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TransferrableFile.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/Autocomplete.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ToolNotes.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermApplication.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermExposeWindow.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/RegexKitLite.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SplitSelectionView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SCPPath.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PseudoTerminalRestorer.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermNSKeyBindingEmulator.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermSelection.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100Output.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/FontSizeEstimator.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PTYSplitView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GeneralPreferencesViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermPasteSpecialWindowController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermTabBarControlView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermBuriedSessions.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermFullScreenWindowManager.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/DVRBuffer.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermNumberOfSpacesAccessoryViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/FindContext.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/DebugLogging.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermColorPresets.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermImageMark.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PasteEvent.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermDirectoryTreeNode.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermAdditionalHotKeyTableCellView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermOpenQuicklyCommands.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermShortcut.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TmuxLayoutParser.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermModifierRemapper.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSColor+Scripting.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSView+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermHotkeyPreferencesWindowController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/LineBlock.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermExposeView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TextViewWrapper.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/FakeWindow.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SmartMatch.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100TmuxParser.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/AppearancePreferencesViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ToolDirectoriesView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSLocale+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermRestorableSession.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSColor+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PTYTask.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfilesGeneralPreferencesViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfilesTerminalPreferencesViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermShellPromptTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSWindow+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ContextMenuActionPrefsController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermRecentDirectoryMO+CoreDataProperties.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/EventMonitorView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/LineBufferHelpers.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermBaseHotKey.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermToolbeltView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TransferrableFileMenuItemView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermTextViewAccessibilityHelper.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GPBArray.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100CSIParser.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermThroughputEstimator.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermTextDrawingHelper.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfileTableView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PTYSession.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PTYFontInfo.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/UKSystemInfo.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PasswordTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermOpenQuicklyModel.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/FindView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfileModel.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/DVRIndexEntry.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermAnnouncementViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ToolPasteHistory.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/AdvancedWorkingDirectoryWindowController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PTYTextView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermHostRecordMO+Additions.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/IntervalTree.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermCapturedOutputMark.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PTYNoteView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermEventTap.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermOrphanServerAdopter.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100Token.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GPBWireFormat.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfilePreferencesViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSBezierPath+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TmuxGateway.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SessionTitleView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSDateFormatterExtras.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TmuxWindowsTable.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermSessionHotkeyController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSDictionary+Profile.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SCEvent.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/LineBuffer.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SCPFile.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermRemotePreferences.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermHotKeyProfileBindingController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SetHostnameTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SplitPanel.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermFileDescriptorClient.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermProfileSearchToken.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermAdditionalHotKeyObjectValue.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/FileTransferManager.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PFMoveApplication.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSImage+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermDisclosableView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSDate+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100Grid.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TmuxControllerRegistry.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermHotKeyMigrationHelper.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ToolJobs.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100ControlParser.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ScriptTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/UKCrashReporter.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermAboutWindow.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermPreferencesBaseViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermPreviousState.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermOpenQuicklyWindow.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermCommandHistoryEntryMO+CoreDataProperties.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PSMOverflowPopUpButton.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermOpenQuicklyItem.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermPasteSpecialViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GPBUnknownField.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermOpenQuicklyWindowController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TemporaryNumberAllocator.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermDynamicProfileManager.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermKeyboardNavigatableTableView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermURLActionFactory.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/AATreeNode.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermCursor.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100XtermParser.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100LineInfo.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermAdvancedSettingsModel.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermToolWrapper.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermRecentDirectoryMO.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermApplication+Scripting.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermDragHandleView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/FindViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/shell_launcher.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GPBUnknownFieldSet.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermOpenQuicklyTableRowView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/Timestamp.pbobjc.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PSMYosemiteTabStyle.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermCommandHistoryCommandUseMO+Addtions.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/BackgroundThread.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/Any.pbobjc.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GPBExtensionRegistry.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermLaunchServices.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100Parser.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermHostRecordMO.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermQuickLookController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PSMDarkHighContrastTabStyle.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfilesSessionPreferencesViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PasteContext.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermAutomaticProfileSwitcher.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ColorsMenuItemView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PTYScrollView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/AMIndeterminateProgressIndicator.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermTipData.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ToastWindowController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/RoundedRectView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TransferrableFileMenuItemViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfilesWindowPreferencesViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermRootTerminalView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSFont+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/MarkTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ThreeFingerTapGestureRecognizer.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSObject+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermKeyBindingMgr.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermProfilesPanel.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermClearView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermMinimumSubsequenceMatcher.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GPBDictionary.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermIndicatorsHelper.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermTipRootView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermTipWindowController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermExposeTabView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermGrowlDelegate.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/Api.pbobjc-9BEA5900698006A8.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PSMProgressIndicator.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermRule.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/HighlightTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermShellHistoryController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermAboutWindowController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100Screen.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SourceContext.pbobjc.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfileModelWrapper.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermTipController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100AnsiParser.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SmartSelectionController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SessionView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfilesKeysPreferencesViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ToolCapturedOutputView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/DVREncoder.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SolidColorView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermServiceProvider.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/DirectoriesPopup.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermEditKeyActionWindowController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TmuxSessionsTable.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100RemoteHost.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SetDirectoryTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PSMRolloverButton.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/DVR.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/CapturedOutput.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/DVRDecoder.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermFindOnPageHelper.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermToolbeltSplitView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermExpose.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermWindowShortcutLabelTitlebarAccessoryViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermKeyMappingViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ProfilesTextPreferencesViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ToolCommandHistoryView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TerminalFile.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermFontPanel.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PTYTabView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PseudoTerminal.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/GPBCodedInputStream.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ITAddressBookMgr.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermImageWell.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermTipCardViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSScreen+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PopupWindow.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/Wrappers.pbobjc.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TmuxWindowOpener.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/TmuxDashboardController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermIntegerNumberFormatter.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermNewWindowCommand.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermProfilePreferencesBaseViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSTableColumn+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermColorMap.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/ToolWebView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermOpenQuicklyTableView.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermWindowOcclusionChangeMonitor.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermCommandHistoryCommandUseMO+CoreDataProperties.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermPopupWindowController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermDirectoryTree.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/AlertTrigger.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSMutableDictionary+Profile.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/PseudoTerminal+TouchBar.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermAutoMasterParser.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/VT100State.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermApplicationDelegate.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSTextField+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermProfileHotKey.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/NSEvent+iTerm.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/SCEvents.o
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermWarning.d iTerm2-patched/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermWarning.d
+*** iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermWarning.d	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermWarning.d	2017-03-31 13:58:22.000000000 +1100
+***************
+*** 0 ****
+--- 1,4 ----
++ dependencies: /Users/jason/iTerm2/sources/iTermWarning.m \
++   /Users/jason/iTerm2/sources/iTermWarning.h \
++   /Users/jason/iTerm2/sources/DebugLogging.h \
++   /Users/jason/iTerm2/sources/NSArray+iTerm.h
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermWarning.dia and iTerm2-patched/build/iTerm2.build/Development/iTerm2Shared.build/Objects-normal/x86_64/iTermWarning.dia differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/dgph and iTerm2-patched/build/iTerm2.build/Development/iTerm2Shared.build/dgph differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/dgph~ and iTerm2-patched/build/iTerm2.build/Development/iTerm2Shared.build/dgph~ differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-all-non-framework-target-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-all-non-framework-target-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-all-target-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-all-target-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-generated-files.hmap and iTerm2-patched/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-generated-files.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-own-target-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-own-target-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-project-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared-project-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared.hmap and iTerm2-patched/build/iTerm2.build/Development/iTerm2Shared.build/iTerm2Shared.hmap differ
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTerm2SharedARC.LinkFileList iTerm2-patched/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTerm2SharedARC.LinkFileList
+*** iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTerm2SharedARC.LinkFileList	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTerm2SharedARC.LinkFileList	2017-03-31 13:58:09.000000000 +1100
+***************
+*** 0 ****
+--- 1,13 ----
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermSocketAddress.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermLSOF.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermWebSocketFrameBuilder.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermHTTPConnection.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermURLStore.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermWebSocketConnection.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermSocket.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermHelpMessageViewController.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermMenuOpener.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermWebSocketFrame.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermAPIServer.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermSocketIPV4Address.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermIPV4Address.o
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermLSOF.dia and iTerm2-patched/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermLSOF.dia differ
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermSocketAddress.d iTerm2-patched/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermSocketAddress.d
+*** iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermSocketAddress.d	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermSocketAddress.d	2017-03-31 14:24:29.000000000 +1100
+***************
+*** 0 ****
+--- 1,5 ----
++ dependencies: /Users/jason/iTerm2/sources/iTermSocketAddress.m \
++   /Users/jason/iTerm2/sources/iTermSocketAddress.h \
++   /Users/jason/iTerm2/sources/DebugLogging.h \
++   /Users/jason/iTerm2/sources/iTermIPV4Address.h \
++   /Users/jason/iTerm2/sources/iTermSocketIPV4Address.h
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermSocketAddress.dia and iTerm2-patched/build/iTerm2.build/Development/iTerm2SharedARC.build/Objects-normal/x86_64/iTermSocketAddress.dia differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/dgph and iTerm2-patched/build/iTerm2.build/Development/iTerm2SharedARC.build/dgph differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/dgph~ and iTerm2-patched/build/iTerm2.build/Development/iTerm2SharedARC.build/dgph~ differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC-all-non-framework-target-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC-all-non-framework-target-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC-all-target-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC-all-target-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC-generated-files.hmap and iTerm2-patched/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC-generated-files.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC-own-target-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC-own-target-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC-project-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC-project-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC.hmap and iTerm2-patched/build/iTerm2.build/Development/iTerm2SharedARC.build/iTerm2SharedARC.hmap differ
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/iTerm2.build/Development/image_decoder.build/Objects-normal/x86_64/image_decoder.LinkFileList iTerm2-patched/build/iTerm2.build/Development/image_decoder.build/Objects-normal/x86_64/image_decoder.LinkFileList
+*** iTerm2/build/iTerm2.build/Development/image_decoder.build/Objects-normal/x86_64/image_decoder.LinkFileList	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/iTerm2.build/Development/image_decoder.build/Objects-normal/x86_64/image_decoder.LinkFileList	2017-03-31 13:58:09.000000000 +1100
+***************
+*** 0 ****
+--- 1,2 ----
++ /Users/jason/iTerm2/build/iTerm2.build/Development/image_decoder.build/Objects-normal/x86_64/iTermSerializableImage.o
++ /Users/jason/iTerm2/build/iTerm2.build/Development/image_decoder.build/Objects-normal/x86_64/image_decoder.o
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/build/iTerm2.build/Development/image_decoder.build/Objects-normal/x86_64/image_decoder.d iTerm2-patched/build/iTerm2.build/Development/image_decoder.build/Objects-normal/x86_64/image_decoder.d
+*** iTerm2/build/iTerm2.build/Development/image_decoder.build/Objects-normal/x86_64/image_decoder.d	1970-01-01 10:00:00.000000000 +1000
+--- iTerm2-patched/build/iTerm2.build/Development/image_decoder.build/Objects-normal/x86_64/image_decoder.d	2017-03-31 13:58:22.000000000 +1100
+***************
+*** 0 ****
+--- 1,2 ----
++ dependencies: /Users/jason/iTerm2/image_decoder/image_decoder.m \
++   /Users/jason/iTerm2/image_decoder/iTermSerializableImage.h
+Binary files iTerm2/build/iTerm2.build/Development/image_decoder.build/Objects-normal/x86_64/image_decoder.dia and iTerm2-patched/build/iTerm2.build/Development/image_decoder.build/Objects-normal/x86_64/image_decoder.dia differ
+Binary files iTerm2/build/iTerm2.build/Development/image_decoder.build/dgph and iTerm2-patched/build/iTerm2.build/Development/image_decoder.build/dgph differ
+Binary files iTerm2/build/iTerm2.build/Development/image_decoder.build/dgph~ and iTerm2-patched/build/iTerm2.build/Development/image_decoder.build/dgph~ differ
+Binary files iTerm2/build/iTerm2.build/Development/image_decoder.build/image_decoder-all-non-framework-target-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/image_decoder.build/image_decoder-all-non-framework-target-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/image_decoder.build/image_decoder-all-target-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/image_decoder.build/image_decoder-all-target-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/image_decoder.build/image_decoder-generated-files.hmap and iTerm2-patched/build/iTerm2.build/Development/image_decoder.build/image_decoder-generated-files.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/image_decoder.build/image_decoder-own-target-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/image_decoder.build/image_decoder-own-target-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/image_decoder.build/image_decoder-project-headers.hmap and iTerm2-patched/build/iTerm2.build/Development/image_decoder.build/image_decoder-project-headers.hmap differ
+Binary files iTerm2/build/iTerm2.build/Development/image_decoder.build/image_decoder.hmap and iTerm2-patched/build/iTerm2.build/Development/image_decoder.build/image_decoder.hmap differ
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.pbxproj iTerm2-patched/iTerm2.xcodeproj/project.pbxproj
+*** iTerm2/iTerm2.xcodeproj/project.pbxproj	2017-03-31 13:18:46.000000000 +1100
+--- iTerm2-patched/iTerm2.xcodeproj/project.pbxproj	2017-03-31 14:34:11.000000000 +1100
+***************
+*** 7142,7148 ****
+  						DevelopmentTeam = H7V7XYVQ7D;
+  					};
+  					874206460564169600CFC3F1 = {
+! 						DevelopmentTeam = H7V7XYVQ7D;
+  						ProvisioningStyle = Automatic;
+  					};
+  					A66717851DCE36C3000CE608 = {
+--- 7142,7148 ----
+  						DevelopmentTeam = H7V7XYVQ7D;
+  					};
+  					874206460564169600CFC3F1 = {
+! 						DevelopmentTeam = 4688J3MK2P;
+  						ProvisioningStyle = Automatic;
+  					};
+  					A66717851DCE36C3000CE608 = {
+***************
+*** 8906,8912 ****
+  				CODE_SIGN_IDENTITY = "Mac Developer";
+  				COMBINE_HIDPI_IMAGES = YES;
+  				COPY_PHASE_STRIP = YES;
+! 				DEVELOPMENT_TEAM = H7V7XYVQ7D;
+  				FRAMEWORK_SEARCH_PATHS = (
+  					"$(inherited)",
+  					"$(SRCROOT)",
+--- 8906,8912 ----
+  				CODE_SIGN_IDENTITY = "Mac Developer";
+  				COMBINE_HIDPI_IMAGES = YES;
+  				COPY_PHASE_STRIP = YES;
+! 				DEVELOPMENT_TEAM = 4688J3MK2P;
+  				FRAMEWORK_SEARCH_PATHS = (
+  					"$(inherited)",
+  					"$(SRCROOT)",
+***************
+*** 10086,10092 ****
+  				COMBINE_HIDPI_IMAGES = YES;
+  				COPY_PHASE_STRIP = NO;
+  				DEBUG_INFORMATION_FORMAT = dwarf;
+! 				DEVELOPMENT_TEAM = H7V7XYVQ7D;
+  				FRAMEWORK_SEARCH_PATHS = (
+  					"$(inherited)",
+  					"$(SRCROOT)",
+--- 10086,10092 ----
+  				COMBINE_HIDPI_IMAGES = YES;
+  				COPY_PHASE_STRIP = NO;
+  				DEBUG_INFORMATION_FORMAT = dwarf;
+! 				DEVELOPMENT_TEAM = 4688J3MK2P;
+  				FRAMEWORK_SEARCH_PATHS = (
+  					"$(inherited)",
+  					"$(SRCROOT)",
+***************
+*** 10155,10161 ****
+  				CODE_SIGN_IDENTITY = "Mac Developer";
+  				COMBINE_HIDPI_IMAGES = YES;
+  				COPY_PHASE_STRIP = YES;
+! 				DEVELOPMENT_TEAM = H7V7XYVQ7D;
+  				FRAMEWORK_SEARCH_PATHS = (
+  					"$(inherited)",
+  					"$(SRCROOT)",
+--- 10155,10161 ----
+  				CODE_SIGN_IDENTITY = "Mac Developer";
+  				COMBINE_HIDPI_IMAGES = YES;
+  				COPY_PHASE_STRIP = YES;
+! 				DEVELOPMENT_TEAM = 4688J3MK2P;
+  				FRAMEWORK_SEARCH_PATHS = (
+  					"$(inherited)",
+  					"$(SRCROOT)",
+Binary files iTerm2/iTerm2.xcodeproj/project.xcworkspace/xcuserdata/jason.xcuserdatad/UserInterfaceState.xcuserstate and iTerm2-patched/iTerm2.xcodeproj/project.xcworkspace/xcuserdata/jason.xcuserdatad/UserInterfaceState.xcuserstate differ
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/plists/iTerm2.plist iTerm2-patched/plists/iTerm2.plist
+*** iTerm2/plists/iTerm2.plist	2017-03-31 13:18:46.000000000 +1100
+--- iTerm2-patched/plists/iTerm2.plist	2017-03-31 13:46:42.000000000 +1100
 ***************
 *** 2,9 ****
   <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -363,7 +1191,7 @@ diff -Prc -x '*.orig' -x '*.rej' iTerm2/plists/iTerm2.plist iTerm2-borderless/pl
   			<string>Editor</string>
   		</dict>
 ***************
-*** 71,77 ****
+*** 112,118 ****
   	<key>CFBundleInfoDictionaryVersion</key>
   	<string>6.0</string>
   	<key>CFBundleName</key>
@@ -371,7 +1199,7 @@ diff -Prc -x '*.orig' -x '*.rej' iTerm2/plists/iTerm2.plist iTerm2-borderless/pl
   	<key>CFBundlePackageType</key>
   	<string>APPL</string>
   	<key>CFBundleShortVersionString</key>
---- 69,75 ----
+--- 110,116 ----
   	<key>CFBundleInfoDictionaryVersion</key>
   	<string>6.0</string>
   	<key>CFBundleName</key>
@@ -379,11 +1207,11 @@ diff -Prc -x '*.orig' -x '*.rej' iTerm2/plists/iTerm2.plist iTerm2-borderless/pl
   	<key>CFBundlePackageType</key>
   	<string>APPL</string>
   	<key>CFBundleShortVersionString</key>
-diff --exclude=.git -Prc iTerm2/sources/PseudoTerminal.m iTerm2-patched/sources/PseudoTerminal.m
-*** iTerm2/sources/PseudoTerminal.m	2016-08-11 13:47:02.000000000 +1000
---- iTerm2-patched/sources/PseudoTerminal.m	2016-08-10 18:18:47.000000000 +1000
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/PseudoTerminal.m iTerm2-patched/sources/PseudoTerminal.m
+*** iTerm2/sources/PseudoTerminal.m	2017-03-31 13:18:48.000000000 +1100
+--- iTerm2-patched/sources/PseudoTerminal.m	2017-03-31 13:46:42.000000000 +1100
 ***************
-*** 560,566 ****
+*** 601,607 ****
           [myWindow setFrame:initialFrame display:NO];
       }
   
@@ -391,7 +1219,7 @@ diff --exclude=.git -Prc iTerm2/sources/PseudoTerminal.m iTerm2-patched/sources/
   
       DLog(@"Create window %@", myWindow);
   
---- 560,566 ----
+--- 601,607 ----
           [myWindow setFrame:initialFrame display:NO];
       }
   
@@ -399,28 +1227,50 @@ diff --exclude=.git -Prc iTerm2/sources/PseudoTerminal.m iTerm2-patched/sources/
   
       DLog(@"Create window %@", myWindow);
   
-diff --exclude=.git -Prc iTerm2/sources/iTermCursor.m iTerm2-patched/sources/iTermCursor.m
-*** iTerm2/sources/iTermCursor.m	2016-08-11 13:47:02.000000000 +1000
---- iTerm2-patched/sources/iTermCursor.m	2016-08-10 18:20:53.000000000 +1000
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermAdvancedSettingsModel.m iTerm2-patched/sources/iTermAdvancedSettingsModel.m
+*** iTerm2/sources/iTermAdvancedSettingsModel.m	2017-03-31 13:18:46.000000000 +1100
+--- iTerm2-patched/sources/iTermAdvancedSettingsModel.m	2017-03-31 13:57:32.000000000 +1100
 ***************
-*** 84,90 ****
-                 coord:(VT100GridCoord)coord
-            cellHeight:(CGFloat)cellHeight {
-      [backgroundColor set];
-!     NSRectFill(NSMakeRect(rect.origin.x, rect.origin.y, 1, rect.size.height));
-  }
+*** 152,159 ****
+  DEFINE_BOOL(indicateBellsInDockBadgeLabel, YES, @"General: Indicate the number of bells rung while the app is inactive in the dock icon’s badge label");
+  DEFINE_STRING(downloadsDirectory, @"", @"General: Downloads folder.\nIf set, downloaded files go to this location instead of the user’s $HOME/Downloads folder.");
+  DEFINE_FLOAT(pointSizeOfTimeStamp, 10, @"General: Point size for timestamps");
+! DEFINE_INT(terminalMargin, 5, @"General: Width of left and right margins in terminal panes\nHow much space to leave between the left and right edges of the terminal.\nYou must restart iTerm2 after modifying this property. Saved window arrangements should be re-created.");
+! DEFINE_INT(terminalVMargin, 2, @"General: Height of top and bottom margins in terminal panes\nHow much space to leave between the top and bottom edges of the terminal.\nYou must restart iTerm2 after modifying this property. Saved window arrangements should be re-created.");
+  DEFINE_BOOL(zippyTextDrawing, YES, @"General: Use zippy text drawing algorithm?\nThis draws non-ASCII text more quickly but with lower fidelity. This setting is ignored if ligatures are enabled in Prefs > Profiles > Text.");
+  DEFINE_BOOL(useVirtualKeyCodesForDetectingDigits, YES, @"General: On keyboards that require a modifier to press a digit, do not require that modifier for switching between windows, tabs, and panes by number.\nFor example, AZERTY requires you to hold down Shift to enter a number. To switch tabs with Cmd+Number on an AZERTY keyboard, you must enable this setting. Then, for example, Cmd-& switches to tab 1. When this setting is enabled, some user-defined shortcuts may become unavailable because the tab/window/pane switching behavior takes precedence.");
   
-  @end
---- 84,90 ----
-                 coord:(VT100GridCoord)coord
-            cellHeight:(CGFloat)cellHeight {
-      [backgroundColor set];
-!     NSRectFill(NSMakeRect(rect.origin.x, rect.origin.y, 2, rect.size.height));
-  }
+--- 152,159 ----
+  DEFINE_BOOL(indicateBellsInDockBadgeLabel, YES, @"General: Indicate the number of bells rung while the app is inactive in the dock icon’s badge label");
+  DEFINE_STRING(downloadsDirectory, @"", @"General: Downloads folder.\nIf set, downloaded files go to this location instead of the user’s $HOME/Downloads folder.");
+  DEFINE_FLOAT(pointSizeOfTimeStamp, 10, @"General: Point size for timestamps");
+! DEFINE_INT(terminalMargin, 9, @"General: Width of left and right margins in terminal panes\nHow much space to leave between the left and right edges of the terminal.\nYou must restart iTerm2 after modifying this property. Saved window arrangements should be re-created.");
+! DEFINE_INT(terminalVMargin, 8, @"General: Height of top and bottom margins in terminal panes\nHow much space to leave between the top and bottom edges of the terminal.\nYou must restart iTerm2 after modifying this property. Saved window arrangements should be re-created.");
+  DEFINE_BOOL(zippyTextDrawing, YES, @"General: Use zippy text drawing algorithm?\nThis draws non-ASCII text more quickly but with lower fidelity. This setting is ignored if ligatures are enabled in Prefs > Profiles > Text.");
+  DEFINE_BOOL(useVirtualKeyCodesForDetectingDigits, YES, @"General: On keyboards that require a modifier to press a digit, do not require that modifier for switching between windows, tabs, and panes by number.\nFor example, AZERTY requires you to hold down Shift to enter a number. To switch tabs with Cmd+Number on an AZERTY keyboard, you must enable this setting. Then, for example, Cmd-& switches to tab 1. When this setting is enabled, some user-defined shortcuts may become unavailable because the tab/window/pane switching behavior takes precedence.");
   
-  @end
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermCursor.m iTerm2-patched/sources/iTermCursor.m
+*** iTerm2/sources/iTermCursor.m	2017-03-31 13:18:46.000000000 +1100
+--- iTerm2-patched/sources/iTermCursor.m	2017-03-31 14:48:33.000000000 +1100
 ***************
-*** 126,132 ****
+*** 100,106 ****
+               focused:(BOOL)focused
+                 coord:(VT100GridCoord)coord
+               outline:(BOOL)outline {
+!     NSRect cursorRect = NSMakeRect(rect.origin.x, rect.origin.y, 1, rect.size.height);
+      if (outline) {
+          [self drawOutlineOfRect:cursorRect withColor:backgroundColor];
+      } else {
+--- 100,106 ----
+               focused:(BOOL)focused
+                 coord:(VT100GridCoord)coord
+               outline:(BOOL)outline {
+! 	NSRect cursorRect = NSMakeRect(rect.origin.x, rect.origin.y, 2, rect.size.height); // PATCH: 2px-wide vertical cursor
+      if (outline) {
+          [self drawOutlineOfRect:cursorRect withColor:backgroundColor];
+      } else {
+***************
+*** 150,156 ****
           } else {
               // Non-smart
               [self.delegate cursorDrawCharacterAt:coord
@@ -428,23 +1278,23 @@ diff --exclude=.git -Prc iTerm2/sources/iTermCursor.m iTerm2-patched/sources/iTe
                                            context:ctx
                                    backgroundColor:backgroundColor];
           }
---- 126,132 ----
+--- 150,156 ----
           } else {
               // Non-smart
               [self.delegate cursorDrawCharacterAt:coord
-!                                    overrideColor:nil
+! 								   overrideColor:foregroundColor // PATCH: nil for background only
                                            context:ctx
                                    backgroundColor:backgroundColor];
           }
-diff --exclude=.git -Prc iTerm2/sources/iTermRootTerminalView.m iTerm2-patched/sources/iTermRootTerminalView.m
-*** iTerm2/sources/iTermRootTerminalView.m	2016-08-11 13:47:02.000000000 +1000
---- iTerm2-patched/sources/iTermRootTerminalView.m	2016-08-10 18:19:57.000000000 +1000
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermRootTerminalView.m iTerm2-patched/sources/iTermRootTerminalView.m
+*** iTerm2/sources/iTermRootTerminalView.m	2017-03-31 13:18:48.000000000 +1100
+--- iTerm2-patched/sources/iTermRootTerminalView.m	2017-03-31 13:52:59.000000000 +1100
 ***************
 *** 16,22 ****
   #import "iTermToolbeltView.h"
   #import "PTYTabView.h"
   
-! const CGFloat kHorizontalTabBarHeight = 22;
+! const CGFloat kHorizontalTabBarHeight = 24;
   const CGFloat kDivisionViewHeight = 1;
   
   static const CGFloat kMinimumToolbeltSizeInPoints = 100;
@@ -456,58 +1306,9 @@ diff --exclude=.git -Prc iTerm2/sources/iTermRootTerminalView.m iTerm2-patched/s
   const CGFloat kDivisionViewHeight = 1;
   
   static const CGFloat kMinimumToolbeltSizeInPoints = 100;
-diff --exclude=.git -Prc iTerm2/sources/iTermTextDrawingHelper.h iTerm2-patched/sources/iTermTextDrawingHelper.h
-*** iTerm2/sources/iTermTextDrawingHelper.h	2016-08-11 13:47:02.000000000 +1000
---- iTerm2-patched/sources/iTermTextDrawingHelper.h	2016-08-10 18:20:38.000000000 +1000
-***************
-*** 13,22 ****
-  #import "VT100GridTypes.h"
-  
-  // Number of pixels margin on left and right edge.
-! #define MARGIN 5
-  
-  // Number of pixels margin on the top.
-! #define VMARGIN 2
-  
-  @class iTermColorMap;
-  @class iTermFindOnPageHelper;
---- 13,22 ----
-  #import "VT100GridTypes.h"
-  
-  // Number of pixels margin on left and right edge.
-! #define MARGIN 9
-  
-  // Number of pixels margin on the top.
-! #define VMARGIN 8
-  
-  @class iTermColorMap;
-  @class iTermFindOnPageHelper;
-diff --exclude=.git -Prc iTerm2/sources/iTermTextDrawingHelper.m iTerm2-patched/sources/iTermTextDrawingHelper.m
-*** iTerm2/sources/iTermTextDrawingHelper.m	2016-08-11 13:47:02.000000000 +1000
---- iTerm2-patched/sources/iTermTextDrawingHelper.m	2016-08-10 18:33:12.000000000 +1000
-***************
-*** 1074,1080 ****
-      }
-  
-      int savedFontSmoothingStyle = 0;
-!     BOOL useThinStrokes = [self thinStrokes] && ([backgroundColor brightnessComponent] < [color brightnessComponent]);
-      if (useThinStrokes) {
-          CGContextSetShouldSmoothFonts(cgContext, YES);
-          // This seems to be available at least on 10.8 and later. The only reference to it is in
---- 1074,1083 ----
-      }
-  
-      int savedFontSmoothingStyle = 0;
-! 
-! 	// TODO: this might just be the issue
-! 
-!     BOOL useThinStrokes = NO; // [self thinStrokes] && ([backgroundColor brightnessComponent] < [color brightnessComponent]);
-      if (useThinStrokes) {
-          CGContextSetShouldSmoothFonts(cgContext, YES);
-          // This seems to be available at least on 10.8 and later. The only reference to it is in
-diff -Prc -x '*.orig' -x '*.rej' iTerm2/sources/iTermTipWindowController.xib iTerm2-borderless/sources/iTermTipWindowController.xib
-*** iTerm2/sources/iTermTipWindowController.xib	2016-07-18 19:24:57.000000000 +1000
---- iTerm2-borderless/sources/iTermTipWindowController.xib	2016-07-18 19:13:00.000000000 +1000
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermTipWindowController.xib iTerm2-patched/sources/iTermTipWindowController.xib
+*** iTerm2/sources/iTermTipWindowController.xib	2017-03-31 13:18:48.000000000 +1100
+--- iTerm2-patched/sources/iTermTipWindowController.xib	2017-03-31 13:46:42.000000000 +1100
 ***************
 *** 1,7 ****
   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
