@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>16A286a</string>
+	<string>16F43c</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDocumentTypes</key>
@@ -59,7 +59,7 @@
 	<key>CFBundleExecutable</key>
 	<string>iTerm2</string>
 	<key>CFBundleGetInfoString</key>
-	<string>3.0.20160811</string>
+	<string>3.1.20170402</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>iTerm2 Help</string>
 	<key>CFBundleHelpBookName</key>
@@ -71,11 +71,11 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Terminal</string>
+	<string>iTerm2</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0.20160811</string>
+	<string>3.1.20170402</string>
 	<key>CFBundleSignature</key>
 	<string>ITRM</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -182,31 +182,74 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>3.0.20160811</string>
+	<string>3.1.20170402</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>8S188o</string>
+	<string>8E162</string>
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
 	<key>DTSDKBuild</key>
-	<string>16A270e</string>
+	<string>16E185</string>
 	<key>DTSDKName</key>
 	<string>macosx10.12</string>
 	<key>DTXcode</key>
-	<string>0800</string>
+	<string>0830</string>
 	<key>DTXcodeBuild</key>
-	<string>8S188o</string>
+	<string>8E162</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
 	<key>NSExtensions</key>
 	<dict/>
+	<key>NSHumanReadableCopyright</key>
+	<string>GPL v2</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>iTermApplication</string>
+	<key>NSServices</key>
+	<array>
+		<dict>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>New iTerm2 Tab Here</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>openTab</string>
+			<key>NSRequiredContext</key>
+			<dict>
+				<key>NSTextContent</key>
+				<string>FilePath</string>
+			</dict>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSFilenamesPboardType</string>
+				<string>public.plain-text</string>
+			</array>
+		</dict>
+		<dict>
+			<key>NSMenuItem</key>
+			<dict>
+				<key>default</key>
+				<string>New iTerm2 Window Here</string>
+			</dict>
+			<key>NSMessage</key>
+			<string>openWindow</string>
+			<key>NSRequiredContext</key>
+			<dict>
+				<key>NSTextContent</key>
+				<string>FilePath</string>
+			</dict>
+			<key>NSSendTypes</key>
+			<array>
+				<string>NSFilenamesPboardType</string>
+				<string>public.plain-text</string>
+			</array>
+		</dict>
+	</array>
 	<key>NSSupportsAutomaticGraphicsSwitching</key>
 	<true/>
 	<key>OSAScriptingDefinition</key>

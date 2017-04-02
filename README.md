@@ -4,15 +4,15 @@
 
 My custom iTerm2 patch and build. Consistently updated.
 
-* Removed titlebar (They added an option for this but this maintains the native macOS window shadow)
+* Removed titlebar
 * Removed tab bar line visible on other borderless patches
 * Native macOS shadow on windows
-* Modified menu bar to resemble Terminal.app shipped with macOS
-* New app icon to resemble the window's appearance
-* Extra window padding
-* Block cursor doesn't change character foreground color
-* 2px-wide vertical bar cursor
-* ~~Reverted to slightly bolder font smoothing~~ They added an option in preferences for this
+* Modified MainMenu to resemble Terminal.app
+* Added advanced option to set width of vertical cursor (*Preferences > Advanced > Vertical cursor width*)
+* Added advanced option to set duration before blinking starts after moving the cursor (*Duration before cursor starts blinking*)
+* Added advanced option to set whether to change the foreground cursor color (*Preferences > Advanced > Set cursor foreground color*)
+* ~~Extra window padding~~ Change the margins in *Preferences > Advanced > General*
+* ~~Reverted to slightly bolder font smoothing~~ Set *Preferences > Profiles > Text > Use thin strokes for anti-alised text* to Never
 
 Copy Terminal.app to /Applications or apply the patch youself. Open an issue if it fails patching.
 
