@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>16F43c</string>
+	<string>16G29</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDocumentTypes</key>
@@ -59,7 +59,7 @@
 	<key>CFBundleExecutable</key>
 	<string>iTerm2</string>
 	<key>CFBundleGetInfoString</key>
-	<string>3.1.20170402</string>
+	<string>3.1.20170730</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>iTerm2 Help</string>
 	<key>CFBundleHelpBookName</key>
@@ -75,7 +75,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.1.20170402</string>
+	<string>3.1.20170730</string>
 	<key>CFBundleSignature</key>
 	<string>ITRM</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -182,11 +182,11 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>3.1.20170402</string>
+	<string>3.1.20170730</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>8E162</string>
+	<string>8E3004b</string>
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
 	<key>DTSDKBuild</key>
@@ -194,9 +194,9 @@
 	<key>DTSDKName</key>
 	<string>macosx10.12</string>
 	<key>DTXcode</key>
-	<string>0830</string>
+	<string>0833</string>
 	<key>DTXcodeBuild</key>
-	<string>8E162</string>
+	<string>8E3004b</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>NSAppleScriptEnabled</key>

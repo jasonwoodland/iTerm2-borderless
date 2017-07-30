@@ -80,6 +80,10 @@
 		<data>
 		dcwK8TrGsbPiVNiXkKK/3xlYcTA=
 		</data>
+		<key>Resources/CopyMode.tiff</key>
+		<data>
+		fr7jKDO0vr3t27BWijegfjWk30M=
+		</data>
 		<key>Resources/DeadForDarkTheme.tiff</key>
 		<data>
 		dgYGySAz/9wcYnBLMMnl+VGNP0U=
@@ -186,7 +190,7 @@
 		</data>
 		<key>Resources/MainMenu.nib</key>
 		<data>
-		CZdYFbiYUw13xFQmWPA1220eveY=
+		REIQnCIOrhcJjTUhufyTCmLqaxs=
 		</data>
 		<key>Resources/MainMenu.strings</key>
 		<data>
@@ -266,7 +270,7 @@
 		</data>
 		<key>Resources/PreferencePanel.nib</key>
 		<data>
-		EpfE8+5v623XedO8RgIdra5VMb8=
+		phVN/xA/f+6YurkxhM1P287tzqk=
 		</data>
 		<key>Resources/PreferencePanel.strings</key>
 		<data>
@@ -458,7 +462,7 @@
 		</data>
 		<key>Resources/iTermHotkeyPreferencesWindowController.nib</key>
 		<data>
-		1/sL5j4fyW4N0R01z8vOPZ0oDzw=
+		Mpn/Oh+FOsGEOuwhh9hQ42oBOh8=
 		</data>
 		<key>Resources/iTermKeyMapping.nib</key>
 		<data>
@@ -470,7 +474,7 @@
 		</data>
 		<key>Resources/iTermPasswordManager.nib</key>
 		<data>
-		blEh/YreezZivjuW1ikPHA/Pzh4=
+		2xGxzCVx/Eh8hQM42kFnkzFjgt8=
 		</data>
 		<key>Resources/iTermPasteSpecialViewController.nib</key>
 		<data>
@@ -498,7 +502,7 @@
 		</data>
 		<key>Resources/image_decoder</key>
 		<data>
-		k76kklmMe0hZYuiwxSxMuBPvjaw=
+		lz4g+ow6JH+3B+t7Tdhj6d9zxEI=
 		</data>
 		<key>Resources/image_decoder.sb</key>
 		<data>
@@ -574,6 +578,15 @@
 			</data>
 			<key>requirement</key>
 			<string>identifier "org.sparkle-project.Sparkle" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: jasonwoodland@me.com (77H58TBMWC)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+		</dict>
+		<key>Frameworks/libclang_rt.asan_osx_dynamic.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			w0W/yxgtWvcKaPXlCCYWjC11MGY=
+			</data>
+			<key>requirement</key>
+			<string>identifier "libclang_rt.asan_osx_dynamic" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: jasonwoodland@me.com (77H58TBMWC)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 		</dict>
 		<key>Resources/AboutWindow.nib</key>
 		<dict>
@@ -782,6 +795,17 @@
 			<key>hash2</key>
 			<data>
 			c08IVEI/h6xHB03YxCk9lIQ2cN/FlmjWGVuJRlGBAsA=
+			</data>
+		</dict>
+		<key>Resources/CopyMode.tiff</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			fr7jKDO0vr3t27BWijegfjWk30M=
+			</data>
+			<key>hash2</key>
+			<data>
+			En3XhPz008jYl2j38nKcn7LuN5YY9E2YFE7quZPalxg=
 			</data>
 		</dict>
 		<key>Resources/DeadForDarkTheme.tiff</key>
@@ -1074,11 +1098,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CZdYFbiYUw13xFQmWPA1220eveY=
+			REIQnCIOrhcJjTUhufyTCmLqaxs=
 			</data>
 			<key>hash2</key>
 			<data>
-			HYOw+P6tOByFqaPHWFbN7lrP95s3HlXyxpC/9/NQbGY=
+			3glasmLmyz3f7BhjvJN3Cr2ydrIHIcy/cBD2cP7bQdU=
 			</data>
 		</dict>
 		<key>Resources/MainMenu.strings</key>
@@ -1294,11 +1318,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EpfE8+5v623XedO8RgIdra5VMb8=
+			phVN/xA/f+6YurkxhM1P287tzqk=
 			</data>
 			<key>hash2</key>
 			<data>
-			V32smGyEruJLpsqG25w6KqM1hY6d/tp2EVCFRJdePuw=
+			/VxX6LZjFZ+8ux1a1zr0FZtVaYyeS9nGNwOujiWZ6ZU=
 			</data>
 		</dict>
 		<key>Resources/PreferencePanel.strings</key>
@@ -1822,11 +1846,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1/sL5j4fyW4N0R01z8vOPZ0oDzw=
+			Mpn/Oh+FOsGEOuwhh9hQ42oBOh8=
 			</data>
 			<key>hash2</key>
 			<data>
-			hIKrXLBqdMq77mm2Q7whMi6iSR9i1u/7Ri6txTufoR0=
+			PwJxkJROT4pncHTBmNnQYcPOx+gy1QmNf53r40NwEVo=
 			</data>
 		</dict>
 		<key>Resources/iTermKeyMapping.nib</key>
@@ -1855,11 +1879,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			blEh/YreezZivjuW1ikPHA/Pzh4=
+			2xGxzCVx/Eh8hQM42kFnkzFjgt8=
 			</data>
 			<key>hash2</key>
 			<data>
-			N7/48Rw14+cxTCKtx/ee51GOU8deRDNKpM1MnYLSXt0=
+			mhG/flG6CSiwdkRSCqv4w/cBY7UqdTkG8/R3GuEnciE=
 			</data>
 		</dict>
 		<key>Resources/iTermPasteSpecialViewController.nib</key>
@@ -1932,11 +1956,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			k76kklmMe0hZYuiwxSxMuBPvjaw=
+			lz4g+ow6JH+3B+t7Tdhj6d9zxEI=
 			</data>
 			<key>hash2</key>
 			<data>
-			/n4yMwgkoYzbwEdxNkLWdDrr7uidenzsb0Cy3uqhP7k=
+			veXvSVeCC5HUcXMcHbWlI/MIcSxYPcJgJJHJZDWhqZs=
 			</data>
 		</dict>
 		<key>Resources/image_decoder.sb</key>
