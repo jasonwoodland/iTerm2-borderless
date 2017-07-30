@@ -1,265 +1,40 @@
-Binary files iTerm2/.DS_Store and iTerm2-patched/.DS_Store differ
 diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/Interfaces/MainMenu.xib iTerm2-patched/Interfaces/MainMenu.xib
-*** iTerm2/Interfaces/MainMenu.xib	2017-04-02 13:20:53.000000000 +1000
---- iTerm2-patched/Interfaces/MainMenu.xib	2017-04-02 15:54:16.000000000 +1000
+*** iTerm2/Interfaces/MainMenu.xib	2017-07-30 17:21:39.000000000 +1000
+--- iTerm2-patched/Interfaces/MainMenu.xib	2017-07-30 17:17:23.000000000 +1000
 ***************
-*** 1,8 ****
+*** 1,5 ****
   <?xml version="1.0" encoding="UTF-8"?>
-! <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+! <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
       <dependencies>
-!         <deployment identifier="macosx"/>
-!         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+          <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
       </dependencies>
-      <objects>
-          <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
---- 1,7 ----
+--- 1,5 ----
   <?xml version="1.0" encoding="UTF-8"?>
-! <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12118" systemVersion="16F43c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+! <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
       <dependencies>
-!         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+          <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
       </dependencies>
-      <objects>
-          <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
 ***************
-*** 14,23 ****
+*** 13,20 ****
           <customObject id="-3" userLabel="Application" customClass="NSObject"/>
           <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
               <items>
 !                 <menuItem title="iTerm2" id="56">
 !                     <menu key="submenu" title="iTerm2" systemMenu="apple" id="57">
                           <items>
-!                             <menuItem title="About iTerm2" id="233">
+                              <menuItem title="About iTerm2" identifier="About iTerm2" id="233">
                                   <connections>
-                                      <action selector="showAbout:" target="201" id="509"/>
-                                  </connections>
---- 13,22 ----
+--- 13,20 ----
           <customObject id="-3" userLabel="Application" customClass="NSObject"/>
           <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
               <items>
 !                 <menuItem title="Terminal" id="56">
 !                     <menu key="submenu" title="Terminal" systemMenu="apple" id="57">
                           <items>
-!                             <menuItem title="About Terminal" id="233">
+                              <menuItem title="About iTerm2" identifier="About iTerm2" id="233">
                                   <connections>
-                                      <action selector="showAbout:" target="201" id="509"/>
-                                  </connections>
 ***************
-*** 63,69 ****
-                              <menuItem isSeparatorItem="YES" id="144">
-                                  <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                              </menuItem>
-!                             <menuItem title="Hide iTerm2" keyEquivalent="h" id="134">
-                                  <connections>
-                                      <action selector="hide:" target="-2" id="152"/>
-                                  </connections>
---- 62,68 ----
-                              <menuItem isSeparatorItem="YES" id="144">
-                                  <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                              </menuItem>
-!                             <menuItem title="Hide Terminal" keyEquivalent="h" id="134">
-                                  <connections>
-                                      <action selector="hide:" target="-2" id="152"/>
-                                  </connections>
-***************
-*** 89,101 ****
-                                  </connections>
-                              </menuItem>
-                              <menuItem isSeparatorItem="YES" id="1176"/>
-!                             <menuItem title="Make iTerm2 Default Term" keyEquivalent="\" id="1470">
-                                  <modifierMask key="keyEquivalentModifierMask" shift="YES" control="YES" command="YES"/>
-                                  <connections>
-                                      <action selector="makeDefaultTerminal:" target="201" id="1472"/>
-                                  </connections>
-                              </menuItem>
-!                             <menuItem title="Make Terminal Default Term" alternate="YES" keyEquivalent="\" id="1473">
-                                  <modifierMask key="keyEquivalentModifierMask" shift="YES" control="YES" option="YES" command="YES"/>
-                                  <connections>
-                                      <action selector="unmakeDefaultTerminal:" target="201" id="1475"/>
---- 88,100 ----
-                                  </connections>
-                              </menuItem>
-                              <menuItem isSeparatorItem="YES" id="1176"/>
-!                             <menuItem title="Make Default Terminal" keyEquivalent="\" id="1470">
-                                  <modifierMask key="keyEquivalentModifierMask" shift="YES" control="YES" command="YES"/>
-                                  <connections>
-                                      <action selector="makeDefaultTerminal:" target="201" id="1472"/>
-                                  </connections>
-                              </menuItem>
-!                             <menuItem title="Restore Default Terminal" alternate="YES" keyEquivalent="\" id="1473">
-                                  <modifierMask key="keyEquivalentModifierMask" shift="YES" control="YES" option="YES" command="YES"/>
-                                  <connections>
-                                      <action selector="unmakeDefaultTerminal:" target="201" id="1475"/>
-***************
-*** 108,114 ****
-                                  </connections>
-                              </menuItem>
-                              <menuItem isSeparatorItem="YES" id="1469"/>
-!                             <menuItem title="Quit iTerm2" keyEquivalent="q" id="136">
-                                  <connections>
-                                      <action selector="terminate:" target="-1" id="532"/>
-                                  </connections>
---- 107,113 ----
-                                  </connections>
-                              </menuItem>
-                              <menuItem isSeparatorItem="YES" id="1469"/>
-!                             <menuItem title="Quit Terminal" keyEquivalent="q" id="136">
-                                  <connections>
-                                      <action selector="terminate:" target="-1" id="532"/>
-                                  </connections>
-***************
-*** 715,863 ****
-                          </items>
-                      </menu>
-                  </menuItem>
--                 <menuItem title="Session" id="ZGW-Bo-6S6">
--                     <modifierMask key="keyEquivalentModifierMask"/>
--                     <menu key="submenu" title="Session" id="3Ow-tu-l1x">
--                         <items>
--                             <menuItem title="Edit Session…" keyEquivalent="i" id="954">
--                                 <connections>
--                                     <action selector="editCurrentSession:" target="201" id="955"/>
--                                 </connections>
--                             </menuItem>
--                             <menuItem isSeparatorItem="YES" id="w7i-MX-J2b">
--                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
--                             </menuItem>
--                             <menuItem title="Run Coprocess…" keyEquivalent="r" id="1305">
--                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
--                                 <connections>
--                                     <action selector="runCoprocess:" target="-1" id="1320"/>
--                                 </connections>
--                             </menuItem>
--                             <menuItem title="Stop Coprocess" keyEquivalent="R" id="1321">
--                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
--                                 <connections>
--                                     <action selector="stopCoprocess:" target="-1" id="1325"/>
--                                 </connections>
--                             </menuItem>
--                             <menuItem isSeparatorItem="YES" id="xtQ-dE-5vt">
--                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
--                             </menuItem>
--                             <menuItem title="Restart Session" id="Jvo-Bw-UNg">
--                                 <modifierMask key="keyEquivalentModifierMask"/>
--                                 <connections>
--                                     <action selector="restartSession:" target="-1" id="zO6-It-s2w"/>
--                                 </connections>
--                             </menuItem>
--                             <menuItem isSeparatorItem="YES" id="ibp-nX-yTw">
--                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
--                             </menuItem>
--                             <menuItem title="Open Autocomplete..." keyEquivalent=";" id="1144">
--                                 <connections>
--                                     <action selector="openAutocomplete:" target="-1" id="1146"/>
--                                 </connections>
--                             </menuItem>
--                             <menuItem title="Open Command History..." keyEquivalent=";" id="MXE-be-qxv">
--                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
--                                 <connections>
--                                     <action selector="openCommandHistory:" target="-1" id="XHr-bn-Hbc"/>
--                                 </connections>
--                             </menuItem>
--                             <menuItem title="Open Recent Directories..." keyEquivalent="/" id="7X6-Am-EEB">
--                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
--                                 <connections>
--                                     <action selector="openDirectories:" target="-1" id="U0c-KD-2xF"/>
--                                 </connections>
--                             </menuItem>
--                             <menuItem title="Open Paste History..." keyEquivalent="H" id="1142">
--                                 <connections>
--                                     <action selector="openPasteHistory:" target="-1" id="1143"/>
--                                 </connections>
--                             </menuItem>
--                             <menuItem isSeparatorItem="YES" id="908">
--                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
--                             </menuItem>
--                             <menuItem title="Reset" keyEquivalent="r" id="907">
--                                 <connections>
--                                     <action selector="reset:" target="-1" id="909"/>
--                                 </connections>
--                             </menuItem>
--                             <menuItem title="Reset Character Set" id="1500">
--                                 <modifierMask key="keyEquivalentModifierMask"/>
--                                 <connections>
--                                     <action selector="resetCharset:" target="-1" id="1502"/>
--                                 </connections>
--                             </menuItem>
--                             <menuItem isSeparatorItem="YES" id="Sq7-yQ-kOu">
--                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
--                             </menuItem>
--                             <menuItem title="Log" id="227">
--                                 <menu key="submenu" title="Log" autoenablesItems="NO" id="228">
--                                     <items>
--                                         <menuItem title="Start" id="229">
--                                             <connections>
--                                                 <action selector="logStart:" target="-1" id="231"/>
--                                             </connections>
--                                         </menuItem>
--                                         <menuItem title="Stop" id="230">
--                                             <connections>
--                                                 <action selector="logStop:" target="-1" id="232"/>
--                                             </connections>
--                                         </menuItem>
--                                     </items>
--                                 </menu>
--                             </menuItem>
--                             <menuItem isSeparatorItem="YES" id="vXn-Fa-KDE"/>
--                             <menuItem title="Bury Session" keyEquivalent="b" id="m8k-FC-JBb">
--                                 <connections>
--                                     <action selector="bury:" target="-1" id="jki-EJ-MEs"/>
--                                 </connections>
--                             </menuItem>
--                             <menuItem title="Buried Sessions" id="Weo-nd-iLL">
--                                 <menu key="submenu" title="Buried Sessions" autoenablesItems="NO" id="PTu-aD-qbz"/>
--                             </menuItem>
--                         </items>
--                     </menu>
--                 </menuItem>
--                 <menuItem title="Profiles" id="591">
--                     <menu key="submenu" title="Profiles" id="592">
--                         <items>
--                             <menuItem title="Open Profiles…" keyEquivalent="o" id="952">
--                                 <connections>
--                                     <action selector="showBookmarkWindow:" target="201" id="953"/>
--                                 </connections>
--                             </menuItem>
--                             <menuItem isSeparatorItem="YES" id="868">
--                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
--                             </menuItem>
--                             <menuItem title="Press Option for New Window" id="875"/>
--                             <menuItem title="Open In New Window" alternate="YES" id="878">
--                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
--                             </menuItem>
--                             <menuItem isSeparatorItem="YES" id="877">
--                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
--                             </menuItem>
--                         </items>
--                     </menu>
--                 </menuItem>
--                 <menuItem title="Toolbelt" id="1295">
--                     <modifierMask key="keyEquivalentModifierMask"/>
--                     <menu key="submenu" title="Toolbelt" id="1296">
--                         <items>
--                             <menuItem title="Show Toolbelt" keyEquivalent="B" id="1297">
--                                 <connections>
--                                     <action selector="toggleToolbeltVisibility:" target="-1" id="v3c-uP-c8Q"/>
--                                 </connections>
--                             </menuItem>
--                             <menuItem title="Set Default Width" id="81r-Vc-nVm">
--                                 <modifierMask key="keyEquivalentModifierMask"/>
--                                 <connections>
--                                     <action selector="setDefaultToolbeltWidth:" target="-1" id="QNN-Mh-iac"/>
--                                 </connections>
--                             </menuItem>
--                             <menuItem isSeparatorItem="YES" id="1298"/>
--                         </items>
--                     </menu>
--                 </menuItem>
-                  <menuItem title="Window" id="19">
-                      <menu key="submenu" title="Window" systemMenu="window" id="24">
-                          <items>
---- 714,719 ----
-***************
-*** 1095,1115 ****
+*** 1106,1126 ****
           </menu>
           <customObject id="201" userLabel="iTermApplicationDelegate" customClass="iTermApplicationDelegate">
               <connections>
@@ -281,21 +56,12 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/Interfaces/MainMenu.xib i
                   <outlet property="useTransparency" destination="1228" id="1230"/>
                   <outlet property="windowArrangementsAsTabs_" destination="z6V-EJ-Ntf" id="wse-Wc-WVw"/>
                   <outlet property="windowArrangements_" destination="1280" id="1285"/>
---- 951,966 ----
-Only in iTerm2/ThirdParty/RegexKitLite: ._License.html
-Only in iTerm2/ThirdParty/RegexKitLite: ._License.rtf
-Only in iTerm2/ThirdParty/RegexKitLite: ._RegexKitLite.html
-Only in iTerm2/ThirdParty/RegexKitLite: ._RegexKitLite.m
-Only in iTerm2/ThirdParty/RegexKitLite: ._examples
-Only in iTerm2/ThirdParty/RegexKitLite/examples: ._NSString-HexConversion.h
-Only in iTerm2/ThirdParty/RegexKitLite/examples: ._compiledRegexCache.d
-Only in iTerm2/ThirdParty/RegexKitLite/examples: ._link_example.m
-Only in iTerm2/ThirdParty/RegexKitLite/examples: ._utf16ConversionCache.d
+--- 1106,1121 ----
 diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.pbxproj iTerm2-patched/iTerm2.xcodeproj/project.pbxproj
-*** iTerm2/iTerm2.xcodeproj/project.pbxproj	2017-04-02 13:20:53.000000000 +1000
---- iTerm2-patched/iTerm2.xcodeproj/project.pbxproj	2017-04-02 17:14:30.000000000 +1000
+*** iTerm2/iTerm2.xcodeproj/project.pbxproj	2017-07-30 17:21:39.000000000 +1000
+--- iTerm2-patched/iTerm2.xcodeproj/project.pbxproj	2017-07-30 16:59:46.000000000 +1000
 ***************
-*** 7151,7157 ****
+*** 7199,7205 ****
   						DevelopmentTeam = H7V7XYVQ7D;
   					};
   					874206460564169600CFC3F1 = {
@@ -303,7 +69,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   						ProvisioningStyle = Automatic;
   					};
   					A66717851DCE36C3000CE608 = {
---- 7151,7157 ----
+--- 7199,7205 ----
   						DevelopmentTeam = H7V7XYVQ7D;
   					};
   					874206460564169600CFC3F1 = {
@@ -312,7 +78,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   					};
   					A66717851DCE36C3000CE608 = {
 ***************
-*** 8916,8922 ****
+*** 8980,8986 ****
   				CODE_SIGN_IDENTITY = "Mac Developer";
   				COMBINE_HIDPI_IMAGES = YES;
   				COPY_PHASE_STRIP = YES;
@@ -320,7 +86,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   				FRAMEWORK_SEARCH_PATHS = (
   					"$(inherited)",
   					"$(SRCROOT)",
---- 8916,8922 ----
+--- 8980,8986 ----
   				CODE_SIGN_IDENTITY = "Mac Developer";
   				COMBINE_HIDPI_IMAGES = YES;
   				COPY_PHASE_STRIP = YES;
@@ -329,7 +95,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   					"$(inherited)",
   					"$(SRCROOT)",
 ***************
-*** 8924,8930 ****
+*** 9121,9127 ****
   					"$(PROJECT_DIR)/ThirdParty",
   					"$(PROJECT_DIR)/ColorPicker",
   				);
@@ -337,7 +103,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   				GCC_OPTIMIZATION_LEVEL = 3;
   				GCC_VERSION = "";
   				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
---- 8924,8931 ----
+--- 9121,9128 ----
   					"$(PROJECT_DIR)/ThirdParty",
   					"$(PROJECT_DIR)/ColorPicker",
   				);
@@ -347,8 +113,8 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   				GCC_VERSION = "";
   				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 ***************
-*** 8949,8954 ****
---- 8950,8956 ----
+*** 9210,9215 ****
+--- 9211,9217 ----
   					"$(inherited)",
   					"\"$(SRCROOT)/ThirdParty/Growl.framework\"",
   				);
@@ -357,7 +123,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   				OTHER_CODE_SIGN_FLAGS = "--deep";
   				OTHER_LDFLAGS = (
 ***************
-*** 10096,10102 ****
+*** 10161,10167 ****
   				COMBINE_HIDPI_IMAGES = YES;
   				COPY_PHASE_STRIP = NO;
   				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -365,7 +131,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   				FRAMEWORK_SEARCH_PATHS = (
   					"$(inherited)",
   					"$(SRCROOT)",
---- 10098,10104 ----
+--- 10163,10169 ----
   				COMBINE_HIDPI_IMAGES = YES;
   				COPY_PHASE_STRIP = NO;
   				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -374,7 +140,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   					"$(inherited)",
   					"$(SRCROOT)",
 ***************
-*** 10105,10111 ****
+*** 10170,10176 ****
   					"$(PROJECT_DIR)/ColorPicker",
   				);
   				GCC_DYNAMIC_NO_PIC = NO;
@@ -382,7 +148,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   				GCC_OPTIMIZATION_LEVEL = 0;
   				GCC_VERSION = "";
   				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
---- 10107,10114 ----
+--- 10172,10179 ----
   					"$(PROJECT_DIR)/ColorPicker",
   				);
   				GCC_DYNAMIC_NO_PIC = NO;
@@ -392,8 +158,8 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   				GCC_VERSION = "";
   				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 ***************
-*** 10131,10136 ****
---- 10134,10140 ----
+*** 10196,10201 ****
+--- 10199,10205 ----
   					"\"$(SRCROOT)/ThirdParty/Growl.framework\"",
   				);
   				LINK_WITH_STANDARD_LIBRARIES = YES;
@@ -402,7 +168,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   				"OTHER_CFLAGS[arch=*]" = "-DITERM_DEBUG=1";
   				OTHER_CODE_SIGN_FLAGS = "--deep";
 ***************
-*** 10165,10171 ****
+*** 10230,10236 ****
   				CODE_SIGN_IDENTITY = "Mac Developer";
   				COMBINE_HIDPI_IMAGES = YES;
   				COPY_PHASE_STRIP = YES;
@@ -410,7 +176,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   				FRAMEWORK_SEARCH_PATHS = (
   					"$(inherited)",
   					"$(SRCROOT)",
---- 10169,10175 ----
+--- 10234,10240 ----
   				CODE_SIGN_IDENTITY = "Mac Developer";
   				COMBINE_HIDPI_IMAGES = YES;
   				COPY_PHASE_STRIP = YES;
@@ -419,7 +185,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   					"$(inherited)",
   					"$(SRCROOT)",
 ***************
-*** 10173,10180 ****
+*** 10238,10245 ****
   					"$(PROJECT_DIR)/ThirdParty",
   					"$(PROJECT_DIR)/ColorPicker",
   				);
@@ -428,7 +194,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   				GCC_VERSION = "";
   				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
   				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
---- 10177,10185 ----
+--- 10242,10250 ----
   					"$(PROJECT_DIR)/ThirdParty",
   					"$(PROJECT_DIR)/ColorPicker",
   				);
@@ -439,8 +205,8 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
   				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 ***************
-*** 10198,10203 ****
---- 10203,10209 ----
+*** 10263,10268 ****
+--- 10268,10274 ----
   					"$(inherited)",
   					"\"$(SRCROOT)/ThirdParty/Growl.framework\"",
   				);
@@ -448,12 +214,11 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/iTerm2.xcodeproj/project.
   				MACOSX_DEPLOYMENT_TARGET = 10.10;
   				"OTHER_CFLAGS[arch=*]" = "";
   				OTHER_CODE_SIGN_FLAGS = "--deep";
-Binary files iTerm2/iTerm2.xcodeproj/project.xcworkspace/xcuserdata/jason.xcuserdatad/UserInterfaceState.xcuserstate and iTerm2-patched/iTerm2.xcodeproj/project.xcworkspace/xcuserdata/jason.xcuserdatad/UserInterfaceState.xcuserstate differ
 diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/PseudoTerminal.m iTerm2-patched/sources/PseudoTerminal.m
-*** iTerm2/sources/PseudoTerminal.m	2017-04-02 13:20:53.000000000 +1000
---- iTerm2-patched/sources/PseudoTerminal.m	2017-04-02 17:18:51.000000000 +1000
+*** iTerm2/sources/PseudoTerminal.m	2017-07-30 17:21:39.000000000 +1000
+--- iTerm2-patched/sources/PseudoTerminal.m	2017-07-30 16:59:46.000000000 +1000
 ***************
-*** 601,607 ****
+*** 635,641 ****
           [myWindow setFrame:initialFrame display:NO];
       }
   
@@ -461,7 +226,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/PseudoTerminal.m 
   
       DLog(@"Create window %@", myWindow);
   
---- 601,607 ----
+--- 635,641 ----
           [myWindow setFrame:initialFrame display:NO];
       }
   
@@ -470,8 +235,8 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/PseudoTerminal.m 
       DLog(@"Create window %@", myWindow);
   
 diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermAdvancedSettingsModel.h iTerm2-patched/sources/iTermAdvancedSettingsModel.h
-*** iTerm2/sources/iTermAdvancedSettingsModel.h	2017-04-02 13:20:54.000000000 +1000
---- iTerm2-patched/sources/iTermAdvancedSettingsModel.h	2017-04-02 17:18:52.000000000 +1000
+*** iTerm2/sources/iTermAdvancedSettingsModel.h	2017-07-30 17:21:39.000000000 +1000
+--- iTerm2-patched/sources/iTermAdvancedSettingsModel.h	2017-07-30 16:59:46.000000000 +1000
 ***************
 *** 23,28 ****
 --- 23,31 ----
@@ -485,8 +250,8 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermAdvancedSett
   + (BOOL)neverWarnAboutOverrides;
   + (BOOL)neverWarnAboutPossibleOverrides;
 diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermAdvancedSettingsModel.m iTerm2-patched/sources/iTermAdvancedSettingsModel.m
-*** iTerm2/sources/iTermAdvancedSettingsModel.m	2017-04-02 13:20:54.000000000 +1000
---- iTerm2-patched/sources/iTermAdvancedSettingsModel.m	2017-04-02 17:18:52.000000000 +1000
+*** iTerm2/sources/iTermAdvancedSettingsModel.m	2017-07-30 17:21:39.000000000 +1000
+--- iTerm2-patched/sources/iTermAdvancedSettingsModel.m	2017-07-30 17:16:53.000000000 +1000
 ***************
 *** 109,114 ****
 --- 109,118 ----
@@ -501,20 +266,20 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermAdvancedSett
   // For these, 1 is more aggressive and 0 turns the feature off:
   DEFINE_FLOAT(smartCursorColorBgThreshold, 0.5, @"Terminal: Threshold for Smart Cursor Color for background color (0 to 1).\n0 means the cursor’s background color will always be the cell’s text color, while 1 means it will always be black or white.");
 ***************
-*** 129,134 ****
---- 133,139 ----
+*** 130,135 ****
+--- 134,140 ----
   DEFINE_BOOL(zeroWidthSpaceAdvancesCursor, YES, @"Terminal: Zero-Width Space (U+200B) advances cursor?\nWhile a zero-width space should not advance the cursor per the Unicode spec, both Terminal.app and Konsole do this, and Weechat depends on it. You must restart iTerm2 after changing this setting.");
   DEFINE_BOOL(fullHeightCursor, NO, @"Terminal: Cursor occupies line spacing area.\nIf lines have more than 100% vertical spacing and this setting is enabled the bottom of the cursor will be aligned to the bottom of the spacing area.");
   DEFINE_FLOAT(underlineCursorOffset, 0, @"Terminal: Vertical offset for underline cursor.\nPositive values move it up, negative values move it down.");
 + DEFINE_INT(verticalCursorWidth, 2, @"Terminal: Width for vertical cursor.");
+  DEFINE_BOOL(preventEscapeSequenceFromClearingHistory, NO, @"Terminal: Prevent CSI 3 J from clearing scrollback history?\nThis is also known as thethe terminfo E3 capability.");
   
   #pragma mark Hotkey
-  DEFINE_FLOAT(hotkeyTermAnimationDuration, 0.25, @"Hotkey: Duration in seconds of the hotkey window animation.\nWarning: reducing this value may cause problems if you have multiple displays.");
 diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermCursor.m iTerm2-patched/sources/iTermCursor.m
-*** iTerm2/sources/iTermCursor.m	2017-04-02 13:20:54.000000000 +1000
---- iTerm2-patched/sources/iTermCursor.m	2017-04-02 17:18:52.000000000 +1000
+*** iTerm2/sources/iTermCursor.m	2017-07-30 17:21:39.000000000 +1000
+--- iTerm2-patched/sources/iTermCursor.m	2017-07-30 17:16:09.000000000 +1000
 ***************
-*** 100,106 ****
+*** 109,115 ****
                focused:(BOOL)focused
                  coord:(VT100GridCoord)coord
                outline:(BOOL)outline {
@@ -522,7 +287,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermCursor.m iTe
       if (outline) {
           [self drawOutlineOfRect:cursorRect withColor:backgroundColor];
       } else {
---- 100,106 ----
+--- 109,115 ----
                focused:(BOOL)focused
                  coord:(VT100GridCoord)coord
                outline:(BOOL)outline {
@@ -531,28 +296,30 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermCursor.m iTe
           [self drawOutlineOfRect:cursorRect withColor:backgroundColor];
       } else {
 ***************
-*** 149,156 ****
+*** 199,207 ****
                                        coord:coord];
           } else {
               // Non-smart
               [self.delegate cursorDrawCharacterAt:coord
+                                       doubleWidth:doubleWidth
 !                                    overrideColor:foregroundColor
                                            context:ctx
                                    backgroundColor:backgroundColor];
           }
---- 149,157 ----
+--- 199,208 ----
                                        coord:coord];
           } else {
               // Non-smart
-+              // PATCH: (Modified) Set cursor foreground color
++             // PATCH: (Modified) Set cursor foreground color
               [self.delegate cursorDrawCharacterAt:coord
+                                       doubleWidth:doubleWidth
 !                                    overrideColor:[iTermAdvancedSettingsModel setCursorForegroundColor] == YES ? foregroundColor : nil
                                            context:ctx
                                    backgroundColor:backgroundColor];
           }
 diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermRootTerminalView.m iTerm2-patched/sources/iTermRootTerminalView.m
-*** iTerm2/sources/iTermRootTerminalView.m	2017-04-02 13:20:54.000000000 +1000
---- iTerm2-patched/sources/iTermRootTerminalView.m	2017-04-02 17:18:52.000000000 +1000
+*** iTerm2/sources/iTermRootTerminalView.m	2017-07-30 17:21:39.000000000 +1000
+--- iTerm2-patched/sources/iTermRootTerminalView.m	2017-07-30 16:59:46.000000000 +1000
 ***************
 *** 16,22 ****
   #import "iTermToolbeltView.h"
@@ -571,10 +338,10 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermRootTerminal
   
   static const CGFloat kMinimumToolbeltSizeInPoints = 100;
 diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermTextDrawingHelper.m iTerm2-patched/sources/iTermTextDrawingHelper.m
-*** iTerm2/sources/iTermTextDrawingHelper.m	2017-04-02 13:20:54.000000000 +1000
---- iTerm2-patched/sources/iTermTextDrawingHelper.m	2017-04-02 17:18:52.000000000 +1000
+*** iTerm2/sources/iTermTextDrawingHelper.m	2017-07-30 17:21:39.000000000 +1000
+--- iTerm2-patched/sources/iTermTextDrawingHelper.m	2017-07-30 16:59:46.000000000 +1000
 ***************
-*** 2375,2384 ****
+*** 2455,2464 ****
   }
   
   - (BOOL)shouldShowCursor {
@@ -585,7 +352,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermTextDrawingH
           // Allow the cursor to blink if it is configured, the window is key, this session is active
           // in the tab, and the cursor has not moved for half a second.
           return _blinkingItemsVisible;
---- 2375,2385 ----
+--- 2455,2465 ----
   }
   
   - (BOOL)shouldShowCursor {

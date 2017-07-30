@@ -11,10 +11,10 @@ My custom iTerm2 patch and build. Consistently updated.
 * Added advanced option to set width of vertical cursor (*Preferences > Advanced > Vertical cursor width*)
 * Added advanced option to set duration before blinking starts after moving the cursor (*Duration before cursor starts blinking*)
 * Added advanced option to set whether to change the foreground cursor color (*Preferences > Advanced > Set cursor foreground color*)
-* ~~Extra window padding~~ Change the margins in *Preferences > Advanced > General*
+* ~~Extra window padding~~ You can change the margins in *Preferences > Advanced > General* now
 * ~~Reverted to slightly bolder font smoothing~~ Set *Preferences > Profiles > Text > Use thin strokes for anti-alised text* to Never
 
-Copy Terminal.app to /Applications or apply the patch youself. Open an issue if it fails patching.
+Copy Terminal.app to /Applications or apply the patch youself. (Open an issue if it fails patching so I can update it)
 
 ## Patch it youself
 
@@ -55,16 +55,24 @@ cp ../iTerm2-borderless/config/com.googlecode.iterm2.plist ~/Library/Preferences
 
 If the terminal looks wrong, go to Terminal > Preferences > Profiles > Window, and set the Style to "No Title Bar". Otherwise, open an issue.
 
-### Font
+### Credits
 
-[12pt Source Code Pro Medium](https://github.com/adobe-fonts/source-code-pro)
+[San Francisco Mono Font](https://developer.apple.com/fonts/)
+[NeXTSTEP Terminal icon](http://galgot.free.fr/wordpress/?p=1410)
 
 ### App icon
 
-1. Open either of the icon PNGs in the config directory with Preview.app
+#### PNG icon
+
+1. Open the PNG it with Preview.app
 2. Press ⌘A, followed by ⌘C to copy the image data to the clipboard.
 3. Right click Terminal.app and click Get Info.
 4. Click the small icon in the top left corner of the inspector and press ⌘V.
+
+#### Apple icon
+
+1. Right click Terminal.app and click Get Info.
+2. Drag the .icns file onto the old icon at the top of the Info panel
 
 ### Moving the window
 
