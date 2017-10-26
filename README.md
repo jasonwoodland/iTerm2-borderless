@@ -10,8 +10,8 @@ My custom iTerm2 patch and build. Consistently updated.
 * Modified MainMenu to resemble Terminal.app
 * Added advanced option to set duration before blinking starts after moving the cursor (*Duration before cursor starts blinking*)
 * Added advanced option to set whether to change the foreground cursor color (*Preferences > Advanced > Set cursor foreground color*)
-* ~~Added advanced option to set width of vertical cursor~~ You can change the cursor width in *Preferences > Advanced > Vertical bar cursor width* now
-* ~~Extra window padding~~ You can change the margins in *Preferences > Advanced > General* now
+* ~~Added advanced option to set width of vertical cursor~~ You can now change the cursor width in *Preferences > Advanced > Vertical bar cursor width*
+* ~~Extra window padding~~ You can now change the margins in *Preferences > Advanced > General*
 * ~~Reverted to slightly bolder font smoothing~~ Set *Preferences > Profiles > Text > Use thin strokes for anti-alised text* to Never
 
 Copy Terminal.app to /Applications or apply the patch youself. (Open an issue if it fails patching so I can update it)
@@ -34,11 +34,11 @@ patch -p1 < ../iTerm2-borderless/iTerm2-borderless.patch
 
 ### Build
 
-The build is in build/Default
+The build is in build/Deployment
 
 ```
-xcodebuild -parallelizeTargets -target iTerm2
-open build/Default
+xcodebuild -parallelizeTargets -target iTerm2 -configuration Deployment
+open build/Deployment
 ```
 
 Drag the app to /Applications.
