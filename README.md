@@ -8,9 +8,9 @@ My custom iTerm2 patch and build. Consistently updated.
 * Removed tab bar line visible on other borderless patches
 * Native macOS shadow on windows
 * Modified MainMenu to resemble Terminal.app
-* Added advanced option to set width of vertical cursor (*Preferences > Advanced > Vertical cursor width*)
 * Added advanced option to set duration before blinking starts after moving the cursor (*Duration before cursor starts blinking*)
 * Added advanced option to set whether to change the foreground cursor color (*Preferences > Advanced > Set cursor foreground color*)
+* ~~Added advanced option to set width of vertical cursor~~ You can change the cursor width in *Preferences > Advanced > Vertical bar cursor width* now
 * ~~Extra window padding~~ You can change the margins in *Preferences > Advanced > General* now
 * ~~Reverted to slightly bolder font smoothing~~ Set *Preferences > Profiles > Text > Use thin strokes for anti-alised text* to Never
 
