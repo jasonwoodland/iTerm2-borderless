@@ -37,7 +37,7 @@ patch -p1 < ../iTerm2-borderless/iTerm2-borderless.patch
 The build is in build/Deployment
 
 ```
-xcodebuild -parallelizeTargets -target iTerm2 -configuration Deployment
+xcodebuild -project iTerm2.xcodeproj -configuration Deployment -target iTerm2 -parallelizeTargets
 open build/Deployment
 ```
 
