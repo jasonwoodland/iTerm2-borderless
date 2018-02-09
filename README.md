@@ -58,7 +58,6 @@ If the terminal looks wrong, go to Terminal > Preferences > Profiles > Window, a
 ### Credits
 
 * [San Francisco Mono Font](https://developer.apple.com/fonts/)
-* [NeXTSTEP Terminal icon](http://galgot.free.fr/wordpress/?p=1410)
 
 ### App icon
 
