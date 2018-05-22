@@ -26,11 +26,11 @@
 		</data>
 		<key>Resources/AppIcon.icns</key>
 		<data>
-		Cm/72ntHAUZVUT06fFjmjRz22hA=
+		S9HNS3srwoD5+QF1TfnDMgLPI2E=
 		</data>
 		<key>Resources/Assets.car</key>
 		<data>
-		MSc+vWDxNzaFIkspSCNKkcjoMQU=
+		zd0nbJB+oKhnwQ7jJvVS5K5Gx0I=
 		</data>
 		<key>Resources/Autocomplete.nib</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>Resources/Licenses.txt</key>
 		<data>
-		G/olub+T6LpApsa6nbRlFnBm7lw=
+		SnLd3ml+SRcvrLjjaMiUhjlwtYo=
 		</data>
 		<key>Resources/LogoFrame.png</key>
 		<data>
@@ -198,11 +198,11 @@
 		</data>
 		<key>Resources/MainMenu.nib</key>
 		<data>
-		6/OyGCDM2b1OA0VlHgCXjeMuLHc=
+		gtLGIKfVWYYoXlpjfcoNiSgO8no=
 		</data>
 		<key>Resources/MainMenu.strings</key>
 		<data>
-		TxdveEXk3Kjkatv5ktldsqrTWaE=
+		iYbCaDifCQz3a7Sc704wgc/r5mE=
 		</data>
 		<key>Resources/Man Page Touch Bar Icon.tiff</key>
 		<data>
@@ -278,7 +278,7 @@
 		</data>
 		<key>Resources/PreferencePanel.nib</key>
 		<data>
-		xSQM/tf6GBPpOz8Z2laUGUt2Lm4=
+		Q9ESyALwPU6VLTnxcKdbI5jjWSA=
 		</data>
 		<key>Resources/PreferencePanel.strings</key>
 		<data>
@@ -450,7 +450,11 @@
 		</data>
 		<key>Resources/default.metallib</key>
 		<data>
-		/SZzhcTyIY+JZQQ+L/f4dy86+Jk=
+		Y6PLTaYA2TPorUUKuqBjokC06Gg=
+		</data>
+		<key>Resources/download.tiff</key>
+		<data>
+		HXj+HZN+wXeF/Rqe4bricF2aGxw=
 		</data>
 		<key>Resources/dsa_pub.pem</key>
 		<data>
@@ -464,9 +468,13 @@
 		<data>
 		fidae4aKl5z/2eYp+RmcZNnrJK0=
 		</data>
+		<key>Resources/iTermBuildingScriptWindowController.nib</key>
+		<data>
+		ly2FvHO1wNY5JIuMZ5TKWaWCkYs=
+		</data>
 		<key>Resources/iTermEditKeyActionWindowController.nib</key>
 		<data>
-		5MC5bJJLzdfXW5KUd2oWwEwwCJg=
+		A/PsMUvAsCrwDJepudTkRZn6c8Y=
 		</data>
 		<key>Resources/iTermHelpMessageViewController.nib</key>
 		<data>
@@ -474,7 +482,7 @@
 		</data>
 		<key>Resources/iTermHotkeyPreferencesWindowController.nib</key>
 		<data>
-		a3v8iN+wL6YjRxjVNgqeDd2gXfc=
+		QcDYuowAgorWLu/7D9vv37ki5x4=
 		</data>
 		<key>Resources/iTermKeyMapping.nib</key>
 		<data>
@@ -483,6 +491,10 @@
 		<key>Resources/iTermOpenQuicklyWindowController.nib</key>
 		<data>
 		yrOkkPFgPy22VxbvrfJaUFuQmSE=
+		</data>
+		<key>Resources/iTermOptionalComponentDownloadWindowController.nib</key>
+		<data>
+		4ZuEuCv40Fh5S9+pSWZY8/b6dNw=
 		</data>
 		<key>Resources/iTermPasswordManager.nib</key>
 		<data>
@@ -500,6 +512,14 @@
 		<data>
 		zYnipmtxJxdaGWGTb1ubM6sjzAo=
 		</data>
+		<key>Resources/iTermScriptConsole.nib</key>
+		<data>
+		C1jHB38+QLC+TiHaRiafg7QeA6Q=
+		</data>
+		<key>Resources/iTermScriptTemplatePickerWindowController.nib</key>
+		<data>
+		Vls5PHaFu+7UBV3rNllZFUydb38=
+		</data>
 		<key>Resources/iTermTipCardViewController.nib</key>
 		<data>
 		iJotNI112Kz/rXqQGMhkyemhd1A=
@@ -514,7 +534,7 @@
 		</data>
 		<key>Resources/image_decoder</key>
 		<data>
-		tS5P7cos5NHs8ohULjqtYEQwL3A=
+		F2hZ1OSzPIk/ERCOt0TlsGUKe0M=
 		</data>
 		<key>Resources/image_decoder.sb</key>
 		<data>
@@ -523,6 +543,10 @@
 		<key>Resources/important.tiff</key>
 		<data>
 		YCBwrVafNgzyeiyo2vrbwbBHJtY=
+		</data>
+		<key>Resources/it2_api_wrapper.sh</key>
+		<data>
+		418JvXquI8OAHzZ4qa2Edr3ve7o=
 		</data>
 		<key>Resources/key.tiff</key>
 		<data>
@@ -544,9 +568,33 @@
 		<data>
 		UjtzA4H+dsBhaoBKvoJsYvII/vQ=
 		</data>
+		<key>Resources/repl_banner.txt</key>
+		<data>
+		NhCRUW4sWKuIAdhgCehL5Z9vYgk=
+		</data>
 		<key>Resources/restore-arrangement.tiff</key>
 		<data>
 		ByM2MZWqD3EB7mbXXGjxJEWPsc0=
+		</data>
+		<key>Resources/rsa_pub.pem</key>
+		<data>
+		8MFB9YPzanrnUlgqRnDgG7HnfNg=
+		</data>
+		<key>Resources/template_basic_daemon.py</key>
+		<data>
+		9FbZMkFKnc+hNqAAeCq6tv7SyrU=
+		</data>
+		<key>Resources/template_basic_simple.py</key>
+		<data>
+		lq4KZqIrQpIsEaILNQrHMnfbFaQ=
+		</data>
+		<key>Resources/template_pyenv_daemon.py</key>
+		<data>
+		85s5RaS8F7u2z6pfKb18aa2v3YM=
+		</data>
+		<key>Resources/template_pyenv_simple.py</key>
+		<data>
+		UpIoYsA5swk3qt9BOHrq8gHBBno=
 		</data>
 		<key>Resources/wrap_to_bottom.png</key>
 		<data>
@@ -563,16 +611,25 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			IDnNDLQbYqeTfdOSRzo/ZOxogqM=
+			3R/NYtP1secWXHG33xsO+LU6KbU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.googlecode.iterm2.ColorPicker" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: jasonwoodland@me.com (77H58TBMWC)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+		</dict>
+		<key>Frameworks/CoreParse.framework</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			O2aneNf6ShdMS+pTGSEbvc8uvSs=
+			</data>
+			<key>requirement</key>
+			<string>identifier "com.inthebeginninggames.CoreParse" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: jasonwoodland@me.com (77H58TBMWC)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 		</dict>
 		<key>Frameworks/Growl.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			zWbInAFQh9zOosjxQRYTAhMIRKs=
+			mNHijKUBrV4d3jlVZP907KBXjqQ=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.growl.growlframework" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: jasonwoodland@me.com (77H58TBMWC)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -581,7 +638,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			SfyVo9taB+70W675HkJTe49gCuc=
+			NJZZQBjtMQNznPUSW4d3mgMVqxI=
 			</data>
 			<key>requirement</key>
 			<string>identifier "se.ninemuses.NMSSH" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: jasonwoodland@me.com (77H58TBMWC)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -590,7 +647,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			QTSspDxU8Uv5les3dxYpmJycwA8=
+			/nCP+bT4VTWCg/qgu7zXecnNpFk=
 			</data>
 			<key>requirement</key>
 			<string>identifier "org.sparkle-project.Sparkle" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: jasonwoodland@me.com (77H58TBMWC)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -654,22 +711,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Cm/72ntHAUZVUT06fFjmjRz22hA=
+			S9HNS3srwoD5+QF1TfnDMgLPI2E=
 			</data>
 			<key>hash2</key>
 			<data>
-			oPP2q47lmrGvQBRU5/FDcX/psKgyZ6BZrLypRgATiCc=
+			GWIZAaLKABsasNhUqIkkxHQaz2w3EAEQoPoYnNUBwhM=
 			</data>
 		</dict>
 		<key>Resources/Assets.car</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MSc+vWDxNzaFIkspSCNKkcjoMQU=
+			zd0nbJB+oKhnwQ7jJvVS5K5Gx0I=
 			</data>
 			<key>hash2</key>
 			<data>
-			qIK6/r5MrFmBLuh8IpKJvUZmBBZ5Hzzc8SlR9k+ZdCQ=
+			Yj5vnPwYaUBPvNcKDK0SEMHXiDkBHA6sjNcc9Whjbds=
 			</data>
 		</dict>
 		<key>Resources/Autocomplete.nib</key>
@@ -1083,11 +1140,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			G/olub+T6LpApsa6nbRlFnBm7lw=
+			SnLd3ml+SRcvrLjjaMiUhjlwtYo=
 			</data>
 			<key>hash2</key>
 			<data>
-			gu2MBIkU4nUNgKacKrppv6BG6qzN2H8k+NT5zkYOA74=
+			kx0sqEqUTzBhOI7kTA7yBWcs01ojpHrhZH4B6PcND7g=
 			</data>
 		</dict>
 		<key>Resources/LogoFrame.png</key>
@@ -1127,22 +1184,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6/OyGCDM2b1OA0VlHgCXjeMuLHc=
+			gtLGIKfVWYYoXlpjfcoNiSgO8no=
 			</data>
 			<key>hash2</key>
 			<data>
-			6EucZL3GnqgA76Mqz1tISN3tYArQqxXXKGHhe1760Fg=
+			3BUsI97kKgwEN8S6W/bwCWHdgcR5RlecEf9FNa46sTQ=
 			</data>
 		</dict>
 		<key>Resources/MainMenu.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TxdveEXk3Kjkatv5ktldsqrTWaE=
+			iYbCaDifCQz3a7Sc704wgc/r5mE=
 			</data>
 			<key>hash2</key>
 			<data>
-			JhuU9Sm/axu249cmyU4Qsy+Qb0EnmakIIGXjW850MAQ=
+			CxiE1snJkZAgzspJQXLCd53SKEyRjdtr4BCcbtoAV6Q=
 			</data>
 		</dict>
 		<key>Resources/Man Page Touch Bar Icon.tiff</key>
@@ -1347,11 +1404,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xSQM/tf6GBPpOz8Z2laUGUt2Lm4=
+			Q9ESyALwPU6VLTnxcKdbI5jjWSA=
 			</data>
 			<key>hash2</key>
 			<data>
-			yMInFo/OOTGw3qXhXcEpVNxK8mnYANkQFwmUBVWOPN8=
+			6kck17X7UAS8NZV6Fzb86Zo11QeXTdYAPnFE/83Y/JA=
 			</data>
 		</dict>
 		<key>Resources/PreferencePanel.strings</key>
@@ -1820,11 +1877,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/SZzhcTyIY+JZQQ+L/f4dy86+Jk=
+			Y6PLTaYA2TPorUUKuqBjokC06Gg=
 			</data>
 			<key>hash2</key>
 			<data>
-			E8zWIGqYn4h302xMr4cKCnDtTWbRGO7LsrFj84r2ozU=
+			k1ftclw6Y+diP+y0L5AbL+EEN+9LoXYHEcxlV5yYQS4=
+			</data>
+		</dict>
+		<key>Resources/download.tiff</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			HXj+HZN+wXeF/Rqe4bricF2aGxw=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZC7WKSXh2QckJkyfMVB9IDARJNX5H7jIB5oKo/vH0+s=
 			</data>
 		</dict>
 		<key>Resources/dsa_pub.pem</key>
@@ -1860,15 +1928,26 @@
 			g2E9mLd1LLzVA7LYg4doOnRv6Lp1LecSDhGvwGBd3EU=
 			</data>
 		</dict>
+		<key>Resources/iTermBuildingScriptWindowController.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ly2FvHO1wNY5JIuMZ5TKWaWCkYs=
+			</data>
+			<key>hash2</key>
+			<data>
+			oMwDrxWcJOP3KFFbcB8U9Z4FdMTlCbIXYZyIjJhiHnI=
+			</data>
+		</dict>
 		<key>Resources/iTermEditKeyActionWindowController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5MC5bJJLzdfXW5KUd2oWwEwwCJg=
+			A/PsMUvAsCrwDJepudTkRZn6c8Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			lumhGn51hciOM9ex83Rt7ZnlHlklJCjotcYuJphrMbs=
+			TZYSWN/+xcp3QPFV7uXWYBiCnIlKsrXZXSsYlKr3DNw=
 			</data>
 		</dict>
 		<key>Resources/iTermHelpMessageViewController.nib</key>
@@ -1886,11 +1965,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			a3v8iN+wL6YjRxjVNgqeDd2gXfc=
+			QcDYuowAgorWLu/7D9vv37ki5x4=
 			</data>
 			<key>hash2</key>
 			<data>
-			lqpxjiEUkq1Bb/jpBaV2nmwGwI9MnsrrMunwluHOOho=
+			SnbDVCNO1LPMUp/obYde3zjXUTZWdZO/InF9adSsLSk=
 			</data>
 		</dict>
 		<key>Resources/iTermKeyMapping.nib</key>
@@ -1913,6 +1992,17 @@
 			<key>hash2</key>
 			<data>
 			PeyH/BBzG+UB2JIrfsWlceiAoXTFnVV3k7dlZM+/Rhw=
+			</data>
+		</dict>
+		<key>Resources/iTermOptionalComponentDownloadWindowController.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			4ZuEuCv40Fh5S9+pSWZY8/b6dNw=
+			</data>
+			<key>hash2</key>
+			<data>
+			VYHEPJvI9Ugrn0w+Sr8nxFqw3oOiTC3Jo2CdC2Ztmww=
 			</data>
 		</dict>
 		<key>Resources/iTermPasswordManager.nib</key>
@@ -1959,6 +2049,28 @@
 			iIwa20LB1nxQynbZA2xouXPo3GYXKtBNOL4Ak5lbyiY=
 			</data>
 		</dict>
+		<key>Resources/iTermScriptConsole.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			C1jHB38+QLC+TiHaRiafg7QeA6Q=
+			</data>
+			<key>hash2</key>
+			<data>
+			FTkkZIgasnNi3TYm1sTFYvc94yMlYU27aFMWquJEnxw=
+			</data>
+		</dict>
+		<key>Resources/iTermScriptTemplatePickerWindowController.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Vls5PHaFu+7UBV3rNllZFUydb38=
+			</data>
+			<key>hash2</key>
+			<data>
+			uLX+8fuwVwNoUY6Olb4/OxTUjO6LPYohmJDixd3MOpw=
+			</data>
+		</dict>
 		<key>Resources/iTermTipCardViewController.nib</key>
 		<dict>
 			<key>hash</key>
@@ -1996,11 +2108,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tS5P7cos5NHs8ohULjqtYEQwL3A=
+			F2hZ1OSzPIk/ERCOt0TlsGUKe0M=
 			</data>
 			<key>hash2</key>
 			<data>
-			wpkmnbaRQRtgUaTwF5OkKXgz+5jxN36Va/gmoGcGM7U=
+			nlYRCf8UzWH359o7AoB+Mtaer3rB0Me1XMFM6atcWMo=
 			</data>
 		</dict>
 		<key>Resources/image_decoder.sb</key>
@@ -2023,6 +2135,17 @@
 			<key>hash2</key>
 			<data>
 			epYqGmYVp8wdLdz/s2Md2fsBMS4DWBOryfHB6isKLDI=
+			</data>
+		</dict>
+		<key>Resources/it2_api_wrapper.sh</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			418JvXquI8OAHzZ4qa2Edr3ve7o=
+			</data>
+			<key>hash2</key>
+			<data>
+			+KM0ECkEn1o+aiB5VqpwjTH1EMIP6vG54lPXq3I82ks=
 			</data>
 		</dict>
 		<key>Resources/key.tiff</key>
@@ -2080,6 +2203,17 @@
 			c0k9257I9HD8ZFT+Kpl0etHv0s7f3J4ZCac7KqDf5w8=
 			</data>
 		</dict>
+		<key>Resources/repl_banner.txt</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			NhCRUW4sWKuIAdhgCehL5Z9vYgk=
+			</data>
+			<key>hash2</key>
+			<data>
+			jPP/2LHclhcliAvLFQ0ygC6ZtBPCjET7oNW4z1HRJkg=
+			</data>
+		</dict>
 		<key>Resources/restore-arrangement.tiff</key>
 		<dict>
 			<key>hash</key>
@@ -2089,6 +2223,61 @@
 			<key>hash2</key>
 			<data>
 			WdHWBwypcu/r6tfnhrnG0TwGWODwIz0TO3avOADdMKo=
+			</data>
+		</dict>
+		<key>Resources/rsa_pub.pem</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			8MFB9YPzanrnUlgqRnDgG7HnfNg=
+			</data>
+			<key>hash2</key>
+			<data>
+			hmWwfebXZHGtx1SuYaGWXiwwHRPLDNpRXCtwiKUNgJY=
+			</data>
+		</dict>
+		<key>Resources/template_basic_daemon.py</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9FbZMkFKnc+hNqAAeCq6tv7SyrU=
+			</data>
+			<key>hash2</key>
+			<data>
+			3DKSQRxIIEkzabvsuvA43s29aOxcEfsuKDB+TPpf70Y=
+			</data>
+		</dict>
+		<key>Resources/template_basic_simple.py</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			lq4KZqIrQpIsEaILNQrHMnfbFaQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			gB/FtGKCT6w6FyEK1RFlNCnf1T1tTA4QZL86igya9OM=
+			</data>
+		</dict>
+		<key>Resources/template_pyenv_daemon.py</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			85s5RaS8F7u2z6pfKb18aa2v3YM=
+			</data>
+			<key>hash2</key>
+			<data>
+			8EvaomonX9B6Pn9AxY3l8yQC4NgnSoQUmv9xEmN43rc=
+			</data>
+		</dict>
+		<key>Resources/template_pyenv_simple.py</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			UpIoYsA5swk3qt9BOHrq8gHBBno=
+			</data>
+			<key>hash2</key>
+			<data>
+			NrhWMvN+07OhWCCXSij5Kvfpqmzwz3UAqtZNln2Ec7g=
 			</data>
 		</dict>
 		<key>Resources/wrap_to_bottom.png</key>

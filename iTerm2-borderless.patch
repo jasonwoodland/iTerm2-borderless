@@ -1,67 +1,38 @@
-diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/Interfaces/MainMenu.strings iTerm2-patched/Interfaces/MainMenu.strings
-*** iTerm2/Interfaces/MainMenu.strings	2017-10-26 17:21:49.000000000 +1100
---- iTerm2-patched/Interfaces/MainMenu.strings	2017-10-26 17:22:50.000000000 +1100
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/PTYSession.m iTerm2-patched/sources/PTYSession.m
+*** iTerm2/sources/PTYSession.m	2018-05-20 23:04:57.000000000 +1000
+--- iTerm2-patched/sources/PTYSession.m	2018-05-22 17:46:55.000000000 +1000
 ***************
-*** 167,173 ****
-  "Window" = "Window";
-  
-  /* NSTextField (iTerm) : <title:iTerm> (oid:510) */
-! "iTerm" = "iTerm";
-  
-  /* NSMenuItem : <title:iTerm Help> (oid:111) */
-  "iTerm Help" = "iTerm Help";
---- 167,173 ----
-  "Window" = "Window";
-  
-  /* NSTextField (iTerm) : <title:iTerm> (oid:510) */
-! "Terminal" = "Terminal";
-  
-  /* NSMenuItem : <title:iTerm Help> (oid:111) */
-  "iTerm Help" = "iTerm Help";
-diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/Interfaces/MainMenu.xib iTerm2-patched/Interfaces/MainMenu.xib
-*** iTerm2/Interfaces/MainMenu.xib	2017-10-26 17:21:49.000000000 +1100
---- iTerm2-patched/Interfaces/MainMenu.xib	2017-10-26 17:22:50.000000000 +1100
-***************
-*** 1,7 ****
-  <?xml version="1.0" encoding="UTF-8"?>
-! <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
-      <dependencies>
-!         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
-      </dependencies>
-      <objects>
-          <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
---- 1,7 ----
-  <?xml version="1.0" encoding="UTF-8"?>
-! <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
-      <dependencies>
-!         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
-      </dependencies>
-      <objects>
-          <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
-***************
-*** 13,20 ****
-          <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-          <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
-              <items>
-!                 <menuItem title="iTerm2" id="56">
-!                     <menu key="submenu" title="iTerm2" systemMenu="apple" id="57">
-                          <items>
-                              <menuItem title="About iTerm2" identifier="About iTerm2" id="233">
-                                  <connections>
---- 13,20 ----
-          <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-          <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
-              <items>
-!                 <menuItem title="Terminal" id="56">
-!                     <menu key="submenu" title="Terminal" systemMenu="apple" id="57">
-                          <items>
-                              <menuItem title="About iTerm2" identifier="About iTerm2" id="233">
-                                  <connections>
+*** 3586,3592 ****
+          if (baseIsBookmarkName && ![iTermPreferences boolForKey:kPreferenceKeyShowProfileName]) {
+              return [NSString stringWithFormat:@"%@", self.jobName];
+          } else {
+!             return [NSString stringWithFormat:@"%@ (%@)", base, self.jobName];
+          }
+      } else {
+          if (baseIsBookmarkName && ![iTermPreferences boolForKey:kPreferenceKeyShowProfileName]) {
+--- 3586,3592 ----
+          if (baseIsBookmarkName && ![iTermPreferences boolForKey:kPreferenceKeyShowProfileName]) {
+              return [NSString stringWithFormat:@"%@", self.jobName];
+          } else {
+!             return [NSString stringWithFormat:@"%@", base]; // PATCH: (Modified) don't show job name if title was set
+          }
+      } else {
+          if (baseIsBookmarkName && ![iTermPreferences boolForKey:kPreferenceKeyShowProfileName]) {
 diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/PseudoTerminal.m iTerm2-patched/sources/PseudoTerminal.m
-*** iTerm2/sources/PseudoTerminal.m	2017-10-26 17:21:50.000000000 +1100
---- iTerm2-patched/sources/PseudoTerminal.m	2017-10-26 17:23:11.000000000 +1100
+*** iTerm2/sources/PseudoTerminal.m	2018-05-20 23:04:57.000000000 +1000
+--- iTerm2-patched/sources/PseudoTerminal.m	2018-05-22 16:26:08.000000000 +1000
 ***************
-*** 638,644 ****
+*** 388,393 ****
+--- 388,394 ----
+      if (hotkeyWindowType == iTermHotkeyWindowTypeFloatingPanel) {
+          mask = NSNonactivatingPanelMask;
+      }
++     //mask = NSFullSizeContentViewWindowMask; // PATCH: (Added) Make content view utilise entire window
+      switch (windowType) {
+          case WINDOW_TYPE_TOP:
+          case WINDOW_TYPE_BOTTOM:
+***************
+*** 639,645 ****
           [myWindow setFrame:initialFrame display:NO];
       }
   
@@ -69,17 +40,108 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/PseudoTerminal.m 
   
       DLog(@"Create window %@", myWindow);
   
---- 638,644 ----
+--- 640,649 ----
           [myWindow setFrame:initialFrame display:NO];
       }
   
 !     [myWindow setHasShadow:YES]; // PATCH: (Modified) Native macOS window shadow
+!     
+!     myWindow.titlebarAppearsTransparent = true; // PATCH: (Added) Hides dark title bar strip
+!     //myWindow.titleVisibility = NSWindowTitleHidden; // PATCH: (Added) Hides window title
   
       DLog(@"Create window %@", myWindow);
   
+***************
+*** 1663,1676 ****
+          if (self.window.frame.size.width < 250) {
+              aTitle = [NSString stringWithFormat:@"%d✕%d", session.columns, session.rows];
+          } else {
+!             aTitle = [NSString stringWithFormat:@"%@ \u2014 %d✕%d",
+!                       [self currentSessionName],
+                        [session columns],
+                        [session rows]];
+          }
+          [self setWindowTitle:aTitle];
+      } else {
+!         [self setWindowTitle:[self currentSessionName]];
+      }
+  }
+  
+--- 1667,1685 ----
+          if (self.window.frame.size.width < 250) {
+              aTitle = [NSString stringWithFormat:@"%d✕%d", session.columns, session.rows];
+          } else {
+!             // PATCH (Modified) just change to dimensions while resizing
+!             aTitle = [NSString stringWithFormat:@"%d✕%d",
+                        [session columns],
+                        [session rows]];
+          }
++         
+          [self setWindowTitle:aTitle];
+      } else {
+!         // PATCH: (Added) Change title format
+!         NSString *aTitle;
+!         aTitle = [NSString stringWithFormat:@"Terminal \u2013 %@",
+!                   [self currentSessionName]];
+!         [self setWindowTitle:aTitle];
+      }
+  }
+  
+***************
+*** 4432,4438 ****
+      PTYTab *aTab = [tabViewItem identifier];
+      PseudoTerminal *term = (PseudoTerminal *)[aTabBarControl delegate];
+  
+!     if ([term numberOfTabs] == 1) {
+          [term fitWindowToTabs];
+      } else {
+          [term fitTabToWindow:aTab];
+--- 4441,4447 ----
+      PTYTab *aTab = [tabViewItem identifier];
+      PseudoTerminal *term = (PseudoTerminal *)[aTabBarControl delegate];
+  
+!     if (true) { // PATCH: (Modified) Prevents title bar from showing
+          [term fitWindowToTabs];
+      } else {
+          [term fitTabToWindow:aTab];
+***************
+*** 4936,4944 ****
+          [_contentView.tabBarControl setTabColor:color forTabViewItem:tabViewItem];
+          if ([_contentView.tabView selectedTabViewItem] == tabViewItem) {
+              NSColor* newTabColor = [_contentView.tabBarControl tabColorForTabViewItem:tabViewItem];
+!             if ([_contentView.tabView numberOfTabViewItems] == 1 &&
+!                 [iTermPreferences boolForKey:kPreferenceKeyHideTabBar] &&
+!                 newTabColor) {
+                  [self setBackgroundColor:newTabColor];
+  
+                  [_contentView setColor:newTabColor];
+--- 4945,4954 ----
+          [_contentView.tabBarControl setTabColor:color forTabViewItem:tabViewItem];
+          if ([_contentView.tabView selectedTabViewItem] == tabViewItem) {
+              NSColor* newTabColor = [_contentView.tabBarControl tabColorForTabViewItem:tabViewItem];
+!             if (true) { // PATCH: (Modified) always use the tab color
+!                 // PATCH: (Added) set window title background so it renders properly
+!                 NSTextView *titleView = [self.contentView.window standardWindowButton:NSWindowCloseButton].superview.subviews[3];
+!                 titleView.backgroundColor = [self.tabs[0].sessions[0].colorMap colorForKey:kColorMapBackground];
+                  [self setBackgroundColor:newTabColor];
+  
+                  [_contentView setColor:newTabColor];
+***************
+*** 4963,4968 ****
+--- 4973,4982 ----
+                  break;
+          }
+      }
++     
++     // PATCH: (Added) set window background color to terminal background color
++     backgroundColor = [self.tabs[0].sessions[0].colorMap colorForKey:kColorMapBackground];
++     
+      [self.window setBackgroundColor:backgroundColor];
+      if (backgroundColor != nil && backgroundColor.perceivedBrightness < 0.5) {
+          self.window.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantDark];
 diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermAdvancedSettingsModel.h iTerm2-patched/sources/iTermAdvancedSettingsModel.h
-*** iTerm2/sources/iTermAdvancedSettingsModel.h	2017-10-26 17:21:50.000000000 +1100
---- iTerm2-patched/sources/iTermAdvancedSettingsModel.h	2017-10-26 17:24:34.000000000 +1100
+*** iTerm2/sources/iTermAdvancedSettingsModel.h	2018-05-20 23:04:57.000000000 +1000
+--- iTerm2-patched/sources/iTermAdvancedSettingsModel.h	2018-05-20 22:56:51.000000000 +1000
 ***************
 *** 23,28 ****
 --- 23,30 ----
@@ -92,11 +154,11 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermAdvancedSett
   + (BOOL)neverWarnAboutOverrides;
   + (BOOL)neverWarnAboutPossibleOverrides;
 diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermAdvancedSettingsModel.m iTerm2-patched/sources/iTermAdvancedSettingsModel.m
-*** iTerm2/sources/iTermAdvancedSettingsModel.m	2017-10-26 17:21:50.000000000 +1100
---- iTerm2-patched/sources/iTermAdvancedSettingsModel.m	2017-10-26 17:24:34.000000000 +1100
+*** iTerm2/sources/iTermAdvancedSettingsModel.m	2018-05-20 23:04:57.000000000 +1000
+--- iTerm2-patched/sources/iTermAdvancedSettingsModel.m	2018-05-20 22:56:51.000000000 +1000
 ***************
-*** 111,116 ****
---- 111,120 ----
+*** 133,138 ****
+--- 133,142 ----
   #pragma mark Terminal
   DEFINE_BOOL(traditionalVisualBell, NO, @"Terminal: Visual bell flashes the whole screen, not just a bell icon.");
   DEFINE_FLOAT(timeBetweenBlinks, 0.5, @"Terminal: Cursor blink speed (seconds).");
@@ -108,10 +170,10 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermAdvancedSett
   // For these, 1 is more aggressive and 0 turns the feature off:
   DEFINE_FLOAT(smartCursorColorBgThreshold, 0.5, @"Terminal: Threshold for Smart Cursor Color for background color (0 to 1).\n0 means the cursor’s background color will always be the cell’s text color, while 1 means it will always be black or white.");
 diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermCursor.m iTerm2-patched/sources/iTermCursor.m
-*** iTerm2/sources/iTermCursor.m	2017-10-26 17:21:50.000000000 +1100
---- iTerm2-patched/sources/iTermCursor.m	2017-10-26 17:23:31.000000000 +1100
+*** iTerm2/sources/iTermCursor.m	2018-05-20 23:04:57.000000000 +1000
+--- iTerm2-patched/sources/iTermCursor.m	2018-05-20 22:56:51.000000000 +1000
 ***************
-*** 199,207 ****
+*** 209,217 ****
                                        coord:coord];
           } else {
               // Non-smart
@@ -121,7 +183,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermCursor.m iTe
                                            context:ctx
                                    backgroundColor:backgroundColor];
           }
---- 199,208 ----
+--- 209,218 ----
                                        coord:coord];
           } else {
               // Non-smart
@@ -133,8 +195,8 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermCursor.m iTe
                                    backgroundColor:backgroundColor];
           }
 diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermRootTerminalView.m iTerm2-patched/sources/iTermRootTerminalView.m
-*** iTerm2/sources/iTermRootTerminalView.m	2017-10-26 17:21:50.000000000 +1100
---- iTerm2-patched/sources/iTermRootTerminalView.m	2017-10-26 17:24:06.000000000 +1100
+*** iTerm2/sources/iTermRootTerminalView.m	2018-05-20 23:04:57.000000000 +1000
+--- iTerm2-patched/sources/iTermRootTerminalView.m	2018-05-22 00:15:56.000000000 +1000
 ***************
 *** 16,22 ****
   #import "iTermToolbeltView.h"
@@ -153,10 +215,10 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermRootTerminal
   
   static const CGFloat kMinimumToolbeltSizeInPoints = 100;
 diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermTextDrawingHelper.m iTerm2-patched/sources/iTermTextDrawingHelper.m
-*** iTerm2/sources/iTermTextDrawingHelper.m	2017-10-26 17:21:50.000000000 +1100
---- iTerm2-patched/sources/iTermTextDrawingHelper.m	2017-10-26 17:24:15.000000000 +1100
+*** iTerm2/sources/iTermTextDrawingHelper.m	2018-05-20 23:04:57.000000000 +1000
+--- iTerm2-patched/sources/iTermTextDrawingHelper.m	2018-05-20 22:56:51.000000000 +1000
 ***************
-*** 2543,2552 ****
+*** 2572,2581 ****
   }
   
   - (BOOL)shouldShowCursor {
@@ -167,11 +229,11 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermTextDrawingH
           // Allow the cursor to blink if it is configured, the window is key, this session is active
           // in the tab, and the cursor has not moved for half a second.
           return _blinkingItemsVisible;
---- 2543,2553 ----
+--- 2572,2582 ----
   }
   
   - (BOOL)shouldShowCursor {
-+     // PATCH: (Modified) Blink delat after moving the cursor
++     // PATCH: (Modified) Blink delay after moving the cursor
       if (_cursorBlinking &&
           self.isInKeyWindow &&
           _textViewIsActiveSession &&
@@ -179,3 +241,85 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermTextDrawingH
           // Allow the cursor to blink if it is configured, the window is key, this session is active
           // in the tab, and the cursor has not moved for half a second.
           return _blinkingItemsVisible;
+diff --exclude=.git -x '*.orig' -x '*.rej' -Prc iTerm2/sources/iTermWindowImpl.m iTerm2-patched/sources/iTermWindowImpl.m
+*** iTerm2/sources/iTermWindowImpl.m	2018-05-20 23:04:57.000000000 +1000
+--- iTerm2-patched/sources/iTermWindowImpl.m	2018-05-22 00:15:56.000000000 +1000
+***************
+*** 26,31 ****
+--- 26,33 ----
+      double _cachedTotalOcclusion;
+  
+      NSTimeInterval _timeOfLastWindowTitleChange;
++     
++     NSTextView *titleView;
+  }
+  
+  - (instancetype)initWithContentRect:(NSRect)contentRect
+***************
+*** 42,47 ****
+--- 44,50 ----
+          DLog(@"Invalidate cached occlusion: %@ %p", NSStringFromSelector(_cmd), self);
+          [[iTermWindowOcclusionChangeMonitor sharedInstance] invalidateCachedOcclusion];
+      }
++ 
+      return self;
+  }
+  
+***************
+*** 55,67 ****
+  
+  }
+  
+  - (BOOL)titleChangedRecently {
+      NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
+      return (now > _timeOfLastWindowTitleChange && now - _timeOfLastWindowTitleChange < iTermWindowTitleChangeMinimumInterval);
+  }
+  
+  - (void)setTitle:(NSString *)title {
+!     [super setTitle:title];
+      _timeOfLastWindowTitleChange = [NSDate timeIntervalSinceReferenceDate];
+  }
+  
+--- 58,99 ----
+  
+  }
+  
++ // PATCH: (Added) Modify standard title bar
++ - (void)layoutIfNeeded {
++     NSButton *closeButton = [self.contentView.window standardWindowButton:NSWindowCloseButton];
++     NSButton *miniaturizeButton = [self.contentView.window standardWindowButton:NSWindowMiniaturizeButton];
++     NSButton *fullscreenButton = [self.contentView.window standardWindowButton:NSWindowZoomButton];
++     
++     [closeButton setFrameOrigin:NSMakePoint(12 + 5, -2)];
++     [miniaturizeButton setFrameOrigin:NSMakePoint(32 + 5, -2)];
++     [fullscreenButton setFrameOrigin:NSMakePoint(52 + 5, -2)];
++     
++     NSView *lights = closeButton.superview.superview;
++     NSRect newFrame = lights.frame;
++     //lights.layer.backgroundColor = [NSColor grayColor].CGColor;
++     newFrame.origin.y = self.contentView.frame.size.height - 8;
++     lights.frame = newFrame;
++     
++     NSTextView *titleView = closeButton.superview.subviews[3];
++     
++     titleView.font = [NSFont systemFontOfSize:13];
++     [titleView removeConstraints:titleView.constraints];
++     CGRect frame = titleView.frame;
++     frame.size.width = 200;
++     frame.origin.y = -1;
++     titleView.frame = frame;
++     titleView.drawsBackground = true;
++     
++     [super layoutIfNeeded];
++ }
++ 
+  - (BOOL)titleChangedRecently {
+      NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
+      return (now > _timeOfLastWindowTitleChange && now - _timeOfLastWindowTitleChange < iTermWindowTitleChangeMinimumInterval);
+  }
+  
+  - (void)setTitle:(NSString *)title {
+!     [super setTitle:title]; // PATCH: (Modified) Change window title to "Terminal"
+      _timeOfLastWindowTitleChange = [NSDate timeIntervalSinceReferenceDate];
+  }
+  
