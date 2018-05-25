@@ -14,7 +14,7 @@ My custom iTerm2 patch and build. Consistently updated.
 * ~~Extra window padding~~ You can now change the margins in *Preferences > Advanced > General*
 * ~~Reverted to slightly bolder font smoothing~~ Set *Preferences > Profiles > Text > Use thin strokes for anti-aliased text* to Never
 
-Copy `Terminal.app` to `/Applications` or apply the patch yourself. (Open an issue if it fails patching so I can fix it)
+Copy `iTerm2.app` to `/Applications` or apply the patch yourself. (Open an issue if it fails patching so I can fix it)
 
 ## Patch it yourself
 
