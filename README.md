@@ -8,7 +8,7 @@ My custom iTerm2 patch and build. Consistently updated.
 * Hides the tab bar
 * Fixes window title rendering
 * New window title which displays either the title *or* the job name
-* New advanced options found under *Preferences > Advanced*: (Search for `borderless`)
+* New advanced options found under *Preferences > Advanced*: (Search for *&ldquo;borderless&rdquo;*)
   * ***Standard window buttons horizontal/vertical offset:*** Change the position of the window buttons and titlebar.
   * ***Window title format:*** Set a custom title format
   * ***Set cursor foreground color:*** Set whether to change the cursor foreground color
