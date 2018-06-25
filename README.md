@@ -53,6 +53,28 @@ open build/Deployment
 
 Drag the app to `/Applications`
 
+### 4. Set preferences
+
+In the patched build, go to _Preferences > Appearance_ and disable _Show line under title bar when the tab bar is not visble_
+
+
+#### Set the terminal margins
+
+* Height of top and bottom margins in terminal panes
+* Width of left and right margins in terminal panes
+
+#### Set the title bar margins
+
+* Standard window buttons horizontal offset
+* Standard window buttons vertical offset
+
+#### Set other options I've added
+
+* Duration before cursor starts blinking
+* Set cursor foreground color
+* Window title format
+
 ## To do
 
 - [ ] The title bar drag area needs increasing
+- [ ] Override preferences which break the patch for people (also override margin: 0)
