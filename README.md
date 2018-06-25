@@ -2,21 +2,21 @@
 
 ![iTerm2-borderless](https://github.com/jasonwoodland/iTerm2-borderless/blob/master/Preview.png?raw=true)
 
-My custom iTerm2 patch and build. Consistently updated.
+My custom iTerm2 patch and build. Consistently updated. (Build 3.2.20180526)
 
 * Hides the window title bar
 * Hides the tab bar
 * Fixes window title rendering
 * New window title which displays either the title *or* the job name
 * New advanced options found under *Preferences > Advanced*: (Search for *&ldquo;borderless&rdquo;*)
-  * ***Standard window buttons horizontal/vertical offset:*** Change the position of the window buttons and titlebar.
+  * ***Standard window buttons horizontal/vertical offset:*** Change the position of the window buttons and title bar.
   * ***Window title format:*** Set a custom title format
   * ***Set cursor foreground color:*** Set whether to change the cursor foreground color
   * ***Duration before cursor starts blinking:*** Set a duration for when the cursor should start blinking after it has moved
     
   * ~~***Vertical cursor width***~~ You can now change the cursor width by setting *Vertical bar cursor width*
 * ~~Extra window padding~~ You can now change the margins in *Preferences > Advanced > General*
-* ~~Reverted to slightly bolder font smoothing~~ *Preferences > Profiles > Text > Use thin strokes for anti-aliased text > Never*
+* ~~Reverted to slightly bolder font smoothing~~ Set *Preferences > Profiles > Text > Use thin strokes for anti-aliased text* to *Never*
 
 Copy `iTerm2.app` to `/Applications` or apply the patch yourself. (Open an issue if it fails patching so I can fix it)
 
@@ -55,8 +55,9 @@ Drag the app to `/Applications`
 
 ### 4. Set preferences
 
-In the patched build, go to _Preferences > Appearance_ and disable _Show line under title bar when the tab bar is not visble_
+In the patched build, go to *Preferences > Appearance* and disable *Show line under title bar when the tab bar is not visble*
 
+Next, go to *Preferences > Advanced*
 
 #### Set the terminal margins
 
@@ -68,13 +69,9 @@ In the patched build, go to _Preferences > Appearance_ and disable _Show line un
 * Standard window buttons horizontal offset
 * Standard window buttons vertical offset
 
-#### Set other options I've added
-
-* Duration before cursor starts blinking
-* Set cursor foreground color
-* Window title format
-
 ## To do
 
 - [ ] The title bar drag area needs increasing
+- [ ] Title bar rendering fix displays black rectangles in fullscreen sometimes
+- [ ] Strange line on title bar in macOS Mojave
 - [ ] Override preferences which break the patch for people (also override margin: 0)
