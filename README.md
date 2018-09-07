@@ -18,8 +18,7 @@ My custom iTerm2 patch and build. Consistently updated. (Build 3.2.20180526)
 * ~~Extra window padding~~ You can now change the margins in *Preferences > Advanced > General*
 * ~~Reverted to slightly bolder font smoothing~~ Set *Preferences > Profiles > Text > Use thin strokes for anti-aliased text* to *Never*
 
-Copy `iTerm2.app` to `/Applications` or apply the patch yourself. (Open an issue if it fails patching so I can fix it)
-
+Download the [latest release](https://github.com/jasonwoodland/iTerm2-borderless/releases/latest) and copy `iTerm2.app` to `/Applications`, or apply the patch yourself. (Open an issue if it fails patching so I can fix it)
 ## Patch it yourself
 
 ### 1. Get iTerm2 and iTerm2-borderless
@@ -73,5 +72,5 @@ Next, go to *Preferences > Advanced*
 
 - [ ] The title bar drag area needs increasing
 - [ ] Title bar rendering fix displays black rectangles in fullscreen sometimes
-- [ ] Strange line on title bar in macOS Mojave
+- [x] Strange line on title bar in macOS Mojave
 - [ ] Override preferences which break the patch for people (also override margin: 0)
