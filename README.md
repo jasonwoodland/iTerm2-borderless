@@ -1,4 +1,8 @@
+<p align="center">
+![](https://github.com/jasonwoodland/iTerm2-borderless/blob/master/icons/iTerm2 icon.png?raw=true =128x)
+
 # iTerm2-borderless
+</p>
 
 ![iTerm2-borderless](https://github.com/jasonwoodland/iTerm2-borderless/blob/master/Preview.png?raw=true)
 
