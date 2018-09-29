@@ -1,8 +1,8 @@
 # iTerm2-borderless
 
-![iTerm2-borderless](https://github.com/jasonwoodland/iTerm2-borderless/blob/master/Preview.png?raw=true)
+<img width="794" src="https://github.com/jasonwoodland/iTerm2-borderless/blob/master/Preview.png?raw=true">
 
-My custom iTerm2 patch and build. Consistently updated. (Build 3.2.20180526)
+My custom iTerm2 patch and build. Consistently updated.
 
 * Hides the window title bar
 * Hides the tab bar
