@@ -305,7 +305,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -x build -Prc iTerm2/sources/PseudoTe
       // There's an opportunity for improvement here if there's a tab color and we know the
       // window isn't opaque we could set the titlebar's color, since that works again in 10.14.
 !     // PATCH: (Modified) set window background color so our transparent title bar doesn't show behind the window
-!     backgroundColor = [self.tabs[0].sessions[0].colorMap colorForKey:kColorMapBackground];
+!     backgroundColor = [self.currentSession.colorMap colorForKey:kColorMapBackground];
 ! 
 !     self.window.backgroundColor = backgroundColor;
   }
@@ -319,7 +319,7 @@ diff --exclude=.git -x '*.orig' -x '*.rej' -x build -Prc iTerm2/sources/PseudoTe
       }
 +     
 +     // PATCH: (Added) set window background color to terminal background color
-+     backgroundColor = [self.tabs[0].sessions[0].colorMap colorForKey:kColorMapBackground];
++     backgroundColor = [self.currentSession.colorMap colorForKey:kColorMapBackground];
 +     
       [self.window setBackgroundColor:backgroundColor];
       if (backgroundColor != nil && backgroundColor.perceivedBrightness < 0.5) {
