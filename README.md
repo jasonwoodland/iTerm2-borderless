@@ -1,5 +1,5 @@
 <p align="center">
-<img width="72" src="https://github.com/jasonwoodland/iTerm2-borderless/blob/master/icons/iTerm2%20Icon.png?raw=true">
+<img width="72" style="margin-bottom: -20px" src="https://github.com/jasonwoodland/iTerm2-borderless/blob/master/icons/iTerm2%20Icon.png?raw=true">
 </p>
 <h1 align="center">iTerm2 borderless</h1>
 <p align="center">
