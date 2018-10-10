@@ -1,6 +1,10 @@
-# iTerm2-borderless
-
-<img width="794" src="https://github.com/jasonwoodland/iTerm2-borderless/blob/master/Preview.png?raw=true">
+<p align="center">
+<img width="72" src="https://github.com/jasonwoodland/iTerm2-borderless/blob/master/icons/iTerm2%20Icon.png?raw=true">
+</p>
+<h1 align="center">iTerm2 borderless</h1>
+<p align="center">
+<img align="center" width="794" src="https://github.com/jasonwoodland/iTerm2-borderless/blob/master/Preview.png?raw=true">
+</p>
 
 My custom iTerm2 patch and build. Consistently updated.
 
