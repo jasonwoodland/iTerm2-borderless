@@ -28,8 +28,8 @@ Download the [latest release](https://github.com/jasonwoodland/iTerm2-borderless
 ### 1. Get iTerm2 and iTerm2-borderless
 
 ```
-git clone https://github.com/gnachman/iTerm2.git
-git clone https://github.com/jasonwoodland/iTerm2-borderless.git
+git clone --depth=1 https://github.com/gnachman/iTerm2.git
+git clone --depth=1 https://github.com/jasonwoodland/iTerm2-borderless.git
 ```
 
 ### 2. Patch
