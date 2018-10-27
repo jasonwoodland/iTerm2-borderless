@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-imageName="iTerm2 Icon.png"
-iconset="iTerm2.iconset"
+imageName="AppIcon.png"
+iconset="AppIcon.iconset"
 
-mkdir $iconset
+# mkdir $iconset
 sips -z 16 16  "$imageName" --out "$iconset/icon_16x16.png"
 sips -z 32 32  "$imageName" --out "$iconset/icon_16x16@2x.png"
 sips -z 32 32  "$imageName" --out "$iconset/icon_32x32.png"
@@ -14,4 +14,4 @@ sips -z 256 256  "$imageName" --out "$iconset/icon_256x256.png"
 sips -z 512 512  "$imageName" --out "$iconset/icon_256x256@2x.png"
 sips -z 512 512  "$imageName" --out "$iconset/icon_512x512.png"
 cp "$imageName" "$iconset/icon_512x512@2x.png"
-iconutil -c icns "$iconset"
+# iconutil -c icns "$iconset"
