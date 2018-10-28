@@ -3,10 +3,12 @@
 </p>
 <h1 align="center">iTerm2 borderless</h1>
 <p align="center">
-<img align="center" width="794" src="https://github.com/jasonwoodland/iTerm2-borderless/blob/master/Preview.png?raw=true">
+<img align="center" width="794" src="https://github.com/jasonwoodland/iTerm2-borderless/blob/wip/tabs/Preview.png?raw=true">
 </p>
 
 My custom iTerm2 patch and build. Consistently updated.
+
+Tabbed version WIP.
 
 * Hides the window title bar
 * Hides the tab bar

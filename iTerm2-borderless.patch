@@ -1,8 +1,118 @@
+diff --git a/Interfaces/PreferencePanel.xib b/Interfaces/PreferencePanel.xib
+index ec4be6c..6f26f08 100644
+--- a/Interfaces/PreferencePanel.xib
++++ b/Interfaces/PreferencePanel.xib
+@@ -5726,7 +5726,7 @@ DQ
+                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                     <clipView key="contentView" id="N1C-ir-dI5">
+                         <rect key="frame" x="1" y="0.0" width="238" height="378"/>
+-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
++                        <autoresizingMask key="autoresizingMask"/>
+                         <subviews>
+                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="5563" id="5562">
+                                 <rect key="frame" x="0.0" y="0.0" width="238" height="361"/>
+@@ -5840,7 +5840,7 @@ DQ
+                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                     <clipView key="contentView" id="2zv-hI-Vxj">
+                         <rect key="frame" x="1" y="0.0" width="849" height="245"/>
+-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
++                        <autoresizingMask key="autoresizingMask"/>
+                         <subviews>
+                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="none" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" headerView="6206" id="6091">
+                                 <rect key="frame" x="0.0" y="0.0" width="849" height="228"/>
+diff --git a/ThirdParty/PSMTabBarControl/source/PSMDarkTabStyle.m b/ThirdParty/PSMTabBarControl/source/PSMDarkTabStyle.m
+index 488f8fd..64c6cf5 100644
+--- a/ThirdParty/PSMTabBarControl/source/PSMDarkTabStyle.m
++++ b/ThirdParty/PSMTabBarControl/source/PSMDarkTabStyle.m
+@@ -17,14 +17,16 @@ - (NSString *)name {
+ }
+ 
+ + (NSColor *)tabBarColorWhenKeyAndActive:(BOOL)keyAndActive {
++    return [NSColor clearColor];
+     if (@available(macOS 10.14, *)) {
+-        return [NSColor colorWithSRGBRed:0 green:0 blue:0 alpha:0.25];
++        return [NSColor colorWithSRGBRed:0 green:0 blue:0 alpha:0.0];
+     } else {
+-        return [NSColor colorWithCalibratedWhite:0.12 alpha:1.00];
++        return [NSColor colorWithCalibratedWhite:0.12 alpha:0.00];
+     }
+ }
+ 
+ - (NSColor *)tabBarColor {
++    return [NSColor clearColor];
+     return [PSMDarkTabStyle tabBarColorWhenKeyAndActive:self.tabBar.window.isKeyWindow && [NSApp isActive]];
+ }
+ 
+@@ -67,6 +69,7 @@ - (NSColor *)bottomLineColorSelected:(BOOL)selected {
+ }
+ 
+ - (NSColor *)verticalLineColorSelected:(BOOL)selected {
++    return [NSColor clearColor];
+     if (@available(macOS 10.14, *)) {
+         return [self topLineColorSelected:selected];
+     } else {
+@@ -75,6 +78,7 @@ - (NSColor *)verticalLineColorSelected:(BOOL)selected {
+ }
+ 
+ - (NSColor *)backgroundColorSelected:(BOOL)selected highlightAmount:(CGFloat)highlightAmount {
++    return [NSColor clearColor];
+     if (@available(macOS 10.14, *)) {
+         CGFloat colors[3];
+         if (self.tabBar.window.isKeyWindow && [NSApp isActive]) {
+diff --git a/ThirdParty/PSMTabBarControl/source/PSMYosemiteTabStyle.m b/ThirdParty/PSMTabBarControl/source/PSMYosemiteTabStyle.m
+index c257f12..94537b8 100644
+--- a/ThirdParty/PSMTabBarControl/source/PSMYosemiteTabStyle.m
++++ b/ThirdParty/PSMTabBarControl/source/PSMYosemiteTabStyle.m
+@@ -162,12 +162,12 @@ - (void)dealloc {
+ #pragma mark - Control Specific
+ 
+ - (float)leftMarginForTabBarControl {
+-    return self.tabBar.insets.left;
++    return 70.0f;
+ }
+ 
+ - (float)rightMarginForTabBarControl {
+     // Leaves space for overflow control.
+-    return 24.0f;
++    return 70.0f;
+ }
+ 
+ // For vertical orientation
+@@ -459,7 +459,7 @@ - (NSAttributedString *)attributedStringValueForTabCell:(PSMTabBarCell *)cell {
+     // graphic
+     NSImage *graphic = [(id)[[cell representedObject] identifier] psmTabGraphic];
+ 
+-    NSFont *font = [NSFont systemFontOfSize:self.fontSize];
++    NSFont *font = [NSFont systemFontOfSize:NSFont.systemFontSize];
+     NSDictionary *attributes = @{ NSFontAttributeName: font,
+                                   NSForegroundColorAttributeName: [self textColorForCell:cell],
+                                   NSParagraphStyleAttributeName: truncatingTailParagraphStyle };
+@@ -704,6 +704,7 @@ - (void)drawCellBackgroundAndFrameHorizontallyOriented:(BOOL)horizontal
+                                           withTabColor:(NSColor *)tabColor
+                                                 isLast:(BOOL)isLast
+                                        highlightAmount:(CGFloat)highlightAmount {
++    return;
+     [self drawCellBackgroundSelected:selected
+                               inRect:cellFrame
+                         withTabColor:tabColor
+@@ -1043,9 +1044,9 @@ - (void)drawTabBar:(PSMTabBarControl *)bar
+         _tabBar = bar;
+     }
+ 
+-    [self drawBackgroundInRect:rect color:[self tabBarColor] horizontal:horizontal];
+-    [[self topLineColorSelected:NO] set];
+-    [self drawHorizontalLineInFrame:rect y:0];
++    //[self drawBackgroundInRect:rect color:[NSColor clearColor] horizontal:horizontal];
++    //[[self topLineColorSelected:NO] set];
++    //[self drawHorizontalLineInFrame:rect y:0];
+ 
+     // no tab view == not connected
+     if (![bar tabView]){
 diff --git a/iTerm2.xcodeproj/project.pbxproj b/iTerm2.xcodeproj/project.pbxproj
-index ba7ad6001..c5a656d07 100644
+index b3803e9..7ac83a8 100644
 --- a/iTerm2.xcodeproj/project.pbxproj
 +++ b/iTerm2.xcodeproj/project.pbxproj
-@@ -9487,7 +9487,8 @@
+@@ -9508,7 +9508,8 @@
  						DevelopmentTeam = H7V7XYVQ7D;
  					};
  					874206460564169600CFC3F1 = {
@@ -12,7 +122,7 @@ index ba7ad6001..c5a656d07 100644
  						SystemCapabilities = {
  							com.apple.HardenedRuntime = {
  								enabled = 0;
-@@ -11924,11 +11925,11 @@
+@@ -11948,11 +11949,11 @@
  				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
  				CLANG_ENABLE_OBJC_WEAK = YES;
  				CLANG_WARN_INT_CONVERSION = YES;
@@ -27,7 +137,7 @@ index ba7ad6001..c5a656d07 100644
  				ENABLE_HARDENED_RUNTIME = NO;
  				FRAMEWORK_SEARCH_PATHS = (
  					"$(inherited)",
-@@ -12063,7 +12064,7 @@
+@@ -12088,7 +12089,7 @@
  				CODE_SIGN_IDENTITY = "Mac Developer";
  				COMBINE_HIDPI_IMAGES = YES;
  				COPY_PHASE_STRIP = YES;
@@ -36,7 +146,7 @@ index ba7ad6001..c5a656d07 100644
  				FRAMEWORK_SEARCH_PATHS = (
  					"$(inherited)",
  					"$(SRCROOT)",
-@@ -12554,11 +12555,11 @@
+@@ -12579,11 +12580,11 @@
  				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
  				CLANG_ENABLE_OBJC_WEAK = YES;
  				CLANG_WARN_INT_CONVERSION = YES;
@@ -51,7 +161,7 @@ index ba7ad6001..c5a656d07 100644
  				ENABLE_HARDENED_RUNTIME = NO;
  				FRAMEWORK_SEARCH_PATHS = (
  					"$(inherited)",
-@@ -12729,7 +12730,7 @@
+@@ -12755,7 +12756,7 @@
  				CODE_SIGN_IDENTITY = "Mac Developer";
  				COMBINE_HIDPI_IMAGES = YES;
  				COPY_PHASE_STRIP = YES;
@@ -60,7 +170,7 @@ index ba7ad6001..c5a656d07 100644
  				FRAMEWORK_SEARCH_PATHS = (
  					"$(inherited)",
  					"$(SRCROOT)",
-@@ -13594,12 +13595,12 @@
+@@ -13620,12 +13621,12 @@
  				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
  				CLANG_ENABLE_OBJC_WEAK = YES;
  				CLANG_WARN_INT_CONVERSION = YES;
@@ -76,7 +186,7 @@ index ba7ad6001..c5a656d07 100644
  				ENABLE_HARDENED_RUNTIME = NO;
  				FRAMEWORK_SEARCH_PATHS = (
  					"$(inherited)",
-@@ -13670,11 +13671,11 @@
+@@ -13697,11 +13698,11 @@
  				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
  				CLANG_ENABLE_OBJC_WEAK = YES;
  				CLANG_WARN_INT_CONVERSION = YES;
@@ -92,75 +202,105 @@ index ba7ad6001..c5a656d07 100644
  				FRAMEWORK_SEARCH_PATHS = (
  					"$(inherited)",
 diff --git a/sources/PTYSession.m b/sources/PTYSession.m
-index e9d8d250a..c898d373a 100644
+index a73e7f7..999dccc 100644
 --- a/sources/PTYSession.m
 +++ b/sources/PTYSession.m
-@@ -3715,7 +3715,8 @@ - (void)setPreferencesFromAddressBookEntry:(NSDictionary *)aePrefs {
+@@ -3575,7 +3575,9 @@ - (void)setPreferencesFromAddressBookEntry:(NSDictionary *)aePrefs {
                                                         inBookmark:aDict]];
  
      // transparency
 -    [self setTransparency:[iTermProfilePreferences floatForKey:KEY_TRANSPARENCY inProfile:aDict]];
-+    // PATCH: (Modified) only window appears semi-transparent, if not opaque, set transparent
++    // PATCH: (Modified) now the window appears semi-transparent, not the terminal
++    // So if it's not opaque, make the terminal fully transparent
 +    [self setTransparency:[iTermProfilePreferences floatForKey:KEY_TRANSPARENCY inProfile:aDict] == 0 ? 0 : 1];
      [self setBlend:[iTermProfilePreferences floatForKey:KEY_BLEND inProfile:aDict]];
      [self setTransparencyAffectsOnlyDefaultBackgroundColor:[iTermProfilePreferences floatForKey:KEY_TRANSPARENCY_AFFECTS_ONLY_DEFAULT_BACKGROUND_COLOR inProfile:aDict]];
  
-@@ -4063,10 +4064,11 @@ - (float)transparency
+@@ -3973,10 +3975,7 @@ - (float)transparency
  
  - (void)setTransparency:(float)transparency
  {
-+    // PATCH: (Modified) ignore 0.9 limit, make terminal fully transparent
-     // Limit transparency because fully transparent windows can't be clicked on.
+-    // Limit transparency because fully transparent windows can't be clicked on.
 -    if (transparency > 0.9) {
 -        transparency = 0.9;
 -    }
-+    //if (transparency > 0.9) {
-+    //    transparency = 0.9;
-+    //}
++    // PATCH: (Removed) ignore limit, make terminal fully transparent, they can still be clicked
      [_textview setTransparency:transparency];
      [self useTransparencyDidChange];
      [self.view setNeedsDisplay:YES];
+diff --git a/sources/PTYTab.m b/sources/PTYTab.m
+index 7a6fa87..c53fbb8 100644
+--- a/sources/PTYTab.m
++++ b/sources/PTYTab.m
+@@ -576,7 +576,7 @@ - (void)nameOfSession:(PTYSession *)session didChangeTo:(NSString*)newName {
+ 
+ - (void)updateTabTitleForCurrentSessionName:(NSString *)newName {
+     NSString *value = (self.evaluatedTitleOverride ?: newName) ?: @" ";
+-    [tabViewItem_ setLabel:value];  // PSM uses bindings to bind the label to its title
++    [tabViewItem_ setLabel:self.activeSession.windowTitle.length != 0 ? self.activeSession.windowTitle : value];  // PSM uses bindings to bind the label to its title
+     [self.realParentWindow tabTitleDidChange:self];
+ }
+ 
 diff --git a/sources/PTYTextView.m b/sources/PTYTextView.m
-index cee305d44..f751af406 100644
+index e757811..0b58840 100644
 --- a/sources/PTYTextView.m
 +++ b/sources/PTYTextView.m
-@@ -2587,7 +2587,7 @@ - (void)pasteFromSelectionWithEvent:(NSEvent *)event
+@@ -587,7 +587,7 @@ - (BOOL)isFlipped
  
- - (void)_openTargetWithEvent:(NSEvent *)event inBackground:(BOOL)openInBackground {
-     // Command click in place.
--    NSPoint clickPoint = [self clickPoint:event allowRightMarginOverflow:NO];
-+    NSPoint clickPoint = [self clickPoint:event allowRightMarginOverflow:YES]; // PATCH: (Modified) fix URL command click?
-     int x = clickPoint.x;
-     int y = clickPoint.y;
-     iTermTextExtractor *extractor = [iTermTextExtractor textExtractorWithDataSource:_dataSource];
+ - (BOOL)isOpaque
+ {
+-    return YES;
++    return NO;
+ }
+ 
+ - (void)setHighlightCursorLine:(BOOL)highlightCursorLine {
 diff --git a/sources/PseudoTerminal.m b/sources/PseudoTerminal.m
-index e63926036..2768e92ab 100644
+index 3676c91..53e448f 100644
 --- a/sources/PseudoTerminal.m
 +++ b/sources/PseudoTerminal.m
-@@ -395,11 +395,11 @@ + (void)registerSessionsInArrangement:(NSDictionary *)arrangement {
+@@ -397,12 +397,12 @@ + (void)registerSessionsInArrangement:(NSDictionary *)arrangement {
+ }
  
  + (void)updateDecorationsOfWindow:(NSWindow *)myWindow forType:(iTermWindowType)windowType {
-     const BOOL isCompact = (windowType == WINDOW_TYPE_COMPACT);
+-    const BOOL isCompact = (windowType == WINDOW_TYPE_COMPACT);
 -    [myWindow setHasShadow:(windowType == WINDOW_TYPE_NORMAL ||
 -                            isCompact)];
++    const BOOL isCompact = NO;
 +    [myWindow setHasShadow:YES]; // PATCH: (Modified) Native macOS window shadow
++    [myWindow setTitleVisibility:NSWindowTitleHidden];
      // Chrome doesn't change titleVisibility so neither do we.
      // Some truly dreadful hacks are used instead. See PTYWindow.m.
 -    myWindow.titlebarAppearsTransparent = isCompact;
 +    myWindow.titlebarAppearsTransparent = YES; // PATCH: (Modified) Hides title bar strip
-+    //myWindow.titleVisibility = NSWindowTitleHidden; // PATCH: (Added) Hides window title
  }
  
  + (NSInteger)styleMaskForWindowType:(iTermWindowType)windowType
-@@ -408,6 +408,7 @@ + (NSInteger)styleMaskForWindowType:(iTermWindowType)windowType
-     if (hotkeyWindowType == iTermHotkeyWindowTypeFloatingPanel) {
-         mask = NSWindowStyleMaskNonactivatingPanel;
+@@ -421,7 +421,7 @@ + (NSInteger)styleMaskForWindowType:(iTermWindowType)windowType
+         case WINDOW_TYPE_LEFT_PARTIAL:
+         case WINDOW_TYPE_RIGHT_PARTIAL:
+         case WINDOW_TYPE_NO_TITLE_BAR:
+-            return mask | NSWindowStyleMaskBorderless | NSWindowStyleMaskResizable;
++            return mask | NSWindowStyleMaskBorderless | NSWindowStyleMaskResizable | NSWindowStyleMaskFullSizeContentView;
+ 
+         case WINDOW_TYPE_TRADITIONAL_FULL_SCREEN:
+             if (@available(macOS 10.13, *)) {
+@@ -436,6 +436,7 @@ + (NSInteger)styleMaskForWindowType:(iTermWindowType)windowType
+                     NSWindowStyleMaskTitled |
+                     NSWindowStyleMaskClosable |
+                     NSWindowStyleMaskMiniaturizable |
++                    NSWindowStyleMaskTexturedBackground |
+                     NSWindowStyleMaskResizable);
+ 
+         default:
+@@ -444,6 +445,7 @@ + (NSInteger)styleMaskForWindowType:(iTermWindowType)windowType
+                     NSWindowStyleMaskClosable |
+                     NSWindowStyleMaskMiniaturizable |
+                     NSWindowStyleMaskResizable |
++                    NSWindowStyleMaskFullSizeContentView |
+                     NSWindowStyleMaskTexturedBackground);
      }
-+    //mask = NSFullSizeContentViewWindowMask; // PATCH: (Added) Make content view utilise entire window
-     switch (windowType) {
-         case WINDOW_TYPE_TOP:
-         case WINDOW_TYPE_BOTTOM:
-@@ -1771,15 +1772,9 @@ - (PTYSession *)currentSession {
+ }
+@@ -1785,15 +1787,9 @@ - (PTYSession *)currentSession {
  - (void)setWindowTitle {
      if (self.isShowingTransientTitle) {
          PTYSession *session = self.currentSession;
@@ -178,16 +318,35 @@ index e63926036..2768e92ab 100644
          [self setWindowTitle:aTitle];
      } else {
          [self setWindowTitle:[self undecoratedWindowTitle]];
-@@ -4844,7 +4839,7 @@ - (void)tabView:(NSTabView*)aTabView
+@@ -3470,7 +3466,7 @@ - (NSEdgeInsets)tabBarInsets {
  }
  
- - (void)didDonateTab:(PTYTab *)aTab toWindowController:(PseudoTerminal *)term {
--    if ([term numberOfTabs] == 1) {
-+    if (YES) { // PATCH: (Modified) Prevents title bar from showing
-         [term fitWindowToTabs];
-     } else {
-         [term fitTabToWindow:aTab];
-@@ -5398,9 +5393,10 @@ - (void)updateTabColors {
+ - (BOOL)tabBarAlwaysVisible {
+-    return ![iTermPreferences boolForKey:kPreferenceKeyHideTabBar];
++    return YES;
+ }
+ 
+ - (BOOL)anyFullScreen
+@@ -4066,8 +4062,7 @@ - (void)toggleTraditionalFullScreenMode {
+         }
+         PtyLog(@"toggleFullScreenMode - allocate new terminal");
+     }
+-    [self.window setHasShadow:(windowType_ == WINDOW_TYPE_NORMAL ||
+-                               windowType_ == WINDOW_TYPE_COMPACT)];
++    [self.window setHasShadow:YES]; // PATCH: (Modified) always set window shadow
+ 
+     if (!_fullScreen &&
+         [iTermPreferences boolForKey:kPreferenceKeyDisableFullscreenTransparencyByDefault]) {
+@@ -4186,7 +4181,7 @@ - (void)updateWindowShadow {
+         if ([iTermAdvancedSettingsModel disableWindowShadowWhenTransparencyOnMojave]) {
+             const BOOL haveTransparency = [self anySessionInCurrentTabHasTransparency];
+             DLog(@"%@: have transparency = %@ for sessions %@ in tab %@", self, @(haveTransparency), self.currentTab.sessions, self.currentTab);
+-            self.window.hasShadow = !haveTransparency;
++            self.window.hasShadow = YES; // PATCH: (Modified) always has window shadow
+         }
+     }
+ }
+@@ -5502,9 +5497,10 @@ - (void)updateTabColors {
          [_contentView.tabBarControl setTabColor:color forTabViewItem:tabViewItem];
          if ([_contentView.tabView selectedTabViewItem] == tabViewItem) {
              NSColor* newTabColor = [_contentView.tabBarControl tabColorForTabViewItem:tabViewItem];
@@ -201,26 +360,20 @@ index e63926036..2768e92ab 100644
                  [self setBackgroundColor:newTabColor];
  
                  [_contentView setColor:newTabColor];
-@@ -5443,7 +5439,17 @@ - (void)setMojaveBackgroundColor:(nullable NSColor *)backgroundColor NS_AVAILABL
-     // But there's a bug that the window title shows a broken vibrancy effect (issue 6964).
-     // There's an opportunity for improvement here if there's a tab color and we know the
-     // window isn't opaque we could set the titlebar's color, since that works again in 10.14.
--    self.window.backgroundColor = [NSColor clearColor];
+@@ -5547,7 +5543,11 @@ - (void)setMojaveBackgroundColor:(nullable NSColor *)backgroundColor NS_AVAILABL
+             self.window.appearance = [NSAppearance appearanceNamed:NSAppearanceNameDarkAqua];
+             break;
+     }
+-    self.window.backgroundColor = self.anyPaneIsTransparent ? [NSColor clearColor] : [NSColor windowBackgroundColor];
 +    // PATCH: (Modified) set window background color so our transparent title bar doesn't show behind the window
 +    backgroundColor = [self.currentSession.colorMap colorForKey:kColorMapBackground];
 +    backgroundColor = [backgroundColor colorWithAlphaComponent:1 - [iTermProfilePreferences floatForKey:KEY_TRANSPARENCY inProfile:self.currentSession.profile]];
 +    
-+// TODO CLEANUP
-+    //self.window.backgroundColor = backgroundColor;
-+    //NSColor *bgColor = [self.currentSession.colorMap colorForKey:kColorMapBackground];
-+    //bgColor = NSColor color
-+    //self.window.backgroundColor = [NSColor clearColor];
 +    self.window.backgroundColor = backgroundColor;
-+    
+     self.window.titlebarAppearsTransparent = NO;  // Keep it from showing content from other windows behind it. Issue 7108.
  }
  
- - (void)setLegacyBackgroundColor:(nullable NSColor *)backgroundColor {
-@@ -5480,6 +5486,10 @@ - (void)setLegacyBackgroundColor:(nullable NSColor *)backgroundColor {
+@@ -5586,6 +5586,10 @@ - (void)setLegacyBackgroundColor:(nullable NSColor *)backgroundColor {
          }
          darkAppearance = (backgroundColor != nil && backgroundColor.perceivedBrightness < 0.5);
      }
@@ -232,10 +385,10 @@ index e63926036..2768e92ab 100644
      if (darkAppearance) {
          self.window.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantDark];
 diff --git a/sources/iTermAdvancedSettingsModel.h b/sources/iTermAdvancedSettingsModel.h
-index b587fc767..b4fb85a65 100644
+index 1919965..5413c23 100644
 --- a/sources/iTermAdvancedSettingsModel.h
 +++ b/sources/iTermAdvancedSettingsModel.h
-@@ -186,6 +186,13 @@ extern NSString *const iTermAdvancedSettingsDidChange;
+@@ -188,6 +188,13 @@ extern NSString *const iTermAdvancedSettingsDidChange;
  + (int)slowPasteBytesPerCall;
  + (double)slowPasteDelayBetweenCalls;
  
@@ -250,7 +403,7 @@ index b587fc767..b4fb85a65 100644
  // in brightness between the proposed background color and the neighbors' background color is less
  // than this threshold.
 diff --git a/sources/iTermAdvancedSettingsModel.m b/sources/iTermAdvancedSettingsModel.m
-index a54d81d36..ad81dd36c 100644
+index cbbfba4..aeabc01 100644
 --- a/sources/iTermAdvancedSettingsModel.m
 +++ b/sources/iTermAdvancedSettingsModel.m
 @@ -270,6 +270,14 @@ + (void)enumerateDictionaries:(void (^)(NSDictionary *))block {
@@ -269,7 +422,7 @@ index a54d81d36..ad81dd36c 100644
  
  #define SECTION_TERMINAL @"Terminal: "
 diff --git a/sources/iTermBackgroundDrawingHelper.m b/sources/iTermBackgroundDrawingHelper.m
-index d37d3724e..bda2246e3 100644
+index d37d372..bda2246 100644
 --- a/sources/iTermBackgroundDrawingHelper.m
 +++ b/sources/iTermBackgroundDrawingHelper.m
 @@ -15,6 +15,7 @@ @implementation iTermBackgroundDrawingHelper {
@@ -281,7 +434,7 @@ index d37d3724e..bda2246e3 100644
      NSImage *backgroundImage = [self.delegate backgroundDrawingHelperImage];
      if (backgroundImage) {
 diff --git a/sources/iTermCursor.m b/sources/iTermCursor.m
-index a38fd5641..c944dd6f2 100644
+index a38fd56..c944dd6 100644
 --- a/sources/iTermCursor.m
 +++ b/sources/iTermCursor.m
 @@ -209,9 +209,10 @@ - (void)drawWithRect:(NSRect)rect
@@ -296,8 +449,59 @@ index a38fd5641..c944dd6f2 100644
                                           context:ctx
                                   backgroundColor:backgroundColor];
          }
+diff --git a/sources/iTermRootTerminalView.m b/sources/iTermRootTerminalView.m
+index 69501c4..e64547b 100644
+--- a/sources/iTermRootTerminalView.m
++++ b/sources/iTermRootTerminalView.m
+@@ -136,7 +136,7 @@ - (instancetype)initWithFrame:(NSRect)frameRect
+                 [self setTabBarControlAutoresizingMask:(NSViewHeightSizable | NSViewMaxXMargin)];
+                 break;
+         }
+-        if (@available(macOS 10.14, *)) {
++        if (NO) {
+             [self addSubview:_tabBarBacking];
+             [_tabBarBacking addSubview:_tabBarControl];
+         } else {
+@@ -442,7 +442,7 @@ - (iTermTabBarControlView *)borrowTabBarControl {
+ - (void)returnTabBarControlView:(iTermTabBarControlView *)tabBarControl {
+     assert(_tabBarControlOnLoan);
+     _tabBarControlOnLoan = NO;
+-    if (@available(macOS 10.14, *)) {
++    if (NO) {
+         [_tabBarBacking addSubview:tabBarControl];
+     } else {
+         [self addSubview:tabBarControl];
+@@ -450,9 +450,6 @@ - (void)returnTabBarControlView:(iTermTabBarControlView *)tabBarControl {
+     _tabBarControl.frame = _tabBarBacking.bounds;
+     _tabBarControl = tabBarControl;
+     [self.tabBarControl updateFlashing];
+-    if (@available(macOS 10.14, *)) {
+-        _tabBarBacking.hidden = NO;
+-    }
+ }
+ 
+ - (void)windowNumberDidChangeTo:(NSNumber *)number {
+@@ -695,7 +692,8 @@ - (void)layoutSubviewsTopTabBarVisible:(BOOL)topTabBarVisible forWindow:(NSWindo
+ }
+ 
+ - (void)setTabBarFrame:(NSRect)frame {
+-    if (@available(macOS 10.14, *)) {
++    frame.origin.y -= 10;
++    if (NO) {
+         assert(!_tabBarControlOnLoan);
+         _tabBarBacking.frame = frame;
+         self.tabBarControl.frame = _tabBarBacking.bounds;
+@@ -738,7 +736,7 @@ - (void)layoutSubviewsWithVisibleBottomTabBarForWindow:(NSWindow *)thisWindow {
+ }
+ 
+ - (void)setTabBarControlAutoresizingMask:(NSAutoresizingMaskOptions)mask {
+-    if (@available(macOS 10.14, *)) {
++    if (NO) {
+         if (_tabBarBacking) {
+             _tabBarBacking.autoresizingMask = mask;
+             _tabBarControl.autoresizingMask = (NSViewWidthSizable | NSViewHeightSizable);
 diff --git a/sources/iTermTabBarControlView.m b/sources/iTermTabBarControlView.m
-index ef1c4af11..ed3266a9a 100644
+index 4be80cf..762f94a 100644
 --- a/sources/iTermTabBarControlView.m
 +++ b/sources/iTermTabBarControlView.m
 @@ -13,7 +13,7 @@
@@ -305,15 +509,26 @@ index ef1c4af11..ed3266a9a 100644
  #import "NSView+iTerm.h"
  
 -CGFloat iTermTabBarControlViewDefaultHeight = 24;
-+CGFloat iTermTabBarControlViewDefaultHeight = 0; // PATCH: (Modified) hide tab bar
++CGFloat iTermTabBarControlViewDefaultHeight = 22; // PATCH: (Modified) hide tab bar
  
  @interface NSView (Private)
  - (NSRect)_opaqueRectForWindowMoveWhenInTitlebar;
+@@ -49,8 +49,8 @@ - (instancetype)initWithFrame:(NSRect)frameRect {
+ 
+ - (void)drawRect:(NSRect)dirtyRect {
+     if (@available(macOS 10.14, *)) { } else {
+-        [[NSColor windowBackgroundColor] set];
+-        NSRectFill(dirtyRect);
++        [[NSColor clearColor] set];
++        //NSRectFill(dirtyRect);
+     }
+ 
+     [super drawRect:dirtyRect];
 diff --git a/sources/iTermTextDrawingHelper.m b/sources/iTermTextDrawingHelper.m
-index 0db653842..30fbb55e1 100644
+index 7535309..a88de53 100644
 --- a/sources/iTermTextDrawingHelper.m
 +++ b/sources/iTermTextDrawingHelper.m
-@@ -2566,10 +2566,11 @@ - (NSColor *)backgroundColorForCursor {
+@@ -2585,10 +2585,11 @@ - (NSColor *)backgroundColorForCursor {
  }
  
  - (BOOL)shouldShowCursor {
@@ -327,18 +542,10 @@ index 0db653842..30fbb55e1 100644
          // in the tab, and the cursor has not moved for half a second.
          return _blinkingItemsVisible;
 diff --git a/sources/iTermWindowImpl.m b/sources/iTermWindowImpl.m
-index 22c7528aa..9eab0b1d4 100644
+index 22c7528..790a4c6 100644
 --- a/sources/iTermWindowImpl.m
 +++ b/sources/iTermWindowImpl.m
-@@ -47,6 +47,7 @@ - (instancetype)initWithContentRect:(NSRect)contentRect
-         DLog(@"Invalidate cached occlusion: %@ %p", NSStringFromSelector(_cmd), self);
-         [[iTermWindowOcclusionChangeMonitor sharedInstance] invalidateCachedOcclusion];
-     }
-+
-     return self;
- }
- 
-@@ -60,6 +61,40 @@ - (void)iterm_dealloc {
+@@ -60,6 +60,45 @@ - (void)iterm_dealloc {
  
  }
  
@@ -349,22 +556,27 @@ index 22c7528aa..9eab0b1d4 100644
 +    NSButton *fullscreenButton = [self.contentView.window standardWindowButton:NSWindowZoomButton];
 +    
 +    int horizOff = [iTermAdvancedSettingsModel standardWindowButtonsHorizontalOffset];
-+    int vertOff = [iTermAdvancedSettingsModel standardWindowButtonsVerticalOffset];
++    int vertOff = [iTermAdvancedSettingsModel standardWindowButtonsVerticalOffset] + 20;
 +    
 +    [closeButton setFrameOrigin:NSMakePoint(0 + horizOff, 3)];
 +    [miniaturizeButton setFrameOrigin:NSMakePoint(20 + horizOff, 3)];
 +    [fullscreenButton setFrameOrigin:NSMakePoint(40 + horizOff, 3)];
 +    
 +    NSView *lights = closeButton.superview.superview;
-+    NSRect newFrame = lights.frame;
-+    newFrame.origin.y = self.contentView.frame.size.height - vertOff;
-+    lights.frame = newFrame;
++    if (lights) {
++        NSRect newFrame = lights.frame;
++        newFrame.origin.y = self.contentView.frame.size.height - vertOff;
++        lights.frame = newFrame;
++    }
 +    
-+    NSTextView *titleView = closeButton.superview.subviews[3];
++    
++    self.titlebarAppearsTransparent = true;
 +    
 +    NSView *decorationView = closeButton.superview.superview.subviews[1];
 +    decorationView.layer.opacity = 0.0;
 +    
++    /*
++    NSTextView *titleView = closeButton.superview.subviews[3];
 +    titleView.font = [NSFont systemFontOfSize:13];
 +    [titleView removeConstraints:titleView.constraints];
 +    CGRect frame = titleView.frame;
@@ -372,10 +584,19 @@ index 22c7528aa..9eab0b1d4 100644
 +    frame.origin.y = 3;
 +    titleView.frame = frame;
 +    titleView.drawsBackground = true;
-+    
++ */
 +    [super layoutIfNeeded];
 +}
 +
  - (BOOL)titleChangedRecently {
      NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
      return (now > _timeOfLastWindowTitleChange && now - _timeOfLastWindowTitleChange < iTermWindowTitleChangeMinimumInterval);
+@@ -420,7 +459,7 @@ - (void)setFrame:(NSRect)frameRect display:(BOOL)flag {
+ 
+ #if ENABLE_COMPACT_WINDOW_HACK
+ - (BOOL)isCompact {
+-    return YES;
++    return NO;
+ }
+ 
+ + (Class)frameViewClassForStyleMask:(NSUInteger)windowStyle {
