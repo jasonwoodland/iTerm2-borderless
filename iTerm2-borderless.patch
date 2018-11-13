@@ -1,5 +1,5 @@
 diff --git a/ThirdParty/PSMTabBarControl/source/PSMDarkTabStyle.m b/ThirdParty/PSMTabBarControl/source/PSMDarkTabStyle.m
-index e197d37..efb226b 100644
+index e197d37..4585eda 100644
 --- a/ThirdParty/PSMTabBarControl/source/PSMDarkTabStyle.m
 +++ b/ThirdParty/PSMTabBarControl/source/PSMDarkTabStyle.m
 @@ -17,14 +17,18 @@ - (NSString *)name {
@@ -23,7 +23,16 @@ index e197d37..efb226b 100644
      return [PSMDarkTabStyle tabBarColorWhenKeyAndActive:self.tabBar.window.isKeyWindow && [NSApp isActive]];
  }
  
-@@ -61,6 +65,8 @@ - (NSColor *)bottomLineColorSelected:(BOOL)selected {
+@@ -53,6 +57,8 @@ - (NSColor *)topLineColorSelected:(BOOL)selected {
+ }
+ 
+ - (NSColor *)bottomLineColorSelected:(BOOL)selected {
++    // PATCH: (Added) transparent tab bar bottom line
++    return [NSColor clearColor];
+     if (@available(macOS 10.14, *)) {
+         return [NSColor colorWithWhite:0 alpha:0.1];
+     } else {
+@@ -61,6 +67,8 @@ - (NSColor *)bottomLineColorSelected:(BOOL)selected {
  }
  
  - (NSColor *)verticalLineColorSelected:(BOOL)selected {
@@ -32,7 +41,7 @@ index e197d37..efb226b 100644
      if (@available(macOS 10.14, *)) {
          return [self topLineColorSelected:selected];
      } else {
-@@ -69,6 +75,8 @@ - (NSColor *)verticalLineColorSelected:(BOOL)selected {
+@@ -69,6 +77,8 @@ - (NSColor *)verticalLineColorSelected:(BOOL)selected {
  }
  
  - (NSColor *)backgroundColorSelected:(BOOL)selected highlightAmount:(CGFloat)highlightAmount {
