@@ -8,9 +8,8 @@
 
 My custom iTerm2 patch and build. Consistently updated.
 
-* Hides the window title bar
-* Hides the tab bar
-* Fixes window title rendering
+* Hides the standard window title bar
+* Incorporates the tab bar into the title bar
 * New window title which displays either the title *or* the job name
 * New advanced options found under *Preferences > Advanced*: (Search for *&ldquo;borderless&rdquo;*)
   * ***Standard window buttons horizontal/vertical offset:*** Change the position of the window buttons and title bar.
@@ -22,7 +21,7 @@ My custom iTerm2 patch and build. Consistently updated.
 * ~~Extra window padding~~ You can now change the margins in *Preferences > Advanced > General*
 * ~~Reverted to slightly bolder font smoothing~~ Set *Preferences > Profiles > Text > Use thin strokes for anti-aliased text* to *Never*
 
-Download the [latest release](https://github.com/jasonwoodland/iTerm2-borderless/releases/latest) and copy `iTerm2.app` to `/Applications`, or apply the patch yourself. (Open an issue if it fails patching so I can fix it)
+Download the [latest release](https://github.com/jasonwoodland/iTerm2-borderless/releases/latest) and copy `iTerm2.app` to `/Applications`, or apply the patch yourself. (Open an issue if it fails so I can update the patch)
 ## Patch it yourself
 
 ### 1. Get iTerm2 and iTerm2-borderless
@@ -76,3 +75,5 @@ Next, go to *Preferences > Advanced*
 
 - [ ] The title bar drag area needs increasing
 - [ ] Override preferences which break the patch for people (also override margin: 0)
+- [ ] Fix dragging tabs appearance
+- [ ] Fix title bar bug in fullscreen

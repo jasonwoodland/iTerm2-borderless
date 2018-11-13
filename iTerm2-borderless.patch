@@ -1,8 +1,107 @@
+diff --git a/ThirdParty/PSMTabBarControl/source/PSMDarkTabStyle.m b/ThirdParty/PSMTabBarControl/source/PSMDarkTabStyle.m
+index e197d37..efb226b 100644
+--- a/ThirdParty/PSMTabBarControl/source/PSMDarkTabStyle.m
++++ b/ThirdParty/PSMTabBarControl/source/PSMDarkTabStyle.m
+@@ -17,14 +17,18 @@ - (NSString *)name {
+ }
+ 
+ + (NSColor *)tabBarColorWhenKeyAndActive:(BOOL)keyAndActive {
++    // PATCH: (Added) transparent tab bar
++    return [NSColor clearColor];
+     if (@available(macOS 10.14, *)) {
+-        return [NSColor colorWithSRGBRed:0 green:0 blue:0 alpha:0.25];
++        return [NSColor colorWithSRGBRed:0 green:0 blue:0 alpha:0.0];
+     } else {
+-        return [NSColor colorWithCalibratedWhite:0.12 alpha:1.00];
++        return [NSColor colorWithCalibratedWhite:0.12 alpha:0.00];
+     }
+ }
+ 
+ - (NSColor *)tabBarColor {
++    // PATCH: (Added) transparent tab bar
++    return [NSColor clearColor];
+     return [PSMDarkTabStyle tabBarColorWhenKeyAndActive:self.tabBar.window.isKeyWindow && [NSApp isActive]];
+ }
+ 
+@@ -61,6 +65,8 @@ - (NSColor *)bottomLineColorSelected:(BOOL)selected {
+ }
+ 
+ - (NSColor *)verticalLineColorSelected:(BOOL)selected {
++    // PATCH: (Added) transparent tab bar vertical line
++    return [NSColor clearColor];
+     if (@available(macOS 10.14, *)) {
+         return [self topLineColorSelected:selected];
+     } else {
+@@ -69,6 +75,8 @@ - (NSColor *)verticalLineColorSelected:(BOOL)selected {
+ }
+ 
+ - (NSColor *)backgroundColorSelected:(BOOL)selected highlightAmount:(CGFloat)highlightAmount {
++    // PATCH: (Added) transparent tab bar
++    return [NSColor clearColor];
+     if (@available(macOS 10.14, *)) {
+         CGFloat colors[3];
+         if (self.tabBar.window.isKeyWindow && [NSApp isActive]) {
+diff --git a/ThirdParty/PSMTabBarControl/source/PSMTabBarControl.m b/ThirdParty/PSMTabBarControl/source/PSMTabBarControl.m
+index 54b162d..1cdc983 100644
+--- a/ThirdParty/PSMTabBarControl/source/PSMTabBarControl.m
++++ b/ThirdParty/PSMTabBarControl/source/PSMTabBarControl.m
+@@ -1858,9 +1858,7 @@ - (NSTabViewItem *)tabView:(NSTabView *)tabView unknownObjectWasDropped:(id <NSD
+ 
+ - (NSString *)view:(NSView *)view stringForToolTip:(NSToolTipTag)tag point:(NSPoint)point userData:(void *)userData
+ {
+-    if ([[self delegate] respondsToSelector:@selector(tabView:toolTipForTabViewItem:)]) {
+-        return [[self delegate] tabView:[self tabView] toolTipForTabViewItem:[[self cellForPoint:point cellFrame:nil] representedObject]];
+-    }
++    // PATCH: (Removed) always return empty string for tab tooltips
+     return @"";
+ }
+ 
+diff --git a/ThirdParty/PSMTabBarControl/source/PSMYosemiteTabStyle.m b/ThirdParty/PSMTabBarControl/source/PSMYosemiteTabStyle.m
+index 1fd9750..8942101 100644
+--- a/ThirdParty/PSMTabBarControl/source/PSMYosemiteTabStyle.m
++++ b/ThirdParty/PSMTabBarControl/source/PSMYosemiteTabStyle.m
+@@ -162,12 +162,14 @@ - (void)dealloc {
+ #pragma mark - Control Specific
+ 
+ - (float)leftMarginForTabBarControl {
+-    return self.tabBar.insets.left;
++    // PATCH: (Modified) make room for window controls
++    return 70.0f;
+ }
+ 
+ - (float)rightMarginForTabBarControl {
+     // Leaves space for overflow control.
+-    return 24.0f;
++    // PATCH: (Modified) equal left/right margins so single tab window titles are centered
++    return 70.0f;
+ }
+ 
+ // For vertical orientation
+@@ -459,7 +461,8 @@ - (NSAttributedString *)attributedStringValueForTabCell:(PSMTabBarCell *)cell {
+     // graphic
+     NSImage *graphic = [(id)[[cell representedObject] identifier] psmTabGraphic];
+ 
+-    NSFont *font = [NSFont systemFontOfSize:self.fontSize];
++    // PATCH: (Modified) larger font size for tab label
++    NSFont *font = [NSFont systemFontOfSize:NSFont.systemFontSize];
+     NSDictionary *attributes = @{ NSFontAttributeName: font,
+                                   NSForegroundColorAttributeName: [self textColorForCell:cell],
+                                   NSParagraphStyleAttributeName: truncatingTailParagraphStyle };
+@@ -1105,7 +1108,8 @@ - (void)drawTabBar:(PSMTabBarControl *)bar
+     } else {
+         insetRect = clipRect;
+     }
+-    [self drawHorizontalLineInFrame:NSIntersectionRect(clipRect, insetRect) y:0];
++    // PATCH: (Removed) Don't draw horizontal lines for tabview
++    // [self drawHorizontalLineInFrame:NSIntersectionRect(clipRect, insetRect) y:0];
+ 
+     // no tab view == not connected
+     if (![bar tabView]) {
 diff --git a/iTerm2.xcodeproj/project.pbxproj b/iTerm2.xcodeproj/project.pbxproj
-index b3803e9..7ac83a8 100644
+index 78ef8f4..0ee299e 100644
 --- a/iTerm2.xcodeproj/project.pbxproj
 +++ b/iTerm2.xcodeproj/project.pbxproj
-@@ -9508,7 +9508,8 @@
+@@ -9529,7 +9529,8 @@
  						DevelopmentTeam = H7V7XYVQ7D;
  					};
  					874206460564169600CFC3F1 = {
@@ -12,7 +111,7 @@ index b3803e9..7ac83a8 100644
  						SystemCapabilities = {
  							com.apple.HardenedRuntime = {
  								enabled = 0;
-@@ -11948,11 +11949,11 @@
+@@ -11972,11 +11973,11 @@
  				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
  				CLANG_ENABLE_OBJC_WEAK = YES;
  				CLANG_WARN_INT_CONVERSION = YES;
@@ -27,7 +126,7 @@ index b3803e9..7ac83a8 100644
  				ENABLE_HARDENED_RUNTIME = NO;
  				FRAMEWORK_SEARCH_PATHS = (
  					"$(inherited)",
-@@ -12088,7 +12089,7 @@
+@@ -12112,7 +12113,7 @@
  				CODE_SIGN_IDENTITY = "Mac Developer";
  				COMBINE_HIDPI_IMAGES = YES;
  				COPY_PHASE_STRIP = YES;
@@ -36,7 +135,7 @@ index b3803e9..7ac83a8 100644
  				FRAMEWORK_SEARCH_PATHS = (
  					"$(inherited)",
  					"$(SRCROOT)",
-@@ -12579,11 +12580,11 @@
+@@ -12603,11 +12604,11 @@
  				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
  				CLANG_ENABLE_OBJC_WEAK = YES;
  				CLANG_WARN_INT_CONVERSION = YES;
@@ -51,7 +150,7 @@ index b3803e9..7ac83a8 100644
  				ENABLE_HARDENED_RUNTIME = NO;
  				FRAMEWORK_SEARCH_PATHS = (
  					"$(inherited)",
-@@ -12755,7 +12756,7 @@
+@@ -12779,7 +12780,7 @@
  				CODE_SIGN_IDENTITY = "Mac Developer";
  				COMBINE_HIDPI_IMAGES = YES;
  				COPY_PHASE_STRIP = YES;
@@ -60,7 +159,7 @@ index b3803e9..7ac83a8 100644
  				FRAMEWORK_SEARCH_PATHS = (
  					"$(inherited)",
  					"$(SRCROOT)",
-@@ -13620,12 +13621,12 @@
+@@ -13644,12 +13645,12 @@
  				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
  				CLANG_ENABLE_OBJC_WEAK = YES;
  				CLANG_WARN_INT_CONVERSION = YES;
@@ -76,7 +175,7 @@ index b3803e9..7ac83a8 100644
  				ENABLE_HARDENED_RUNTIME = NO;
  				FRAMEWORK_SEARCH_PATHS = (
  					"$(inherited)",
-@@ -13697,11 +13698,11 @@
+@@ -13721,11 +13722,11 @@
  				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
  				CLANG_ENABLE_OBJC_WEAK = YES;
  				CLANG_WARN_INT_CONVERSION = YES;
@@ -92,10 +191,10 @@ index b3803e9..7ac83a8 100644
  				FRAMEWORK_SEARCH_PATHS = (
  					"$(inherited)",
 diff --git a/sources/PTYSession.m b/sources/PTYSession.m
-index a73e7f7..999dccc 100644
+index 624603c..2494f98 100644
 --- a/sources/PTYSession.m
 +++ b/sources/PTYSession.m
-@@ -3575,7 +3575,9 @@ - (void)setPreferencesFromAddressBookEntry:(NSDictionary *)aePrefs {
+@@ -3583,7 +3583,9 @@ - (void)setPreferencesFromAddressBookEntry:(NSDictionary *)aePrefs {
                                                         inBookmark:aDict]];
  
      // transparency
@@ -106,7 +205,7 @@ index a73e7f7..999dccc 100644
      [self setBlend:[iTermProfilePreferences floatForKey:KEY_BLEND inProfile:aDict]];
      [self setTransparencyAffectsOnlyDefaultBackgroundColor:[iTermProfilePreferences floatForKey:KEY_TRANSPARENCY_AFFECTS_ONLY_DEFAULT_BACKGROUND_COLOR inProfile:aDict]];
  
-@@ -3973,10 +3975,7 @@ - (float)transparency
+@@ -3981,10 +3983,7 @@ - (float)transparency
  
  - (void)setTransparency:(float)transparency
  {
@@ -118,52 +217,103 @@ index a73e7f7..999dccc 100644
      [_textview setTransparency:transparency];
      [self useTransparencyDidChange];
      [self.view setNeedsDisplay:YES];
+diff --git a/sources/PTYTab.m b/sources/PTYTab.m
+index 54ddef3..6d8680d 100644
+--- a/sources/PTYTab.m
++++ b/sources/PTYTab.m
+@@ -584,7 +584,8 @@ - (void)nameOfSession:(PTYSession *)session didChangeTo:(NSString*)newName {
+ 
+ - (void)updateTabTitleForCurrentSessionName:(NSString *)newName {
+     NSString *value = (self.evaluatedTitleOverride ?: newName) ?: @" ";
+-    [tabViewItem_ setLabel:value];  // PSM uses bindings to bind the label to its title
++    // PATCH: (Modified) set tab view label to the window title if it's set
++    [tabViewItem_ setLabel:self.activeSession.windowTitle.length != 0 ? self.activeSession.windowTitle : value];  // PSM uses bindings to bind the label to its title
+     [self.realParentWindow tabTitleDidChange:self];
+ }
+ 
+diff --git a/sources/PTYTextView.m b/sources/PTYTextView.m
+index 3359c5a..f3a6aaa 100644
+--- a/sources/PTYTextView.m
++++ b/sources/PTYTextView.m
+@@ -587,7 +587,8 @@ - (BOOL)isFlipped
+ 
+ - (BOOL)isOpaque
+ {
+-    return YES;
++    // PATCH: (Modified) transparent so we can see our semi-transparent window
++    return NO;
+ }
+ 
+ - (void)setHighlightCursorLine:(BOOL)highlightCursorLine {
 diff --git a/sources/PseudoTerminal.m b/sources/PseudoTerminal.m
-index 3676c91..6bb7ce1 100644
+index 04262b2..dab046b 100644
 --- a/sources/PseudoTerminal.m
 +++ b/sources/PseudoTerminal.m
-@@ -397,12 +397,10 @@ + (void)registerSessionsInArrangement:(NSDictionary *)arrangement {
+@@ -404,12 +404,12 @@ + (void)registerSessionsInArrangement:(NSDictionary *)arrangement {
  }
  
  + (void)updateDecorationsOfWindow:(NSWindow *)myWindow forType:(iTermWindowType)windowType {
 -    const BOOL isCompact = (windowType == WINDOW_TYPE_COMPACT);
 -    [myWindow setHasShadow:(windowType == WINDOW_TYPE_NORMAL ||
 -                            isCompact)];
-+    [myWindow setHasShadow:YES]; // PATCH: (Modified) Native macOS window shadow
-     // Chrome doesn't change titleVisibility so neither do we.
-     // Some truly dreadful hacks are used instead. See PTYWindow.m.
+-    // Chrome doesn't change titleVisibility so neither do we.
+-    // Some truly dreadful hacks are used instead. See PTYWindow.m.
 -    myWindow.titlebarAppearsTransparent = isCompact;
-+    myWindow.titlebarAppearsTransparent = YES; // PATCH: (Modified) Hides title bar strip
++    // PATCH: (Modified) Native macOS window shadow
++    [myWindow setHasShadow:YES];
++    [myWindow setTitleVisibility:NSWindowTitleHidden];
++    
++    // PATCH: (Modified) Hides title bar strip for our tab view instead
++    myWindow.titlebarAppearsTransparent = YES;
  }
  
  + (NSInteger)styleMaskForWindowType:(iTermWindowType)windowType
-@@ -1785,18 +1783,16 @@ - (PTYSession *)currentSession {
- - (void)setWindowTitle {
+@@ -418,6 +418,10 @@ + (NSInteger)styleMaskForWindowType:(iTermWindowType)windowType
+     if (hotkeyWindowType == iTermHotkeyWindowTypeFloatingPanel) {
+         mask = NSWindowStyleMaskNonactivatingPanel;
+     }
++    
++    // PATCH: (Added) Always use full size content view
++    mask |= NSWindowStyleMaskFullSizeContentView;
++    
+     switch (windowType) {
+         case WINDOW_TYPE_TOP:
+         case WINDOW_TYPE_BOTTOM:
+@@ -1853,7 +1857,8 @@ - (void)setWindowTitle {
      if (self.isShowingTransientTitle) {
          PTYSession *session = self.currentSession;
-+        // PATCH: (Modified) just show window dimensions while resizing
          NSString *aTitle;
 -        if (self.window.frame.size.width < 250) {
--            aTitle = [NSString stringWithFormat:@"%d✕%d", session.columns, session.rows];
--        } else {
--            aTitle = [NSString stringWithFormat:@"%@ \u2014 %d✕%d",
--                      [self undecoratedWindowTitle],
--                      [session columns],
--                      [session rows]];
--        }
-+        aTitle = [NSString stringWithFormat:@"%d✕%d", session.columns, session.rows];
-         [self setWindowTitle:aTitle];
-     } else {
--        [self setWindowTitle:[self undecoratedWindowTitle]];
-+        // PATCH: (Modified) show current process name if the window title isn't set.
-+        NSString *aTitle;
-+        aTitle = [self undecoratedWindowTitle];
-+        aTitle = aTitle.length != 0 ? aTitle : [self.currentSession name];
-+        [self setWindowTitle:aTitle];
++        // PATCH: (Modified) check tab width for displaying size when resizing
++        if (self.window.frame.size.width / (self.tabs.count) < 200) {
+             aTitle = [NSString stringWithFormat:@"%d✕%d", session.columns, session.rows];
+         } else {
+             aTitle = [NSString stringWithFormat:@"%@ \u2014 %d✕%d",
+@@ -1908,6 +1913,8 @@ - (void)setWindowTitle:(NSString *)title {
+         return; // Title is already up to date
      }
+ 
++    // PATCH: (Added) set window title for current tab view label
++    [self.currentTab.tabViewItem setLabel:title];
+     [self.contentView windowTitleDidChangeTo:titleExWindowNumber];
+ 
+     if (liveResize_) {
+@@ -3549,12 +3556,8 @@ - (NSEdgeInsets)tabBarInsets {
  }
  
-@@ -4066,8 +4062,7 @@ - (void)toggleTraditionalFullScreenMode {
+ - (BOOL)tabBarAlwaysVisible {
+-    if (@available(macOS 10.14, *)) {
+-        if (togglingLionFullScreen_ || [self lionFullScreen]) {
+-            return YES;
+-        }
+-    }
+-    return ![iTermPreferences boolForKey:kPreferenceKeyHideTabBar];
++    // PATCH: (Added) always show tab bar
++    return YES;
+ }
+ 
+ - (BOOL)anyFullScreen
+@@ -4157,8 +4160,7 @@ - (void)toggleTraditionalFullScreenMode {
          }
          PtyLog(@"toggleFullScreenMode - allocate new terminal");
      }
@@ -173,7 +323,7 @@ index 3676c91..6bb7ce1 100644
  
      if (!_fullScreen &&
          [iTermPreferences boolForKey:kPreferenceKeyDisableFullscreenTransparencyByDefault]) {
-@@ -4186,7 +4181,7 @@ - (void)updateWindowShadow {
+@@ -4277,7 +4279,7 @@ - (void)updateWindowShadow {
          if ([iTermAdvancedSettingsModel disableWindowShadowWhenTransparencyOnMojave]) {
              const BOOL haveTransparency = [self anySessionInCurrentTabHasTransparency];
              DLog(@"%@: have transparency = %@ for sessions %@ in tab %@", self, @(haveTransparency), self.currentTab.sessions, self.currentTab);
@@ -182,7 +332,7 @@ index 3676c91..6bb7ce1 100644
          }
      }
  }
-@@ -5502,9 +5497,10 @@ - (void)updateTabColors {
+@@ -5611,9 +5613,10 @@ - (void)updateTabColors {
          [_contentView.tabBarControl setTabColor:color forTabViewItem:tabViewItem];
          if ([_contentView.tabView selectedTabViewItem] == tabViewItem) {
              NSColor* newTabColor = [_contentView.tabBarControl tabColorForTabViewItem:tabViewItem];
@@ -196,7 +346,7 @@ index 3676c91..6bb7ce1 100644
                  [self setBackgroundColor:newTabColor];
  
                  [_contentView setColor:newTabColor];
-@@ -5547,7 +5543,11 @@ - (void)setMojaveBackgroundColor:(nullable NSColor *)backgroundColor NS_AVAILABL
+@@ -5656,7 +5659,11 @@ - (void)setMojaveBackgroundColor:(nullable NSColor *)backgroundColor NS_AVAILABL
              self.window.appearance = [NSAppearance appearanceNamed:NSAppearanceNameDarkAqua];
              break;
      }
@@ -209,7 +359,7 @@ index 3676c91..6bb7ce1 100644
      self.window.titlebarAppearsTransparent = NO;  // Keep it from showing content from other windows behind it. Issue 7108.
  }
  
-@@ -5586,6 +5586,10 @@ - (void)setLegacyBackgroundColor:(nullable NSColor *)backgroundColor {
+@@ -5695,6 +5702,10 @@ - (void)setLegacyBackgroundColor:(nullable NSColor *)backgroundColor {
          }
          darkAppearance = (backgroundColor != nil && backgroundColor.perceivedBrightness < 0.5);
      }
@@ -221,10 +371,10 @@ index 3676c91..6bb7ce1 100644
      if (darkAppearance) {
          self.window.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantDark];
 diff --git a/sources/iTermAdvancedSettingsModel.h b/sources/iTermAdvancedSettingsModel.h
-index 1919965..5413c23 100644
+index f515a97..5783ae5 100644
 --- a/sources/iTermAdvancedSettingsModel.h
 +++ b/sources/iTermAdvancedSettingsModel.h
-@@ -188,6 +188,13 @@ extern NSString *const iTermAdvancedSettingsDidChange;
+@@ -189,6 +189,13 @@ extern NSString *const iTermAdvancedSettingsDidChange;
  + (int)slowPasteBytesPerCall;
  + (double)slowPasteDelayBetweenCalls;
  
@@ -239,10 +389,10 @@ index 1919965..5413c23 100644
  // in brightness between the proposed background color and the neighbors' background color is less
  // than this threshold.
 diff --git a/sources/iTermAdvancedSettingsModel.m b/sources/iTermAdvancedSettingsModel.m
-index cbbfba4..aeabc01 100644
+index a1bfd21..100560c 100644
 --- a/sources/iTermAdvancedSettingsModel.m
 +++ b/sources/iTermAdvancedSettingsModel.m
-@@ -270,6 +270,14 @@ + (void)enumerateDictionaries:(void (^)(NSDictionary *))block {
+@@ -271,6 +271,14 @@ + (void)enumerateDictionaries:(void (^)(NSDictionary *))block {
  //   `-----'  :      :
  DEFINE_FLOAT(fractionOfCharacterSelectingNextNeighbor, 0.35, SECTION_MOUSE @"Fraction of character’s width on its right side that can be used to select the character to its right.");
  
@@ -257,18 +407,6 @@ index cbbfba4..aeabc01 100644
  #pragma mark Terminal
  
  #define SECTION_TERMINAL @"Terminal: "
-diff --git a/sources/iTermBackgroundDrawingHelper.m b/sources/iTermBackgroundDrawingHelper.m
-index d37d372..bda2246 100644
---- a/sources/iTermBackgroundDrawingHelper.m
-+++ b/sources/iTermBackgroundDrawingHelper.m
-@@ -15,6 +15,7 @@ @implementation iTermBackgroundDrawingHelper {
- - (void)drawBackgroundImageInView:(NSView *)view
-                          viewRect:(NSRect)rect
-            blendDefaultBackground:(BOOL)blendDefaultBackground {
-+    return;
-     const float alpha = [self.delegate backgroundDrawingHelperUseTransparency] ? (1.0 - [self.delegate backgroundDrawingHelperTransparency]) : 1.0;
-     NSImage *backgroundImage = [self.delegate backgroundDrawingHelperImage];
-     if (backgroundImage) {
 diff --git a/sources/iTermCursor.m b/sources/iTermCursor.m
 index a38fd56..c944dd6 100644
 --- a/sources/iTermCursor.m
@@ -285,8 +423,31 @@ index a38fd56..c944dd6 100644
                                           context:ctx
                                   backgroundColor:backgroundColor];
          }
+diff --git a/sources/iTermRootTerminalView.m b/sources/iTermRootTerminalView.m
+index b1d5a10..8d050c1 100644
+--- a/sources/iTermRootTerminalView.m
++++ b/sources/iTermRootTerminalView.m
+@@ -136,7 +136,7 @@ - (instancetype)initWithFrame:(NSRect)frameRect
+                 [self setTabBarControlAutoresizingMask:(NSViewHeightSizable | NSViewMaxXMargin)];
+                 break;
+         }
+-        if (@available(macOS 10.14, *)) {
++        if (NO) {
+             [self addSubview:_tabBarBacking];
+             [_tabBarBacking addSubview:_tabBarControl];
+         } else {
+@@ -695,7 +695,8 @@ - (void)layoutSubviewsTopTabBarVisible:(BOOL)topTabBarVisible forWindow:(NSWindo
+ }
+ 
+ - (void)setTabBarFrame:(NSRect)frame {
+-    if (@available(macOS 10.14, *)) {
++    frame.origin.y -= 10;
++    if (NO) {
+         assert(!_tabBarControlOnLoan);
+         _tabBarBacking.frame = frame;
+         self.tabBarControl.frame = _tabBarBacking.bounds;
 diff --git a/sources/iTermTabBarControlView.m b/sources/iTermTabBarControlView.m
-index 4be80cf..ff70a67 100644
+index 4be80cf..b4014de 100644
 --- a/sources/iTermTabBarControlView.m
 +++ b/sources/iTermTabBarControlView.m
 @@ -13,7 +13,7 @@
@@ -294,15 +455,36 @@ index 4be80cf..ff70a67 100644
  #import "NSView+iTerm.h"
  
 -CGFloat iTermTabBarControlViewDefaultHeight = 24;
-+CGFloat iTermTabBarControlViewDefaultHeight = 0; // PATCH: (Modified) hide tab bar
++CGFloat iTermTabBarControlViewDefaultHeight = 22; // PATCH: (Modified) hide tab bar
  
  @interface NSView (Private)
  - (NSRect)_opaqueRectForWindowMoveWhenInTitlebar;
+@@ -49,8 +49,8 @@ - (instancetype)initWithFrame:(NSRect)frameRect {
+ 
+ - (void)drawRect:(NSRect)dirtyRect {
+     if (@available(macOS 10.14, *)) { } else {
+-        [[NSColor windowBackgroundColor] set];
+-        NSRectFill(dirtyRect);
++        [[NSColor clearColor] set];
++        //NSRectFill(dirtyRect);
+     }
+ 
+     [super drawRect:dirtyRect];
+@@ -245,7 +245,8 @@ - (void)setFlashState:(iTermTabBarFlashState)flashState {
+ #pragma mark - Window Dragging
+ 
+ - (BOOL)mouseDownCanMoveWindow {
+-    return [self.itermTabBarDelegate iTermTabBarCanDragWindow] ? NO : [super mouseDownCanMoveWindow];
++    // PATCH: (Modified) make it easier to drag the window without the tab bar getting in the way
++    return YES;
+ }
+ 
+ - (NSRect)_opaqueRectForWindowMoveWhenInTitlebar {
 diff --git a/sources/iTermTextDrawingHelper.m b/sources/iTermTextDrawingHelper.m
-index 7535309..a88de53 100644
+index 49bbd96..9977aac 100644
 --- a/sources/iTermTextDrawingHelper.m
 +++ b/sources/iTermTextDrawingHelper.m
-@@ -2585,10 +2585,11 @@ - (NSColor *)backgroundColorForCursor {
+@@ -2586,10 +2586,11 @@ - (NSColor *)backgroundColorForCursor {
  }
  
  - (BOOL)shouldShowCursor {
@@ -316,7 +498,7 @@ index 7535309..a88de53 100644
          // in the tab, and the cursor has not moved for half a second.
          return _blinkingItemsVisible;
 diff --git a/sources/iTermWindowImpl.m b/sources/iTermWindowImpl.m
-index 22c7528..09cc5bb 100644
+index 235077c..bc42c3d 100644
 --- a/sources/iTermWindowImpl.m
 +++ b/sources/iTermWindowImpl.m
 @@ -60,6 +60,45 @@ - (void)iterm_dealloc {
@@ -330,7 +512,7 @@ index 22c7528..09cc5bb 100644
 +    NSButton *fullscreenButton = [self.contentView.window standardWindowButton:NSWindowZoomButton];
 +    
 +    int horizOff = [iTermAdvancedSettingsModel standardWindowButtonsHorizontalOffset];
-+    int vertOff = [iTermAdvancedSettingsModel standardWindowButtonsVerticalOffset];
++    int vertOff = [iTermAdvancedSettingsModel standardWindowButtonsVerticalOffset] + 20;
 +    
 +    [closeButton setFrameOrigin:NSMakePoint(0 + horizOff, 3)];
 +    [miniaturizeButton setFrameOrigin:NSMakePoint(20 + horizOff, 3)];
