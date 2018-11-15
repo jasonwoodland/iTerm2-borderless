@@ -50,6 +50,19 @@ index e197d37..4585eda 100644
      if (@available(macOS 10.14, *)) {
          CGFloat colors[3];
          if (self.tabBar.window.isKeyWindow && [NSApp isActive]) {
+diff --git a/ThirdParty/PSMTabBarControl/source/PSMTabBarCell.m b/ThirdParty/PSMTabBarControl/source/PSMTabBarCell.m
+index 0d83568..fa513b9 100644
+--- a/ThirdParty/PSMTabBarControl/source/PSMTabBarCell.m
++++ b/ThirdParty/PSMTabBarControl/source/PSMTabBarCell.m
+@@ -400,6 +400,8 @@ - (CGFloat)highlightAmount {
+ 
+ - (void)mouseEntered:(NSEvent *)theEvent {
+     // check for which tag
++    // PATCH: (Added) Don't show close button if the indicator is visible
++    if (self.hasIcon) return;
+     if ([theEvent trackingNumber] == _closeButtonTrackingTag) {
+         _closeButtonOver = YES;
+     }
 diff --git a/ThirdParty/PSMTabBarControl/source/PSMTabBarControl.m b/ThirdParty/PSMTabBarControl/source/PSMTabBarControl.m
 index 54b162d..1cdc983 100644
 --- a/ThirdParty/PSMTabBarControl/source/PSMTabBarControl.m
@@ -66,7 +79,7 @@ index 54b162d..1cdc983 100644
  }
  
 diff --git a/ThirdParty/PSMTabBarControl/source/PSMYosemiteTabStyle.m b/ThirdParty/PSMTabBarControl/source/PSMYosemiteTabStyle.m
-index 1fd9750..8942101 100644
+index 1fd9750..57fe2db 100644
 --- a/ThirdParty/PSMTabBarControl/source/PSMYosemiteTabStyle.m
 +++ b/ThirdParty/PSMTabBarControl/source/PSMYosemiteTabStyle.m
 @@ -162,12 +162,14 @@ - (void)dealloc {
@@ -86,7 +99,19 @@ index 1fd9750..8942101 100644
  }
  
  // For vertical orientation
-@@ -459,7 +461,8 @@ - (NSAttributedString *)attributedStringValueForTabCell:(PSMTabBarCell *)cell {
+@@ -224,6 +226,11 @@ - (NSRect)closeButtonRectForTabCell:(PSMTabBarCell *)cell {
+     result.origin.x = cellFrame.origin.x + kSPMTabBarCellInternalXMargin;
+     result.origin.y = cellFrame.origin.y + floor((cellFrame.size.height - result.size.height) / 2.0);
+ 
++    // PATCH: (Added) Move closeButtonRect to display on the left of the tab cell label
++    result.origin.x += cellFrame.size.width / 2 - result.size.width - 13;
++    result.origin.x -= cell.attributedStringValue.size.width / 2;
++    result.origin.y += 1;
++    
+     return result;
+ }
+ 
+@@ -459,7 +466,8 @@ - (NSAttributedString *)attributedStringValueForTabCell:(PSMTabBarCell *)cell {
      // graphic
      NSImage *graphic = [(id)[[cell representedObject] identifier] psmTabGraphic];
  
@@ -96,16 +121,82 @@ index 1fd9750..8942101 100644
      NSDictionary *attributes = @{ NSFontAttributeName: font,
                                    NSForegroundColorAttributeName: [self textColorForCell:cell],
                                    NSParagraphStyleAttributeName: truncatingTailParagraphStyle };
-@@ -1105,7 +1108,8 @@ - (void)drawTabBar:(PSMTabBarControl *)bar
+@@ -923,6 +931,8 @@ - (void)drawInteriorWithTabCell:(PSMTabBarCell *)cell
+ 
+     // icon
+     NSRect iconRect = NSZeroRect;
++    // PATCH: (Moved) we need to access this property later on
++    NSImage *icon = [(id)[[cell representedObject] identifier] icon];
+     if ([cell hasIcon]) {
+         iconRect = [self iconRectForTabCell:cell];
+         NSImage *icon = [(id)[[cell representedObject] identifier] icon];
+@@ -935,12 +945,8 @@ - (void)drawInteriorWithTabCell:(PSMTabBarCell *)cell
+             iconRect.origin.y -= (kPSMTabBarIconWidth - [icon size].height)/2.0;
+         }
+ 
+-        [icon drawInRect:iconRect
+-                fromRect:NSZeroRect
+-               operation:NSCompositingOperationSourceOver
+-                fraction:1.0
+-          respectFlipped:YES
+-                   hints:nil];
++        // PATCH: (Removed) Don't draw the icon yet,
++        // we need to mess with tht eframe first, see bottom of this method
+     }
+ 
+     // object counter
+@@ -957,16 +963,12 @@ - (void)drawInteriorWithTabCell:(PSMTabBarCell *)cell
+ 
+     // label rect
+     NSAttributedString *attributedString = [cell attributedStringValue];
++    // PATCH: (Moved) we need to access this property later on
++    NSRect labelRect;
+     if (attributedString.length > 0) {
+-        NSRect labelRect;
+         labelRect.origin.x = labelPosition;
+         labelRect.size.width = cellFrame.size.width - (labelRect.origin.x - cellFrame.origin.x) - kPSMTabBarCellPadding;
+-        if ([cell hasIcon]) {
+-            // Reduce size of label if there is an icon or activity indicator
+-            labelRect.size.width -= iconRect.size.width + kPSMTabBarCellIconPadding;
+-        } else if (![[cell indicator] isHidden]) {
+-            labelRect.size.width -= cell.indicator.frame.size.width + kPSMTabBarCellIconPadding;
+-        }
++        // PATCH: (Removed) Don't mmove the label to the left if the indicator is visible
+         labelRect.size.height = cellFrame.size.height;
+ 
+         if ([cell count] > 0) {
+@@ -989,6 +991,19 @@ - (void)drawInteriorWithTabCell:(PSMTabBarCell *)cell
+ 
+         [attributedString drawInRect:labelRect];
+     }
++    
++    // PATCH: (Added) modify the icon frame and draw it
++    if ([cell hasIcon]) {
++        iconRect.origin.x -= labelRect.size.width / 2 + attributedString.size.width / 2 - 13;
++        iconRect.origin.x -= iconRect.size.width; // Remove if we don't move the label over;
++        iconRect.origin.y += 1;
++        [icon drawInRect:iconRect
++                fromRect:NSZeroRect
++               operation:NSCompositingOperationSourceOver
++                fraction:1.0
++          respectFlipped:YES
++                   hints:nil];
++    }
+ }
+ 
+ - (NSColor *)tabBarColor {
+@@ -1105,8 +1120,9 @@ - (void)drawTabBar:(PSMTabBarControl *)bar
      } else {
          insetRect = clipRect;
      }
 -    [self drawHorizontalLineInFrame:NSIntersectionRect(clipRect, insetRect) y:0];
+-
++    
 +    // PATCH: (Removed) Don't draw horizontal lines for tabview
-+    // [self drawHorizontalLineInFrame:NSIntersectionRect(clipRect, insetRect) y:0];
- 
++    
      // no tab view == not connected
      if (![bar tabView]) {
+         NSRect labelRect = rect;
 diff --git a/iTerm2.xcodeproj/project.pbxproj b/iTerm2.xcodeproj/project.pbxproj
 index 78ef8f4..0ee299e 100644
 --- a/iTerm2.xcodeproj/project.pbxproj
@@ -255,7 +346,7 @@ index 3359c5a..f3a6aaa 100644
  
  - (void)setHighlightCursorLine:(BOOL)highlightCursorLine {
 diff --git a/sources/PseudoTerminal.m b/sources/PseudoTerminal.m
-index 04262b2..dab046b 100644
+index 04262b2..dea52c2 100644
 --- a/sources/PseudoTerminal.m
 +++ b/sources/PseudoTerminal.m
 @@ -404,12 +404,12 @@ + (void)registerSessionsInArrangement:(NSDictionary *)arrangement {
@@ -298,16 +389,7 @@ index 04262b2..dab046b 100644
              aTitle = [NSString stringWithFormat:@"%d✕%d", session.columns, session.rows];
          } else {
              aTitle = [NSString stringWithFormat:@"%@ \u2014 %d✕%d",
-@@ -1908,6 +1913,8 @@ - (void)setWindowTitle:(NSString *)title {
-         return; // Title is already up to date
-     }
- 
-+    // PATCH: (Added) set window title for current tab view label
-+    [self.currentTab.tabViewItem setLabel:title];
-     [self.contentView windowTitleDidChangeTo:titleExWindowNumber];
- 
-     if (liveResize_) {
-@@ -3549,12 +3556,8 @@ - (NSEdgeInsets)tabBarInsets {
+@@ -3549,12 +3554,8 @@ - (NSEdgeInsets)tabBarInsets {
  }
  
  - (BOOL)tabBarAlwaysVisible {
@@ -322,7 +404,7 @@ index 04262b2..dab046b 100644
  }
  
  - (BOOL)anyFullScreen
-@@ -4157,8 +4160,7 @@ - (void)toggleTraditionalFullScreenMode {
+@@ -4157,8 +4158,7 @@ - (void)toggleTraditionalFullScreenMode {
          }
          PtyLog(@"toggleFullScreenMode - allocate new terminal");
      }
@@ -332,7 +414,7 @@ index 04262b2..dab046b 100644
  
      if (!_fullScreen &&
          [iTermPreferences boolForKey:kPreferenceKeyDisableFullscreenTransparencyByDefault]) {
-@@ -4277,7 +4279,7 @@ - (void)updateWindowShadow {
+@@ -4277,7 +4277,7 @@ - (void)updateWindowShadow {
          if ([iTermAdvancedSettingsModel disableWindowShadowWhenTransparencyOnMojave]) {
              const BOOL haveTransparency = [self anySessionInCurrentTabHasTransparency];
              DLog(@"%@: have transparency = %@ for sessions %@ in tab %@", self, @(haveTransparency), self.currentTab.sessions, self.currentTab);
@@ -341,7 +423,7 @@ index 04262b2..dab046b 100644
          }
      }
  }
-@@ -5611,9 +5613,10 @@ - (void)updateTabColors {
+@@ -5611,9 +5611,10 @@ - (void)updateTabColors {
          [_contentView.tabBarControl setTabColor:color forTabViewItem:tabViewItem];
          if ([_contentView.tabView selectedTabViewItem] == tabViewItem) {
              NSColor* newTabColor = [_contentView.tabBarControl tabColorForTabViewItem:tabViewItem];
@@ -355,7 +437,7 @@ index 04262b2..dab046b 100644
                  [self setBackgroundColor:newTabColor];
  
                  [_contentView setColor:newTabColor];
-@@ -5656,7 +5659,11 @@ - (void)setMojaveBackgroundColor:(nullable NSColor *)backgroundColor NS_AVAILABL
+@@ -5656,7 +5657,11 @@ - (void)setMojaveBackgroundColor:(nullable NSColor *)backgroundColor NS_AVAILABL
              self.window.appearance = [NSAppearance appearanceNamed:NSAppearanceNameDarkAqua];
              break;
      }
@@ -368,7 +450,7 @@ index 04262b2..dab046b 100644
      self.window.titlebarAppearsTransparent = NO;  // Keep it from showing content from other windows behind it. Issue 7108.
  }
  
-@@ -5695,6 +5702,10 @@ - (void)setLegacyBackgroundColor:(nullable NSColor *)backgroundColor {
+@@ -5695,6 +5700,10 @@ - (void)setLegacyBackgroundColor:(nullable NSColor *)backgroundColor {
          }
          darkAppearance = (backgroundColor != nil && backgroundColor.perceivedBrightness < 0.5);
      }

@@ -10,7 +10,9 @@ My custom iTerm2 patch and build. Consistently updated.
 
 * Hides the standard window title bar
 * Incorporates the tab bar into the title bar
-* New window title which displays either the title *or* the job name
+* Modified tab bar which integrates in the title bar
+* Moved the close tab button and new-output indicator to left of the tab name
+* New title format which shows either the title *or* the job name
 * New advanced options found under *Preferences > Advanced*: (Search for *&ldquo;borderless&rdquo;*)
   * ***Standard window buttons horizontal/vertical offset:*** Change the position of the window buttons and title bar.
   * ***Window title format:*** Set a custom title format
