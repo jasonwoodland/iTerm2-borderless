@@ -290,6 +290,236 @@ index 78ef8f4..0ee299e 100644
  				ENABLE_HARDENED_RUNTIME = NO;
  				FRAMEWORK_SEARCH_PATHS = (
  					"$(inherited)",
+diff --git a/plists/iTerm2.plist b/plists/iTerm2.plist
+index bc2fc2b..7e80879 100644
+--- a/plists/iTerm2.plist
++++ b/plists/iTerm2.plist
+@@ -2,24 +2,6 @@
+ <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+ <plist version="1.0">
+ <dict>
+-	<key>NSAppTransportSecurity</key>  
+-	<dict>  
+-	    <key>NSExceptionDomains</key>  
+-	    <dict>  
+-		<key>127.0.0.1</key>  
+-		<dict>  
+-		    <key>NSExceptionAllowsInsecureHTTPLoads</key>  
+-		    <true/>  
+-		</dict>  
+-		<key>localhost</key>  
+-		<dict>  
+-		    <key>NSExceptionAllowsInsecureHTTPLoads</key>  
+-		    <true/>  
+-		</dict>  
+-	    </dict>  
+-	</dict> 
+-	<key>NSHumanReadableCopyright</key>
+-	<string>GPL v2</string>
+ 	<key>CFBundleDevelopmentRegion</key>
+ 	<string>English</string>
+ 	<key>CFBundleDocumentTypes</key>
+@@ -42,12 +24,12 @@
+ 			<string>Editor</string>
+ 		</dict>
+ 		<dict>
++			<key>CFBundleTypeName</key>
++			<string>Folders</string>
+ 			<key>CFBundleTypeOSTypes</key>
+ 			<array>
+ 				<string>fold</string>
+ 			</array>
+-			<key>CFBundleTypeName</key>
+-			<string>Folders</string>
+ 			<key>CFBundleTypeRole</key>
+ 			<string>Editor</string>
+ 		</dict>
+@@ -84,65 +66,6 @@
+ 			</array>
+ 		</dict>
+ 	</array>
+-        <key>NSAppleEventsUsageDescription</key>
+-        <string>An application in iTerm2 wants to use AppleScript.</string>
+-        <key>NSCalendarsUsageDescription</key>
+-        <string>An application in iTerm2 wants to use Calendar data.</string>
+-        <key>NSCameraUsageDescription</key>
+-        <string>An application in iTerm2 wants to use the camera.</string>
+-        <key>NSContactsUsageDescription</key>
+-        <string>An application in iTerm2 wants to use your contacts.</string>
+-        <key>NSLocationAlwaysUsageDescription</key>
+-        <string>An application in iTerm2 wants to use your location information, even in the background.</string>
+-        <key>NSLocationUsageDescription</key>
+-        <string>An application in iTerm2 wants to use your location information.</string>
+-        <key>NSLocationWhenInUseUsageDescription</key>
+-        <string>An application in iTerm2 wants to use your location information while active.</string>
+-        <key>NSMicrophoneUsageDescription</key>
+-        <string>An application in iTerm2 wants to use your microphone.</string>
+-        <key>NSRemindersUsageDescription</key>
+-        <string>An application in iTerm2 wants to use your reminders.</string>
+-	<key>NSServices</key>
+-	<array>
+-		<dict>
+-			<key>NSMenuItem</key>
+-			<dict>
+-				<key>default</key>
+-				<string>New iTerm2 Tab Here</string>
+-			</dict>
+-			<key>NSMessage</key>
+-			<string>openTab</string>
+-			<key>NSRequiredContext</key>
+-			<dict>
+-				<key>NSTextContent</key>
+-				<string>FilePath</string>
+-			</dict>
+-			<key>NSSendTypes</key>
+-			<array>
+-				<string>NSFilenamesPboardType</string>
+-				<string>public.plain-text</string>
+-			</array>
+-		</dict>
+-		<dict>
+-			<key>NSMenuItem</key>
+-			<dict>
+-				<key>default</key>
+-				<string>New iTerm2 Window Here</string>
+-			</dict>
+-			<key>NSMessage</key>
+-			<string>openWindow</string>
+-			<key>NSRequiredContext</key>
+-			<dict>
+-				<key>NSTextContent</key>
+-				<string>FilePath</string>
+-			</dict>
+-			<key>NSSendTypes</key>
+-			<array>
+-				<string>NSFilenamesPboardType</string>
+-				<string>public.plain-text</string>
+-			</array>
+-		</dict>
+-	</array>
+ 	<key>CFBundleExecutable</key>
+ 	<string>iTerm2</string>
+ 	<key>CFBundleGetInfoString</key>
+@@ -154,7 +77,7 @@
+ 	<key>CFBundleIconFile</key>
+ 	<string>iTerm2.icns</string>
+ 	<key>CFBundleIdentifier</key>
+-	<string>com.googlecode.iterm2</string>
++	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+ 	<key>CFBundleInfoDictionaryVersion</key>
+ 	<string>6.0</string>
+ 	<key>CFBundleName</key>
+@@ -268,25 +191,102 @@
+ 	<string>unknown</string>
+ 	<key>LSApplicationCategoryType</key>
+ 	<string>public.app-category.utilities</string>
++	<key>NSAppTransportSecurity</key>
++	<dict>
++		<key>NSExceptionDomains</key>
++		<dict>
++			<key>127.0.0.1</key>
++			<dict>
++				<key>NSExceptionAllowsInsecureHTTPLoads</key>
++				<true/>
++			</dict>
++			<key>localhost</key>
++			<dict>
++				<key>NSExceptionAllowsInsecureHTTPLoads</key>
++				<true/>
++			</dict>
++		</dict>
++	</dict>
++	<key>NSAppleEventsUsageDescription</key>
++	<string>An application in iTerm2 wants to use AppleScript.</string>
+ 	<key>NSAppleScriptEnabled</key>
+ 	<string>YES</string>
+-	<key>OSAScriptingDefinition</key>
+-	<string>iTerm2.sdef</string>
++	<key>NSCalendarsUsageDescription</key>
++	<string>An application in iTerm2 wants to use Calendar data.</string>
++	<key>NSCameraUsageDescription</key>
++	<string>An application in iTerm2 wants to use the camera.</string>
++	<key>NSContactsUsageDescription</key>
++	<string>An application in iTerm2 wants to use your contacts.</string>
+ 	<key>NSExtensions</key>
+ 	<dict/>
++	<key>NSHumanReadableCopyright</key>
++	<string>GPL v2</string>
++	<key>NSLocationAlwaysUsageDescription</key>
++	<string>An application in iTerm2 wants to use your location information, even in the background.</string>
++	<key>NSLocationUsageDescription</key>
++	<string>An application in iTerm2 wants to use your location information.</string>
++	<key>NSLocationWhenInUseUsageDescription</key>
++	<string>An application in iTerm2 wants to use your location information while active.</string>
+ 	<key>NSMainNibFile</key>
+ 	<string>MainMenu</string>
++	<key>NSMicrophoneUsageDescription</key>
++	<string>An application in iTerm2 wants to use your microphone.</string>
+ 	<key>NSPrincipalClass</key>
+ 	<string>iTermApplication</string>
+-	<key>SUPublicDSAKeyFile</key>
+-	<string>dsa_pub.pem</string>
++	<key>NSRemindersUsageDescription</key>
++	<string>An application in iTerm2 wants to use your reminders.</string>
++	<key>NSServices</key>
++	<array>
++		<dict>
++			<key>NSMenuItem</key>
++			<dict>
++				<key>default</key>
++				<string>New iTerm2 Tab Here</string>
++			</dict>
++			<key>NSMessage</key>
++			<string>openTab</string>
++			<key>NSRequiredContext</key>
++			<dict>
++				<key>NSTextContent</key>
++				<string>FilePath</string>
++			</dict>
++			<key>NSSendTypes</key>
++			<array>
++				<string>NSFilenamesPboardType</string>
++				<string>public.plain-text</string>
++			</array>
++		</dict>
++		<dict>
++			<key>NSMenuItem</key>
++			<dict>
++				<key>default</key>
++				<string>New iTerm2 Window Here</string>
++			</dict>
++			<key>NSMessage</key>
++			<string>openWindow</string>
++			<key>NSRequiredContext</key>
++			<dict>
++				<key>NSTextContent</key>
++				<string>FilePath</string>
++			</dict>
++			<key>NSSendTypes</key>
++			<array>
++				<string>NSFilenamesPboardType</string>
++				<string>public.plain-text</string>
++			</array>
++		</dict>
++	</array>
+ 	<key>NSSupportsAutomaticGraphicsSwitching</key>
+ 	<true/>
+-	<key>SUFeedURLForTesting</key>
+-	<string>https://iterm2.com/appcasts/testing.xml</string>
++	<key>OSAScriptingDefinition</key>
++	<string>iTerm2.sdef</string>
++	<key>SUFeedURL</key>
++	<string>https://iterm2.com/appcasts/final.xml</string>
+ 	<key>SUFeedURLForFinal</key>
+ 	<string>https://iterm2.com/appcasts/final.xml</string>
+-        <key>SUFeedURL</key>
+-        <string>https://iterm2.com/appcasts/final.xml</string>
++	<key>SUFeedURLForTesting</key>
++	<string>https://iterm2.com/appcasts/testing.xml</string>
++	<key>SUPublicDSAKeyFile</key>
++	<string>dsa_pub.pem</string>
+ </dict>
+ </plist>
 diff --git a/sources/PTYSession.m b/sources/PTYSession.m
 index 624603c..2494f98 100644
 --- a/sources/PTYSession.m
@@ -318,10 +548,58 @@ index 624603c..2494f98 100644
      [self useTransparencyDidChange];
      [self.view setNeedsDisplay:YES];
 diff --git a/sources/PTYTab.m b/sources/PTYTab.m
-index 54ddef3..6d8680d 100644
+index 54ddef3..95197c4 100644
 --- a/sources/PTYTab.m
 +++ b/sources/PTYTab.m
-@@ -584,7 +584,8 @@ - (void)nameOfSession:(PTYSession *)session didChangeTo:(NSString*)newName {
+@@ -557,6 +557,16 @@ - (void)setState:(NSUInteger)flagsToSet reset:(NSUInteger)flagsToReset {
+ }
+ 
+ - (void)updateIcon {
++    NSArray *commands = [[iTermAdvancedSettingsModel disabledNewOutputIndicatorCommands] componentsSeparatedByString:@","];
++    for (id command in commands) {
++        NSString *trimmedCommand = [command stringByTrimmingCharactersInSet:
++                                    [NSCharacterSet whitespaceAndNewlineCharacterSet]];
++        if ([[self.activeSession.childJobNames lastObject] isEqualToString:trimmedCommand]) {
++            [self setIcon:nil];
++            return;
++        }
++    }
++    
+     if (_state & kPTYTabDeadState) {
+         [self setIcon:[PTYTab deadImageWithAppearance:self.realParentWindow.window.effectiveAppearance]];
+     } else if (_state & kPTYTabBellState) {
+@@ -572,6 +582,30 @@ - (void)updateIcon {
+     }
+ }
+ 
++/*- (void)updateIcon {
++    if (_state & kPTYTabDeadState) {
++        [self setIcon:[PTYTab deadImageWithAppearance:self.realParentWindow.window.effectiveAppearance]];
++    } else if (_state & kPTYTabBellState) {
++        if ([iTermAdvancedSettingsModel showNewOutputIndicatorForBell]) {
++            [self setIcon:[PTYTab imageForNewOutputWithAppearance:self.realParentWindow.window.effectiveAppearance]];
++            [self setState:kPTYTabNewOutputState reset:kPTYTabBellState];
++            [self updateIcon];
++        } else {
++            [self setIcon:[PTYTab bellImage]];
++        }
++    } else if ([iTermPreferences boolForKey:kPreferenceKeyShowNewOutputIndicator] &&
++               (_state & (kPTYTabNewOutputState))) {
++        if (![iTermAdvancedSettingsModel showNewOutputIndicatorForBell]) {
++            [self setIcon:[PTYTab imageForNewOutputWithAppearance:self.realParentWindow.window.effectiveAppearance]];
++        }
++    } else if ([iTermPreferences boolForKey:kPreferenceKeyShowNewOutputIndicator] &&
++               (_state & kPTYTabIdleState)) {
++        [self setIcon:[PTYTab idleImageWithAppearance:self.realParentWindow.window.effectiveAppearance]];
++    } else {
++        [self setIcon:nil];
++    }
++}*/
++
+ - (void)loadTitleFromSession {
+     tabViewItem_.label = self.activeSession.name;
+ }
+@@ -584,7 +618,8 @@ - (void)nameOfSession:(PTYSession *)session didChangeTo:(NSString*)newName {
  
  - (void)updateTabTitleForCurrentSessionName:(NSString *)newName {
      NSString *value = (self.evaluatedTitleOverride ?: newName) ?: @" ";
@@ -462,10 +740,10 @@ index 04262b2..dea52c2 100644
      if (darkAppearance) {
          self.window.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantDark];
 diff --git a/sources/iTermAdvancedSettingsModel.h b/sources/iTermAdvancedSettingsModel.h
-index f515a97..5783ae5 100644
+index f515a97..afca0be 100644
 --- a/sources/iTermAdvancedSettingsModel.h
 +++ b/sources/iTermAdvancedSettingsModel.h
-@@ -189,6 +189,13 @@ extern NSString *const iTermAdvancedSettingsDidChange;
+@@ -189,6 +189,14 @@ extern NSString *const iTermAdvancedSettingsDidChange;
  + (int)slowPasteBytesPerCall;
  + (double)slowPasteDelayBetweenCalls;
  
@@ -475,25 +753,31 @@ index f515a97..5783ae5 100644
 ++ (NSString *)windowTitleFormat;
 ++ (int)standardWindowButtonsHorizontalOffset;
 ++ (int)standardWindowButtonsVerticalOffset;
+++ (NSString *)disabledNewOutputIndicatorCommands;
 +
  // The cursor's background goes to the "most different" color from its neighbors if the difference
  // in brightness between the proposed background color and the neighbors' background color is less
  // than this threshold.
 diff --git a/sources/iTermAdvancedSettingsModel.m b/sources/iTermAdvancedSettingsModel.m
-index a1bfd21..100560c 100644
+index a1bfd21..b14a593 100644
 --- a/sources/iTermAdvancedSettingsModel.m
 +++ b/sources/iTermAdvancedSettingsModel.m
-@@ -271,6 +271,14 @@ + (void)enumerateDictionaries:(void (^)(NSDictionary *))block {
+@@ -271,6 +271,19 @@ + (void)enumerateDictionaries:(void (^)(NSDictionary *))block {
  //   `-----'  :      :
  DEFINE_FLOAT(fractionOfCharacterSelectingNextNeighbor, 0.35, SECTION_MOUSE @"Fraction of character’s width on its right side that can be used to select the character to its right.");
  
 +// PATCH: (Added) iTerm2-borderless Features
-+#pragma mark iTerm2-borderless Preferences
-+DEFINE_FLOAT(timeBeforeBlinks, 0.5, @"iTerm2-borderless Features: Duration before cursor starts blinking.");
-+DEFINE_BOOL(setCursorForegroundColor, YES, @"iTerm2-borderless Features: Set cursor foreground color.");
-+DEFINE_STRING(windowTitleFormat, @"%@", @"iTerm2-borderless Features: Window title format\n“%@” represents the current session name, e.g. 'Terminal - %@'")
-+DEFINE_INT(standardWindowButtonsHorizontalOffset, 17, @"iTerm2-borderless Features: Standard window buttons horizontal offset")
-+DEFINE_INT(standardWindowButtonsVerticalOffset, 8, @"iTerm2-borderless Features: Standard window buttons vertical offset")
++
++#pragma mark iTerm2-borderless Features
++
++#define SECTION_BORDERLESS @"iTerm2-borderless Features: "
++
++DEFINE_FLOAT(timeBeforeBlinks, 0.5, SECTION_BORDERLESS @"Duration before cursor starts blinking after a keypress.");
++DEFINE_BOOL(setCursorForegroundColor, YES, SECTION_BORDERLESS @"Set cursor foreground color.");
++//DEFINE_STRING(windowTitleFormat, @"%@", SECTION_BORDERLESS @"Window title format\n“%@” represents the current session name, e.g. 'Terminal - %@'")
++DEFINE_INT(standardWindowButtonsHorizontalOffset, 17, SECTION_BORDERLESS @"Standard window buttons horizontal offset")
++DEFINE_INT(standardWindowButtonsVerticalOffset, 8, SECTION_BORDERLESS @"Standard window buttons vertical offset")
++DEFINE_STRING(disabledNewOutputIndicatorCommands, @"vi,vim,top,htop", SECTION_BORDERLESS @"Comma-seperated list of commands to not show new-output indicator");
 +
  #pragma mark Terminal
  
@@ -589,10 +873,10 @@ index 49bbd96..9977aac 100644
          // in the tab, and the cursor has not moved for half a second.
          return _blinkingItemsVisible;
 diff --git a/sources/iTermWindowImpl.m b/sources/iTermWindowImpl.m
-index 235077c..bc42c3d 100644
+index 235077c..bc66a5c 100644
 --- a/sources/iTermWindowImpl.m
 +++ b/sources/iTermWindowImpl.m
-@@ -60,6 +60,45 @@ - (void)iterm_dealloc {
+@@ -60,6 +60,48 @@ - (void)iterm_dealloc {
  
  }
  
@@ -619,8 +903,11 @@ index 235077c..bc42c3d 100644
 +    
 +    self.titlebarAppearsTransparent = true;
 +    
-+    NSView *decorationView = closeButton.superview.superview.subviews[1];
-+    decorationView.layer.opacity = 0.0;
++    
++    if (@available(macOS 10.14, *)) {
++        NSView *decorationView = closeButton.superview.superview.subviews[1];
++        decorationView.layer.opacity = 0.0;
++    }
 +    
 +    /*
 +    NSTextView *titleView = closeButton.superview.subviews[3];
