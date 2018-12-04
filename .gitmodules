@@ -1,3 +1,5 @@
 [submodule "iTerm2"]
 	path = iTerm2
 	url = https://github.com/gnachman/iTerm2
+	shallow = true
+	branch = HEAD
