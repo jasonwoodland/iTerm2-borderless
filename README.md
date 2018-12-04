@@ -9,16 +9,14 @@
 My custom iTerm2 patch and build. Consistently updated.
 
 * Hides the standard window title bar
-* Incorporates the tab bar into the title bar
-* Modified tab bar which integrates in the title bar
-* Moved the close tab button and new-output indicator to left of the tab name
+* Modified tab bar
+* Moved the close tab button and new-output indicator to left of the tab label
 * New title format which shows either the title *or* the job name
 * New advanced options found under *Preferences > Advanced*: (Search for *&ldquo;borderless&rdquo;*)
   * ***Standard window buttons horizontal/vertical offset:*** Change the position of the window buttons and title bar.
   * ***Window title format:*** Set a custom title format
   * ***Set cursor foreground color:*** Set whether to change the cursor foreground color
   * ***Duration before cursor starts blinking:*** Set a duration for when the cursor should start blinking after it has moved
-    
   * ~~***Vertical cursor width***~~ You can now change the cursor width by setting *Vertical bar cursor width*
 * ~~Extra window padding~~ You can now change the margins in *Preferences > Advanced > General*
 * ~~Reverted to slightly bolder font smoothing~~ Set *Preferences > Profiles > Text > Use thin strokes for anti-aliased text* to *Never*
