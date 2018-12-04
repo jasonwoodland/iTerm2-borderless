@@ -1,9 +1,8 @@
 
-all: patch release
-
-fresh: clean patch release
+all: clean patch release
 
 clean:
+	git submodule update --depth=1
 	cd iTerm2; git reset --hard HEAD; git clean -fd
 
 patch:

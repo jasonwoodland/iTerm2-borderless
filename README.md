@@ -35,7 +35,7 @@ git clone --depth=1 https://github.com/jasonwoodland/iTerm2-borderless.git
 
 ```sh
 cd iTerm2-borderless
-make release
+make all
 ```
 
 If building fails, you might need to set the development team in Xcode. Open the Xcode project file with the open command below, and change the team under *General > Signing > Team*
