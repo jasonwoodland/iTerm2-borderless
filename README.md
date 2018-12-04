@@ -25,10 +25,10 @@ Download the [latest release](https://github.com/jasonwoodland/iTerm2-borderless
 
 ## Patch it yourself
 
-### 1. Get iTerm2 and iTerm2-borderless
+### 1. Get iTerm2-borderless
 
 ```sh
-git clone --depth=1 https://github.com/jasonwoodland/iTerm2-borderless.git
+git clone --recurse-submodules --depth=1 https://github.com/jasonwoodland/iTerm2-borderless.git
 ```
 
 ### 2. Patch and build
