@@ -31,11 +31,11 @@ Download the [latest release](https://github.com/jasonwoodland/iTerm2-borderless
 git clone --depth=1 https://github.com/jasonwoodland/iTerm2-borderless.git
 ```
 
-### 2. Clone iTerm2, patch and build
+### 2. Get iTerm2, patch and build
 
 ```sh
 cd iTerm2-borderless
-make all
+make
 ```
 
 If building fails, you might need to set the development team in Xcode. Open the Xcode project file with the open command below, and change the team under *General > Signing > Team*
@@ -50,7 +50,7 @@ Then try building again:
 make build
 ```
 
-### 3. Move to your Applications
+### 3. Install
 
 Move the app to `/Applications`
 
@@ -75,7 +75,7 @@ Next, go to *Preferences > Advanced*
 If iTerm still doesn't look right, try copying over the sane plist file: (it creates a backup of your current prefs file)
 
 ```sh
-make install_prefs
+make install-prefs
 ```
 
 Then restart iTerm.
