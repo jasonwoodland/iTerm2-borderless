@@ -41,7 +41,7 @@ make
 If building fails, you might need to set the development team in Xcode. Open the Xcode project file with the open command below, and change the team under *General > Signing > Team*
 
 ```sh
-open iTerm2.xcodeproj
+open iTerm2/iTerm2.xcodeproj
 ```
 
 Then try building again:
@@ -70,7 +70,7 @@ Next, go to *Preferences > Advanced*
 * Standard window buttons horizontal offset
 * Standard window buttons vertical offset
 
-### Still having trouble?
+## Still having trouble?
 
 If iTerm still doesn't look right, try copying over the sane plist file: (it creates a backup of your current prefs file)
 
