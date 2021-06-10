@@ -6,7 +6,9 @@
 <img align="center" width="794" src="https://github.com/jasonwoodland/iTerm2-borderless/blob/master/Preview.png?raw=true">
 </p>
 
-My custom iTerm2 patch and build. Consistently updated.
+My custom iTerm2 patch and build.
+
+**DEPRECATED:** Consider using the latest iTerm as most the changes in this patch have been added/improved upon upstream.
 
 * Hides the standard window title bar
 * Modified tab bar
